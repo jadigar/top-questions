@@ -1,9 +1,14 @@
 export class TicTacToe {
   board: number[][];
+
   playerCol: number[];
+
   playerRow: number[];
+
   playerDiagL: number;
+
   playerDiagR: number;
+
   constructor(n: number) {
     this.board = Array(n)
       .fill(0)
@@ -27,34 +32,35 @@ export class TicTacToe {
 
   checkWin(row: number, col: number, player: number): boolean {
     if (
-      (!this.playerRow[row] || this.playerRow[row] === player) &&
-      this.checkRow(row, player)
+      (!this.playerRow[row] || this.playerRow[row] === player)
+      && this.checkRow(row, player)
     ) {
       return true;
     }
     if (
-      (!this.playerCol[col] || this.playerCol[col] === player) &&
-      this.checkCol(col, player)
+      (!this.playerCol[col] || this.playerCol[col] === player)
+      && this.checkCol(col, player)
     ) {
       return true;
     }
     if (
-      col === row &&
-      (!this.playerDiagL || this.playerDiagL === player) &&
-      this.checkDiagonalL(player)
+      col === row
+      && (!this.playerDiagL || this.playerDiagL === player)
+      && this.checkDiagonalL(player)
     ) {
       return true;
     }
     if (
-      col + row === this.board.length - 1 &&
-      (!this.playerDiagR || this.playerDiagR === player) &&
-      this.checkDiagonalR(player)
+      col + row === this.board.length - 1
+      && (!this.playerDiagR || this.playerDiagR === player)
+      && this.checkDiagonalR(player)
     ) {
       return true;
     }
 
     return false;
   }
+
   checkRow(row: number, player: number): boolean {
     if (this.playerRow[row] === 0) {
       this.playerRow[row] = player;
@@ -69,6 +75,7 @@ export class TicTacToe {
     }
     return true;
   }
+
   checkCol(col: number, player: number): boolean {
     if (this.playerCol[col] === 0) {
       this.playerCol[col] = player;

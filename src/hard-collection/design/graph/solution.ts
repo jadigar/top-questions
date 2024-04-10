@@ -1,7 +1,7 @@
 type Edge = [number, number, number]; // [from, to, cost]
 
 export class Graph {
-  private adjacencyList: Map<number, Edge[]>;
+  private readonly adjacencyList: Map<number, Edge[]>;
 
   constructor(n: number, edges: Edge[]) {
     this.adjacencyList = new Map();
@@ -10,7 +10,7 @@ export class Graph {
       this.adjacencyList.set(i, []);
     }
 
-    edges.forEach((edge) => this.addEdge(edge));
+    edges.forEach((edge) => { this.addEdge(edge); });
   }
 
   addEdge(edge: Edge): void {
@@ -46,8 +46,9 @@ export class Graph {
 }
 
 class PriorityQueue<T> {
-  private data: T[];
-  private comparator: (a: T, b: T) => number;
+  private readonly data: T[];
+
+  private readonly comparator: (a: T, b: T) => number;
 
   constructor(comparator: (a: T, b: T) => number) {
     this.data = [];

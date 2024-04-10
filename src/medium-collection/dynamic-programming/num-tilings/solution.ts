@@ -1,6 +1,6 @@
 export function numTilings(n: number): number {
   // Declare a constant for the modulus value.
-  let mod = 1e9 + 7;
+  const mod = 1e9 + 7;
 
   // Initialize an array to store the number of ways to tile each board.
   // The first three values are given.

@@ -1,15 +1,15 @@
-import { checkInclusion } from "./solution";
+import { checkInclusion } from './solution';
 
-it('checkInclusion should return true for s1 = "ab", s2 = "eidbaooo"', function () {
-  const s1 = "ab",
-    s2 = "eidbaooo";
+it('checkInclusion should return true for s1 = "ab", s2 = "eidbaooo"', () => {
+  const s1 = 'ab';
+  const s2 = 'eidbaooo';
   const result = checkInclusion(s1, s2);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });
 
-it('checkInclusion should return true for s1 = "ab", s2 = "eidboaoo"', function () {
-  const s1 = "ab",
-    s2 = "eidboaoo";
+it('checkInclusion should return true for s1 = "ab", s2 = "eidboaoo"', () => {
+  const s1 = 'ab';
+  const s2 = 'eidboaoo';
   const result = checkInclusion(s1, s2);
-  expect(result).toBeFalse();
+  expect(result).toBeFalsy();
 });

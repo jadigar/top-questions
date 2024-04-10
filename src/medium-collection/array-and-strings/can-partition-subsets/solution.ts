@@ -1,17 +1,17 @@
 export function canPartitionKSubsets(nums: number[], k: number): boolean {
-  let sum = nums.reduce((a, b) => a + b, 0);
+  const sum = nums.reduce((a, b) => a + b, 0);
   if (sum % k !== 0) {
     return false; // If total sum of array is not divisible by k, no equal partitioning is possible.
   }
 
-  let target = sum / k; // The sum of numbers in each subset.
+  const target = sum / k; // The sum of numbers in each subset.
   nums.sort((a, b) => b - a); // Sorting in decreasing order will make the algorithm faster.
 
   if (nums[0] > target) {
     return false; // The largest number is greater than the target sum. Hence, partitioning is not possible.
   }
 
-  let subsets = new Array(k).fill(0); // Initialize k subsets with sum 0.
+  const subsets = new Array(k).fill(0); // Initialize k subsets with sum 0.
   return partition(0, nums, subsets, target);
 }
 

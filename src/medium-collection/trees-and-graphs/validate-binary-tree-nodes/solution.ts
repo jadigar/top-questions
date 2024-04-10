@@ -3,7 +3,7 @@ export function validateBinaryTreeNodes(
   leftChild: number[],
   rightChild: number[],
 ): boolean {
-  let map = new Array(n).fill(0);
+  const map = new Array(n).fill(0);
   for (let i = 0; i < leftChild.length; i++) {
     if (leftChild[i] !== -1) {
       map[leftChild[i]]++;
@@ -28,8 +28,8 @@ export function validateBinaryTreeNodes(
     return false;
   }
   // find the root
-  let root = map.indexOf(0);
-  let visited = new Array(n).fill(0);
+  const root = map.indexOf(0);
+  const visited = new Array(n).fill(0);
   dfs(root, leftChild, rightChild, visited);
   // check if we have visited all nodes
   for (let i = 0; i < visited.length; i++) {

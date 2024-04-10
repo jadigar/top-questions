@@ -1,8 +1,8 @@
 export function targetIndices(nums: number[], target: number): number[] {
   nums.sort((a, b) => a - b);
-  let first = nums.indexOf(target);
-  let last = nums.lastIndexOf(target);
-  let result: number[] = [];
+  const first = nums.indexOf(target);
+  const last = nums.lastIndexOf(target);
+  const result: number[] = [];
   if (first === -1) {
     return [];
   }

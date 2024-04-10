@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
   if (root === null) {

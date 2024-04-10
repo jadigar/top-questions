@@ -1,5 +1,5 @@
 export function productExceptSelf(nums: number[]): number[] {
-  let result = [1];
+  const result = [1];
   // calculate product of all numbers to the left of i
   for (let i = 1; i < nums.length; i++) {
     result[i] = result[i - 1] * nums[i - 1];

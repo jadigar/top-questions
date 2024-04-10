@@ -4,9 +4,9 @@ export function ladderLength(
   wordList: string[],
 ): number {
   const wordMap = new Map();
-  for (let word of wordList) {
+  for (const word of wordList) {
     for (let i = 0; i < word.length; i++) {
-      const changedWord = word.slice(0, i) + "*" + word.slice(i + 1);
+      const changedWord = `${word.slice(0, i)}*${word.slice(i + 1)}`;
       if (!wordMap.has(changedWord)) {
         wordMap.set(changedWord, []);
       }
@@ -14,11 +14,11 @@ export function ladderLength(
     }
   }
   let queue = [beginWord];
-  let passedWords = new Set();
+  const passedWords = new Set();
   let level = 1;
   while (queue.length > 0) {
     const next = [];
-    for (let word of queue) {
+    for (const word of queue) {
       if (passedWords.has(word)) {
         continue;
       }
@@ -27,7 +27,7 @@ export function ladderLength(
         return level;
       }
       for (let i = 0; i < word.length; i++) {
-        const changedWord = word.slice(0, i) + "*" + word.slice(i + 1);
+        const changedWord = `${word.slice(0, i)}*${word.slice(i + 1)}`;
         if (wordMap.has(changedWord)) {
           next.push(...wordMap.get(changedWord));
         }

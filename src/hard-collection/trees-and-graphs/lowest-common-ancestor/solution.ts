@@ -1,11 +1,11 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function lowestCommonAncestor(
   root: TreeNode | null,
   p: TreeNode | null,
   q: TreeNode | null,
 ): TreeNode | null {
-  let [_, result] = searchDFS(root, p, q);
+  const [_, result] = searchDFS(root, p, q);
   return result;
 }
 
@@ -21,8 +21,8 @@ function searchDFS(
   if (root.val === p?.val || root.val === q?.val) {
     foundHere = true;
   }
-  let [foundLeft, lNode] = searchDFS(root.left, p, q);
-  let [foundRight, rNode] = searchDFS(root.right, p, q);
+  const [foundLeft, lNode] = searchDFS(root.left, p, q);
+  const [foundRight, rNode] = searchDFS(root.right, p, q);
   let result: [found: boolean, node: TreeNode | null] = [
     foundLeft || foundRight || foundHere,
     lNode ?? rNode,

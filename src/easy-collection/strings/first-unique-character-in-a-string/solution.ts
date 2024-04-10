@@ -1,5 +1,5 @@
 export function firstUniqChar(s: string): number {
-  let result: { [k: string]: number[] } = {};
+  const result: Record<string, number[]> = {};
 
   for (let i = 0; i < s.length; i++) {
     if (result[s[i]]) {

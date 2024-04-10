@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 // this runs in O(n) time complexity
 export function countNodes(root: TreeNode | null): number {

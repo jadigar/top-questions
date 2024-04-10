@@ -1,6 +1,6 @@
 export function mostVisited(n: number, rounds: number[]): number[] {
-  let visitedCounts = new Array(n).fill(0);
-  let result: number[] = [];
+  const visitedCounts = new Array(n).fill(0);
+  const result: number[] = [];
   for (let i = 0; i < rounds.length - 1; i++) {
     let start = rounds[i];
     const end = rounds[i + 1];

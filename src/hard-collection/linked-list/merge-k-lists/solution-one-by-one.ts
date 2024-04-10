@@ -1,10 +1,10 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
-export function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
+export function mergeKLists(lists: (ListNode | null)[]): ListNode | null {
   if (lists.length === 0) {
     return null;
   }
-  let result: ListNode = new ListNode();
+  const result: ListNode = new ListNode();
   let temp: ListNode | null = result;
   let changed = false;
   do {
@@ -19,7 +19,7 @@ export function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
         changed = true;
       }
     }
-    let next = lists[index]?.next ?? null;
+    const next = lists[index]?.next ?? null;
     if (temp?.next?.next) {
       temp.next.next = null;
     }

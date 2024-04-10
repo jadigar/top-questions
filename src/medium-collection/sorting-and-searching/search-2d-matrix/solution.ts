@@ -6,7 +6,7 @@ export function searchMatrix(matrix: number[][], target: number): boolean {
   let row = -1;
   // search the row we should start from
   while (start <= end && start < m) {
-    let tempRow = start + Math.trunc((end - start) / 2);
+    const tempRow = start + Math.trunc((end - start) / 2);
     if (matrix[tempRow][0] > target) {
       end = tempRow - 1;
     } else {
@@ -25,7 +25,7 @@ export function searchMatrix(matrix: number[][], target: number): boolean {
   end = n;
   // search the target in the row
   while (start <= end && start < n) {
-    let col = start + Math.trunc((end - start) / 2);
+    const col = start + Math.trunc((end - start) / 2);
     if (matrix[row][col] > target) {
       end = col - 1;
     } else if (matrix[row][col] < target) {

@@ -23,7 +23,7 @@ function move(from: number, to: number, nums: number[]) {
   if (from === to) {
     return;
   }
-  var element = nums[from];
+  const element = nums[from];
   nums.splice(from, 1);
   nums.splice(to, 0, element);
 }

@@ -7,7 +7,7 @@
 // the nested loops actually run in O(n + n) = O(n) time.
 // All other computations occur in constant time, so the overall runtime is linear.
 export function longestConsecutive(nums: number[]): number {
-  let set = new Set<number>(nums);
+  const set = new Set<number>(nums);
   let result = 0;
   set.forEach((num) => {
     // if this is the beginning of the sequence

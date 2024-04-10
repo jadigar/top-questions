@@ -1,6 +1,8 @@
 export class NumArray {
   tree: number[] = [];
+
   nLen: number;
+
   constructor(nums: number[]) {
     this.nLen = nums.length - 1;
     this.buildSegmentTree(nums, 0, 0, this.nLen);
@@ -61,7 +63,7 @@ export class NumArray {
 
     if (i > mid) {
       return this.queryValue(ti2 + 2, mid + 1, hi, i, j);
-    } else if (j <= mid) {
+    } if (j <= mid) {
       return this.queryValue(ti2 + 1, lo, mid, i, j);
     }
 
@@ -87,10 +89,8 @@ export class NumArray {
 
     const mid = lo + Math.trunc((hi - lo) / 2); // recurse deeper for appropriate child
 
-    if (numIndex > mid)
-      this.updateValue(2 * treeIndex + 2, mid + 1, hi, numIndex, val);
-    else if (numIndex <= mid)
-      this.updateValue(2 * treeIndex + 1, lo, mid, numIndex, val);
+    if (numIndex > mid) this.updateValue(2 * treeIndex + 2, mid + 1, hi, numIndex, val);
+    else if (numIndex <= mid) this.updateValue(2 * treeIndex + 1, lo, mid, numIndex, val);
 
     // merge updates
     this.tree[treeIndex] = this.merge(

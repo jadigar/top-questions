@@ -1,11 +1,11 @@
 export function findWords(board: string[][], words: string[]): string[] {
-  let result: string[] = [];
-  let indexTable = new Map<string, number[][]>();
+  const result: string[] = [];
+  const indexTable = new Map<string, number[][]>();
   // fill index table with indexes for each letter
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[0].length; j++) {
       if (indexTable.has(board[i][j])) {
-        let item = indexTable.get(board[i][j])!;
+        const item = indexTable.get(board[i][j])!;
         item.push([i, j]);
       } else {
         indexTable.set(board[i][j], [[i, j]]);

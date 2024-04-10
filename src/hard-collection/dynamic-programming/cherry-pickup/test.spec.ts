@@ -1,7 +1,7 @@
-import { cherryPickup } from "./solution";
+import { cherryPickup } from './solution';
 
-describe("Cherry Pickup II:", () => {
-  it("cherryPickup should return 24 for grid = [[3,1,1],[2,5,1],[1,5,5],[2,1,1]]", () => {
+describe('Cherry Pickup II:', () => {
+  it('cherryPickup should return 24 for grid = [[3,1,1],[2,5,1],[1,5,5],[2,1,1]]', () => {
     const grid = [
       [3, 1, 1],
       [2, 5, 1],
@@ -12,7 +12,7 @@ describe("Cherry Pickup II:", () => {
     expect(result).toEqual(24);
   });
 
-  it("cherryPickup should return 28 for grid = [[3,1,1],[2,5,1],[1,5,5],[2,1,1]]", () => {
+  it('cherryPickup should return 28 for grid = [[3,1,1],[2,5,1],[1,5,5],[2,1,1]]', () => {
     const grid = [
       [1, 0, 0, 0, 0, 0, 1],
       [2, 0, 0, 0, 0, 3, 0],

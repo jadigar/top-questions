@@ -1,5 +1,5 @@
 export function numRabbits(answers: number[]): number {
-  const counts: Map<number, number> = new Map();
+  const counts = new Map<number, number>();
 
   // Count the occurrences of each answer
   for (const answer of answers) {

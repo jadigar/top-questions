@@ -3,7 +3,7 @@ export function minimizeMax(nums: number[], p: number): number {
   let left = 0;
   let right = nums[nums.length - 1] - nums[0];
   while (left < right) {
-    let mid = left + Math.trunc((right - left) / 2);
+    const mid = left + Math.trunc((right - left) / 2);
     if (countPairs(nums, mid) >= p) {
       right = mid;
     } else {

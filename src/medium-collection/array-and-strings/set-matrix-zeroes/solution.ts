@@ -2,8 +2,8 @@
  Do not return anything, modify matrix in-place instead.
  */
 export function setZeroes(matrix: number[][]): void {
-  let rowZeroes = new Set<number>();
-  let colZeroes = new Set<number>();
+  const rowZeroes = new Set<number>();
+  const colZeroes = new Set<number>();
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {
       if (matrix[i][j] === 0) {

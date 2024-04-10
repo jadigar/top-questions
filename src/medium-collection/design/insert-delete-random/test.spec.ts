@@ -1,6 +1,6 @@
-import { RandomizedSet } from "./solution";
+import { RandomizedSet } from './solution';
 
-it("should return [true, false, true, 2, true, false, 2]", () => {
+it('should return [true, false, true, 2, true, false, 2]', () => {
   const set = new RandomizedSet();
   expect(set.insert(1)).toBe(true);
   expect(set.remove(2)).toBe(false);
@@ -11,7 +11,7 @@ it("should return [true, false, true, 2, true, false, 2]", () => {
   expect(set.getRandom()).toBe(2);
 });
 
-it("should return [true, true, false, 2, true, 2, true]", () => {
+it('should return [true, true, false, 2, true, 2, true]', () => {
   const set = new RandomizedSet();
   expect(set.insert(1)).toBe(true);
   expect(set.insert(2)).toBe(true);
@@ -22,7 +22,7 @@ it("should return [true, true, false, 2, true, 2, true]", () => {
   expect(set.remove(2)).toBe(true);
 });
 
-it("should correctly process get random", () => {
+it('should correctly process get random', () => {
   const set = new RandomizedSet();
   expect(set.insert(1)).toBe(true);
   expect(set.insert(10)).toBe(true);

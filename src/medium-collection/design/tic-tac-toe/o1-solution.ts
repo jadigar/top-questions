@@ -1,9 +1,14 @@
 export class TicTacToe {
   rows: number[];
+
   cols: number[];
+
   diagL: number;
+
   diagR: number;
+
   n: number;
+
   constructor(n: number) {
     this.rows = new Array(n).fill(0);
     this.cols = new Array(n).fill(0);
@@ -23,10 +28,10 @@ export class TicTacToe {
       this.diagR += currentPlayer;
     }
     if (
-      Math.abs(this.rows[row]) === this.n ||
-      Math.abs(this.cols[col]) === this.n ||
-      Math.abs(this.diagL) === this.n ||
-      Math.abs(this.diagR) === this.n
+      Math.abs(this.rows[row]) === this.n
+      || Math.abs(this.cols[col]) === this.n
+      || Math.abs(this.diagL) === this.n
+      || Math.abs(this.diagR) === this.n
     ) {
       return player;
     }

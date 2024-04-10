@@ -1,7 +1,9 @@
 // Definition for a binary tree node.
 export class TreeNode {
   val: number;
+
   left: TreeNode | null;
+
   right: TreeNode | null;
 
   constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
@@ -20,7 +22,7 @@ function createTreeLevel(
   if (i < n) {
     const element = nodes[i];
     if (element !== null) {
-      let temp: TreeNode = new TreeNode(element);
+      const temp: TreeNode = new TreeNode(element);
       root = temp;
       root.left = createTreeLevel(nodes, root.left, 2 * i + 1, n);
       root.right = createTreeLevel(nodes, root.right, 2 * i + 2, n);
@@ -72,10 +74,10 @@ export function treeNodeToArray(root: TreeNode | null): (number | null)[] {
   if (!root) {
     return [];
   }
-  let result: (number | null)[] = [];
-  let queue: (TreeNode | null)[] = [root];
+  const result: (number | null)[] = [];
+  const queue: (TreeNode | null)[] = [root];
   while (queue.length) {
-    let node = queue.shift();
+    const node = queue.shift();
     result.push(node?.val ?? null);
     if (node?.left || node?.right) {
       queue.push(node.left || null);

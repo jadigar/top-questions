@@ -9,12 +9,12 @@ export function isMatch(s: string, p: string): boolean {
   while (sIdx < sLen) {
     // If the pattern character = string character
     // or pattern character = '?'
-    if (pIdx < pLen && (p[pIdx] === "?" || p[pIdx] === s[sIdx])) {
+    if (pIdx < pLen && (p[pIdx] === '?' || p[pIdx] === s[sIdx])) {
       ++sIdx;
       ++pIdx;
 
       // If pattern character = '*'
-    } else if (pIdx < pLen && p[pIdx] === "*") {
+    } else if (pIdx < pLen && p[pIdx] === '*') {
       // Check the situation
       // when '*' matches no characters
       starIdx = pIdx;
@@ -41,7 +41,7 @@ export function isMatch(s: string, p: string): boolean {
 
   // The remaining characters in the pattern should all be '*' characters
   for (let i = pIdx; i < pLen; i++) {
-    if (p[i] !== "*") {
+    if (p[i] !== '*') {
       return false;
     }
   }

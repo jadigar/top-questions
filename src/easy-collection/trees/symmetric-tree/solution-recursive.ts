@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function isSymmetric(root: TreeNode | null): boolean {
   return isSymmetricNode(root?.left || null, root?.right || null);
@@ -12,8 +12,8 @@ function isSymmetricNode(
     return true;
   }
   return (
-    left?.val === right?.val &&
-    isSymmetricNode(left?.left || null, right?.right || null) &&
-    isSymmetricNode(left?.right || null, right?.left || null)
+    left?.val === right?.val
+    && isSymmetricNode(left?.left || null, right?.right || null)
+    && isSymmetricNode(left?.right || null, right?.left || null)
   );
 }

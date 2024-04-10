@@ -1,21 +1,21 @@
-import { removeStars } from "./solution";
+import { removeStars } from './solution';
 
-describe("Removing Stars From a String:", () => {
+describe('Removing Stars From a String:', () => {
   it('removeStars should return "lecoe" for s = "leet**cod*e"', () => {
-    const s = "leet**cod*e";
+    const s = 'leet**cod*e';
     const result = removeStars(s);
-    expect(result).toEqual("lecoe");
+    expect(result).toEqual('lecoe');
   });
 
   it('removeStars should return "" for s = "erase*****"', () => {
-    const s = "erase*****";
+    const s = 'erase*****';
     const result = removeStars(s);
-    expect(result).toEqual("");
+    expect(result).toEqual('');
   });
 
   it('removeStars should return "de" for s = "a*bc**def*g*"', () => {
-    const s = "a*bc**def*g*";
+    const s = 'a*bc**def*g*';
     const result = removeStars(s);
-    expect(result).toEqual("de");
+    expect(result).toEqual('de');
   });
 });

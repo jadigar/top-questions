@@ -8,7 +8,7 @@ export function isReachableAtTime(
   if (sx === fx && sy === fy && t === 1) {
     return false;
   }
-  let xDiff = Math.abs(fx - sx);
-  let yDiff = Math.abs(fy - sy);
+  const xDiff = Math.abs(fx - sx);
+  const yDiff = Math.abs(fy - sy);
   return Math.max(xDiff, yDiff) <= t;
 }

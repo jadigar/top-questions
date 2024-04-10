@@ -1,5 +1,6 @@
 export class Solution {
   hash: Map<number, number[]>;
+
   constructor(nums: number[]) {
     this.hash = new Map<number, number[]>();
     for (let i = 0; i < nums.length; i++) {
@@ -11,8 +12,8 @@ export class Solution {
   }
 
   pick(target: number): number {
-    let indexes = this.hash.get(target)!;
-    let random = Math.floor(Math.random() * indexes.length);
+    const indexes = this.hash.get(target)!;
+    const random = Math.floor(Math.random() * indexes.length);
     return indexes[random];
   }
 }

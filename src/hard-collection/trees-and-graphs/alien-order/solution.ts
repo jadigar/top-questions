@@ -18,7 +18,7 @@ export function alienOrder(words: string[]): string {
     const next = words[i + 1];
     // check that second word is not the prefix of the first
     if (current.length > next.length && current.startsWith(next)) {
-      return "";
+      return '';
     }
 
     // find the first different letter
@@ -41,7 +41,7 @@ export function alienOrder(words: string[]): string {
   });
 
   // pass using BFS
-  let result = "";
+  let result = '';
   while (queue.length) {
     const letter = queue.pop()!;
     result += letter;
@@ -54,5 +54,5 @@ export function alienOrder(words: string[]): string {
     });
   }
 
-  return result.length < depth.size ? "" : result;
+  return result.length < depth.size ? '' : result;
 }

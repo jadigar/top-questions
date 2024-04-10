@@ -1,8 +1,8 @@
 export function freqAlphabets(s: string): string {
-  let result: string[] = [];
+  const result: string[] = [];
   for (let i = s.length - 1; i >= 0; i--) {
     let num;
-    if (s[i] === "#") {
+    if (s[i] === '#') {
       num = parseInt(s.substring(i - 2, i));
       i -= 2;
     } else {
@@ -10,5 +10,5 @@ export function freqAlphabets(s: string): string {
     }
     result.push(String.fromCharCode(96 + num));
   }
-  return result.reverse().join("");
+  return result.reverse().join('');
 }

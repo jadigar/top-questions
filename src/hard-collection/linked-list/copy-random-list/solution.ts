@@ -1,9 +1,10 @@
-import { Node } from "../common";
+import { Node } from '../common';
+
 export function copyRandomList(head: Node | null): Node | null {
-  let copyHead = new Node();
+  const copyHead = new Node();
   let node = head;
-  let nodeRndIndex = new Map<Node, number | null>();
-  let indexNode = new Map<number | null, Node>();
+  const nodeRndIndex = new Map<Node, number | null>();
+  const indexNode = new Map<number | null, Node>();
   let index = 0;
   let currentNode: Node | null = copyHead;
   while (node) {

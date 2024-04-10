@@ -7,7 +7,7 @@ export function findMinArrowShots(points: number[][]): number {
   // Iterate through the sorted list of points.
   for (let i = 0; i < points.length; i++) {
     // The current balloon under consideration.
-    let balloon = points[i];
+    const balloon = points[i];
 
     // While there is a next balloon and the current balloon's end is greater than or equal
     // to the next balloon's start, it indicates an overlap. Thus, these can be burst with the same arrow.

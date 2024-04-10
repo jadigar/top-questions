@@ -1,5 +1,5 @@
 export function combinationSum4(nums: number[], target: number): number {
-  let map = new Map<number, number>();
+  const map = new Map<number, number>();
   dfs(nums, target, map);
   return map.get(target)!;
 }

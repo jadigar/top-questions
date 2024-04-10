@@ -1,7 +1,7 @@
 export function maxProfit(prices: number[], fee: number): number {
-  let buy: number[] = [];
-  let sell: number[] = [];
-  let n = prices.length;
+  const buy: number[] = [];
+  const sell: number[] = [];
+  const n = prices.length;
   // we should spend prices[0] to buy, so the profit is -price[0]
   buy[0] = -prices[0];
   sell[0] = 0;

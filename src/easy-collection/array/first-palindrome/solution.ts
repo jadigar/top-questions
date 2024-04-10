@@ -4,7 +4,7 @@ export function firstPalindrome(words: string[]): string {
       return words[i];
     }
   }
-  return "";
+  return '';
 }
 
 function isPalindrome(word: string): boolean {

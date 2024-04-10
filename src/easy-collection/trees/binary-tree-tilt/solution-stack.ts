@@ -1,14 +1,14 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
-type StackElement = {
+interface StackElement {
   node: TreeNode | null;
-  state: "left" | "right" | "done";
-};
+  state: 'done' | 'left' | 'right';
+}
 
 export function findTilt(root: TreeNode | null): number {
   let totalTilt = 0;
   // Initialize the stack with the root node and its traversal state set to "left"
-  const stack: StackElement[] = [{ node: root, state: "left" }];
+  const stack: StackElement[] = [{ node: root, state: 'left' }];
 
   // Iterate until the stack is empty
   while (stack.length > 0) {
@@ -21,13 +21,13 @@ export function findTilt(root: TreeNode | null): number {
     }
 
     // If the traversal state is "left", we need to visit the left child next
-    if (top.state === "left") {
-      stack.push({ node: top.node.left, state: "left" });
-      top.state = "right";
-    } else if (top.state === "right") {
+    if (top.state === 'left') {
+      stack.push({ node: top.node.left, state: 'left' });
+      top.state = 'right';
+    } else if (top.state === 'right') {
       // If the traversal state is "right", we need to visit the right child next
-      stack.push({ node: top.node.right, state: "left" });
-      top.state = "done";
+      stack.push({ node: top.node.right, state: 'left' });
+      top.state = 'done';
     } else {
       // If the traversal state is "done", we've visited both children
       // Now, we can calculate the tilt for the current node

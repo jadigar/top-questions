@@ -1,6 +1,6 @@
-import { findWinners } from "./solution";
+import { findWinners } from './solution';
 
-it("findWinners should pass test 1", () => {
+it('findWinners should pass test 1', () => {
   const matches = [
     [1, 3],
     [2, 3],
@@ -20,7 +20,7 @@ it("findWinners should pass test 1", () => {
   ]);
 });
 
-it("findWinners should pass test 2", () => {
+it('findWinners should pass test 2', () => {
   const matches = [
     [2, 3],
     [1, 3],

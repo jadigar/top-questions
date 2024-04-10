@@ -1,6 +1,8 @@
 export class MyQueue {
   readStack: number[] = [];
+
   writeStack: number[] = [];
+
   constructor() {}
 
   push(x: number): void {

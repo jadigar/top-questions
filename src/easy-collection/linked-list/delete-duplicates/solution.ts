@@ -1,10 +1,10 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
 export function deleteDuplicates(head: ListNode | null): ListNode | null {
   if (head === null) {
     return null;
   }
-  let result = new ListNode(head.val);
+  const result = new ListNode(head.val);
   let currentNode = result;
   while (head !== null) {
     if (head.val !== currentNode.val) {

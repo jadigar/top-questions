@@ -1,6 +1,6 @@
-import { Heap } from "./heap";
+import { Heap } from './heap';
 
-it("heap should store min heap", () => {
+it('heap should store min heap', () => {
   const minHeap = new Heap<number>((left, right) => left - right);
   minHeap.push(-3);
   minHeap.push(0);
@@ -12,7 +12,7 @@ it("heap should store min heap", () => {
   expect(minHeap.pop()).toEqual(5);
 });
 
-it("heap should store max heap", () => {
+it('heap should store max heap', () => {
   const maxHeap = new Heap<number>((left, right) => right - left);
   maxHeap.push(-3);
   maxHeap.push(0);

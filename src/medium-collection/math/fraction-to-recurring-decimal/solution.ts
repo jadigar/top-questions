@@ -3,27 +3,27 @@ export function fractionToDecimal(
   denominator: number,
 ): string {
   if (numerator == 0) {
-    return "0";
+    return '0';
   }
-  let fraction: string = "";
+  let fraction = '';
   // If either one is negative (not both)
   if (numerator < 0 !== denominator < 0) {
-    fraction += "-";
+    fraction += '-';
   }
   // Convert to Long or else abs(-2147483648) overflows
-  let dividend = Math.abs(numerator);
-  let divisor = Math.abs(denominator);
+  const dividend = Math.abs(numerator);
+  const divisor = Math.abs(denominator);
   fraction += Math.trunc(dividend / divisor);
   let remainder = dividend % divisor;
   if (remainder == 0) {
     return fraction.toString();
   }
-  fraction += ".";
-  let map = new Map();
+  fraction += '.';
+  const map = new Map();
   while (remainder !== 0) {
     if (map.has(remainder)) {
-      fraction = insertString(fraction, "(", map.get(remainder));
-      fraction += ")";
+      fraction = insertString(fraction, '(', map.get(remainder));
+      fraction += ')';
       break;
     }
     map.set(remainder, fraction.length);

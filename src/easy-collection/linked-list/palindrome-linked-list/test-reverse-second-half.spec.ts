@@ -1,44 +1,44 @@
-import { arrayToList } from "../common";
-import { isPalindrome } from "./solution-reverse-second-half";
+import { arrayToList } from '../common';
+import { isPalindrome } from './solution-reverse-second-half';
 
-it("isPalindrome should return true for head = [1,2,2,1]", function () {
+it('isPalindrome should return true for head = [1,2,2,1]', () => {
   const head = [1, 2, 2, 1];
   const list = arrayToList(head);
   const result = isPalindrome(list);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });
 
-it("isPalindrome should return true for head = [1,2,3,2,1]", function () {
+it('isPalindrome should return true for head = [1,2,3,2,1]', () => {
   const head = [1, 2, 3, 2, 1];
   const list = arrayToList(head);
   const result = isPalindrome(list);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });
 
-it("isPalindrome should return true for head = [12,1]", function () {
+it('isPalindrome should return true for head = [12,1]', () => {
   const head = [1, 1, 2, 1];
   const list = arrayToList(head);
   const result = isPalindrome(list);
-  expect(result).toBeFalse();
+  expect(result).toBeFalsy();
 });
 
-it("isPalindrome should return true for head = [12,1]", function () {
+it('isPalindrome should return true for head = [12,1]', () => {
   const head = [1, 2, 1, 1];
   const list = arrayToList(head);
   const result = isPalindrome(list);
-  expect(result).toBeFalse();
+  expect(result).toBeFalsy();
 });
 
-it("isPalindrome should return false for head = [1,2]", function () {
+it('isPalindrome should return false for head = [1,2]', () => {
   const head = [1, 2];
   const list = arrayToList(head);
   const result = isPalindrome(list);
-  expect(result).toBeFalse();
+  expect(result).toBeFalsy();
 });
 
-it("isPalindrome should return true for head = [1]", function () {
+it('isPalindrome should return true for head = [1]', () => {
   const head = [1];
   const list = arrayToList(head);
   const result = isPalindrome(list);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });

@@ -1,27 +1,27 @@
-import { repeatedSubstringPattern } from "./solution";
+import { repeatedSubstringPattern } from './solution';
 
-describe("Repeated Substring Pattern:", () => {
+describe('Repeated Substring Pattern:', () => {
   it('repeatedSubstringPattern should return true for s = "abab"', () => {
-    const s = "abab";
+    const s = 'abab';
     const result = repeatedSubstringPattern(s);
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 
   it('repeatedSubstringPattern should return false for s = "aba"', () => {
-    const s = "aba";
+    const s = 'aba';
     const result = repeatedSubstringPattern(s);
-    expect(result).toBeFalse();
+    expect(result).toBeFalsy();
   });
 
   it('repeatedSubstringPattern should return true for s = "abcabcabcabc"', () => {
-    const s = "abcabcabcabc";
+    const s = 'abcabcabcabc';
     const result = repeatedSubstringPattern(s);
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 
   it('repeatedSubstringPattern should return true for s = "abcabcabc"', () => {
-    const s = "abcabcabc";
+    const s = 'abcabcabc';
     const result = repeatedSubstringPattern(s);
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 });

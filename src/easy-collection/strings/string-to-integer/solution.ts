@@ -1,20 +1,20 @@
 export function myAtoi(s: string): number {
-  let sign: string = "";
-  let result: number = 0;
+  let sign = '';
+  let result = 0;
   for (let i = 0; i < s.length; i++) {
-    if (s[i] === " " && !sign.length) {
+    if (s[i] === ' ' && !sign.length) {
       continue;
     }
     if (sign.length === 0) {
-      if (s[i] === "-" || s[i] === "+") {
+      if (s[i] === '-' || s[i] === '+') {
         sign = s[i];
         continue;
       }
-      sign = "+";
+      sign = '+';
     }
     if (
-      s.charCodeAt(i) >= "0".charCodeAt(0) &&
-      s.charCodeAt(i) <= "9".charCodeAt(0)
+      s.charCodeAt(i) >= '0'.charCodeAt(0)
+      && s.charCodeAt(i) <= '9'.charCodeAt(0)
     ) {
       if (result === 0) {
         result = parseInt(s[i]);
@@ -25,7 +25,7 @@ export function myAtoi(s: string): number {
       break;
     }
   }
-  result = sign === "-" ? result * -1 : result;
+  result = sign === '-' ? result * -1 : result;
   if (result > 2147483647) {
     result = 2147483647;
   }

@@ -5,14 +5,14 @@ export function minOperations(s: string): number {
   for (let i = 0; i < s.length; i++) {
     if (i % 2 === 0) {
       // Even index
-      if (s[i] === "1") {
+      if (s[i] === '1') {
         count1++; // For "0101..." pattern, there should be '0' at even places
       } else {
         count2++; // For "1010..." pattern, there should be '1' at even places
       }
     } else {
       // Odd index
-      if (s[i] === "0") {
+      if (s[i] === '0') {
         count1++; // For "0101..." pattern, there should be '1' at odd places
       } else {
         count2++; // For "1010..." pattern, there should be '0' at odd places

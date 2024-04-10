@@ -15,7 +15,7 @@ export function findCheapestPrice(
   // Relax the edges up to K+1 times.
   for (let i = 0; i <= k; i++) {
     tempCost = [...cost]; // Copy the current state to use for this iteration's updates
-    for (let [from, to, price] of flights) {
+    for (const [from, to, price] of flights) {
       if (cost[from] === Infinity) {
         continue; // Skip if `from` is not reachable
       }

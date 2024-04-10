@@ -1,5 +1,5 @@
 export function largestGoodInteger(num: string): string {
-  let maxGoodInteger = "";
+  let maxGoodInteger = '';
 
   for (let i = 0; i < num.length - 2; i++) {
     const currentChar = num[i];

@@ -1,7 +1,7 @@
 export function maxVowels(s: string, k: number): number {
   let vowelsCount = 0;
   let maxVowelsCount = 0;
-  const vowels = new Set<string>(["a", "e", "i", "o", "u"]);
+  const vowels = new Set<string>(['a', 'e', 'i', 'o', 'u']);
 
   // Count vowels in the first window
   for (let i = 0; i < k; i++) {

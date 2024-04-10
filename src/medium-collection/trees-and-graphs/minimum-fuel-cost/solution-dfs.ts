@@ -1,7 +1,7 @@
 export function minimumFuelCost(roads: number[][], seats: number): number {
-  let fuel: number = 0;
+  let fuel = 0;
 
-  const tree: Map<number, number[]> = new Map();
+  const tree = new Map<number, number[]>();
   for (const [from, to] of roads) {
     tree.set(from, (tree.get(from) || []).concat(to));
     tree.set(to, (tree.get(to) || []).concat(from));
@@ -19,7 +19,7 @@ function calculateFuel(
   seats: number,
   fuel: number,
 ): [number, number] {
-  let representatives: number = 1;
+  let representatives = 1;
   if (!adj.has(node)) {
     return [representatives, fuel];
   }

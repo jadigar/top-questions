@@ -5,5 +5,5 @@ export function customSortString(order: string, s: string): string {
   const result = Array.from(s).sort(
     (a, b) => (sortingMap.get(a) ?? Infinity) - (sortingMap.get(b) ?? Infinity),
   );
-  return result.join("");
+  return result.join('');
 }

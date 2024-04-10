@@ -1,5 +1,5 @@
 export function digitCount(num: string): boolean {
-  let map = new Map<string, number>();
+  const map = new Map<string, number>();
   for (let i = 0; i < num.length; i++) {
     if (!map.has(num[i])) {
       map.set(num[i], 0);

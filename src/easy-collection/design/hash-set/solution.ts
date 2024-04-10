@@ -1,5 +1,6 @@
 export class MyHashSet {
   hashSet: number[] = [];
+
   constructor() {}
 
   add(key: number): void {

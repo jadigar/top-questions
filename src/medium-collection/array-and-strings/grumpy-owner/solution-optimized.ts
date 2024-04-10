@@ -26,13 +26,12 @@ export function maxSatisfied(
 
     // Update the satisfiedCustomersSum based on the new customer's grumpy state
     if (!grumpy[index]) {
-      satisfiedCustomersSum = satisfiedCustomersSum + customers[index];
+      satisfiedCustomersSum += customers[index];
     }
 
     // Update the satisfiedCustomersSum based on the leaving customer's grumpy state
     if (!grumpy[index - minutes]) {
-      satisfiedCustomersSum =
-        satisfiedCustomersSum - customers[index - minutes];
+      satisfiedCustomersSum -= customers[index - minutes];
     }
 
     // Check if the current grumpy difference is greater than the previous one

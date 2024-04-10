@@ -1,21 +1,19 @@
 export function checkValidString(s: string): boolean {
-  let leftStack: number[] = []; // Stack for '(' indices
-  let starStack: number[] = []; // Stack for '*' indices
+  const leftStack: number[] = []; // Stack for '(' indices
+  const starStack: number[] = []; // Stack for '*' indices
 
   for (let i = 0; i < s.length; i++) {
     const char = s[i];
-    if (char === "(") {
+    if (char === '(') {
       leftStack.push(i);
-    } else if (char === "*") {
+    } else if (char === '*') {
       starStack.push(i);
+    } else if (leftStack.length > 0) {
+      leftStack.pop(); // '(' found for ')'
+    } else if (starStack.length > 0) {
+      starStack.pop(); // Use '*' as '('
     } else {
-      if (leftStack.length > 0) {
-        leftStack.pop(); // '(' found for ')'
-      } else if (starStack.length > 0) {
-        starStack.pop(); // Use '*' as '('
-      } else {
-        return false; // No '(' or '*' to balance ')'
-      }
+      return false; // No '(' or '*' to balance ')'
     }
   }
 

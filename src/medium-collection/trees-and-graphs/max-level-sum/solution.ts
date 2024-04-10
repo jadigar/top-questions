@@ -1,8 +1,8 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function maxLevelSum(root: TreeNode | null): number {
-  let queue: { level: number; node: TreeNode }[] = [{ level: 0, node: root! }];
-  let levelSums: number[] = [];
+  const queue: { level: number; node: TreeNode }[] = [{ level: 0, node: root! }];
+  const levelSums: number[] = [];
   while (queue.length) {
     const nodeLevel = queue.pop()!;
     if (levelSums.length === nodeLevel.level) {

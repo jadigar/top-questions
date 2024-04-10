@@ -1,13 +1,13 @@
-import { Node } from "./node";
+import type { Node } from './node';
 
 export function postorder(root: Node | null): number[] {
   if (root === null) {
     return [];
   }
-  let stack: Node[] = [root];
-  let result: number[] = [];
+  const stack: Node[] = [root];
+  const result: number[] = [];
   while (stack.length > 0) {
-    let node = stack.pop();
+    const node = stack.pop();
     result.unshift(node!.val);
     for (const child of node!.children) {
       stack.push(child);

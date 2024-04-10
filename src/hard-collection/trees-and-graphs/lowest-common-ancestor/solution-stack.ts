@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 enum NodeState {
   BOTH_DONE = 0,
@@ -10,7 +10,7 @@ export function lowestCommonAncestor(
   p: TreeNode | null,
   q: TreeNode | null,
 ): TreeNode | null {
-  let stack: [TreeNode | null, NodeState][] = [];
+  const stack: [TreeNode | null, NodeState][] = [];
 
   // Initialize the stack with the root node.
   stack.push([root, NodeState.BOTH_PENDING]);
@@ -26,7 +26,7 @@ export function lowestCommonAncestor(
 
   // We do a post order traversal of the binary tree using stack
   while (stack.length !== 0) {
-    let [parent_node, parent_state] = stack[stack.length - 1];
+    const [parent_node, parent_state] = stack[stack.length - 1];
 
     // If the parent_state is not equal to BOTH_DONE,
     // this means the parent_node can't be popped off yet.
@@ -39,14 +39,13 @@ export function lowestCommonAncestor(
           // both the nodes.
           if (one_node_found) {
             return LCA;
-          } else {
-            // Otherwise, set one_node_found to True,
-            // to mark one of p and q is found.
-            one_node_found = true;
-
-            // Save the current top element of stack as the LCA.
-            [LCA] = stack[stack.length - 1];
           }
+          // Otherwise, set one_node_found to True,
+          // to mark one of p and q is found.
+          one_node_found = true;
+
+          // Save the current top element of stack as the LCA.
+          [LCA] = stack[stack.length - 1];
         }
 
         // If both pending, traverse the left child first
@@ -69,7 +68,7 @@ export function lowestCommonAncestor(
       // If the parent_state of the node is both done,
       // the top node could be popped off the stack.
       // Update the LCA node to be the next top node.
-      let [LCA_node] = stack.pop()!;
+      const [LCA_node] = stack.pop()!;
       if (LCA?.val === LCA_node?.val && one_node_found) {
         [LCA] = stack[stack.length - 1];
       }

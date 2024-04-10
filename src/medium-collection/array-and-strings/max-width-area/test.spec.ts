@@ -1,7 +1,7 @@
-import { maxWidthOfVerticalArea } from "./solution";
+import { maxWidthOfVerticalArea } from './solution';
 
-describe("Widest Vertical Area Between Two Points Containing No Points:", () => {
-  it("maxWidthOfVerticalArea should return 1 for points = [[8,7],[9,9],[7,4],[9,7]]", () => {
+describe('Widest Vertical Area Between Two Points Containing No Points:', () => {
+  it('maxWidthOfVerticalArea should return 1 for points = [[8,7],[9,9],[7,4],[9,7]]', () => {
     const points = [
       [8, 7],
       [9, 9],
@@ -12,7 +12,7 @@ describe("Widest Vertical Area Between Two Points Containing No Points:", () => 
     expect(result).toEqual(1);
   });
 
-  it("maxWidthOfVerticalArea should return 3 for points = [[8,7],[9,9],[7,4],[9,7]]", () => {
+  it('maxWidthOfVerticalArea should return 3 for points = [[8,7],[9,9],[7,4],[9,7]]', () => {
     const points = [
       [3, 1],
       [9, 0],

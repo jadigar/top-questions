@@ -1,7 +1,8 @@
-import { NestedInteger } from "./nested-integer";
+import type { NestedInteger } from './nested-integer';
 
 export class NestedIterator {
   generator;
+
   peeked: number | null = null;
 
   constructor(nestedList: NestedInteger[]) {

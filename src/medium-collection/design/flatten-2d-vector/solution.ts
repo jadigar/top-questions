@@ -1,7 +1,9 @@
 export class Vector2D {
   vec: number[][];
-  inner: number = 0;
-  outer: number = 0;
+
+  inner = 0;
+
+  outer = 0;
 
   constructor(vec: number[][]) {
     this.vec = vec;
@@ -9,15 +11,15 @@ export class Vector2D {
 
   next(): number {
     if (!this.hasNext()) {
-      throw new Error("No next item");
+      throw new Error('No next item');
     }
     return this.vec[this.outer][this.inner++];
   }
 
   goToNextItem() {
     while (
-      this.outer < this.vec.length &&
-      this.inner === this.vec[this.outer].length
+      this.outer < this.vec.length
+      && this.inner === this.vec[this.outer].length
     ) {
       this.outer++;
       this.inner = 0;

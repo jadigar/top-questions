@@ -2,10 +2,10 @@ export function countSmaller(nums: number[]): number[] {
   const offset = 10000; // offset negative to non-negative
   const size = 2 * 10000 + 1; // total possible values in nums
   const tree = new Array(size * 2).fill(0);
-  let result: number[] = [];
+  const result: number[] = [];
 
   for (let i = nums.length - 1; i >= 0; i--) {
-    let smaller_count = query(0, nums[i] + offset, tree, size);
+    const smaller_count = query(0, nums[i] + offset, tree, size);
     result.unshift(smaller_count);
     update(nums[i] + offset, 1, tree, size);
   }

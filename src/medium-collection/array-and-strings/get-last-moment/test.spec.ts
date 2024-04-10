@@ -1,7 +1,7 @@
-import { getLastMoment } from "./solution";
+import { getLastMoment } from './solution';
 
-describe("Last Moment Before All Ants Fall Out of a Plank:", () => {
-  it("getLastMoment should return 4 for n = 4, left = [4,3], right = [0,1]", () => {
+describe('Last Moment Before All Ants Fall Out of a Plank:', () => {
+  it('getLastMoment should return 4 for n = 4, left = [4,3], right = [0,1]', () => {
     const n = 4;
     const left = [4, 3];
     const right = [0, 1];
@@ -9,7 +9,7 @@ describe("Last Moment Before All Ants Fall Out of a Plank:", () => {
     expect(result).toEqual(4);
   });
 
-  it("getLastMoment should return 7 for n = 7, left = [], right = [0,1,2,3,4,5,6,7]", () => {
+  it('getLastMoment should return 7 for n = 7, left = [], right = [0,1,2,3,4,5,6,7]', () => {
     const n = 7;
     const left: number[] = [];
     const right = [0, 1, 2, 3, 4, 5, 6, 7];
@@ -17,7 +17,7 @@ describe("Last Moment Before All Ants Fall Out of a Plank:", () => {
     expect(result).toEqual(7);
   });
 
-  it("getLastMoment should return 7 for n = 7, left = [0,1,2,3,4,5,6,7], right = []", () => {
+  it('getLastMoment should return 7 for n = 7, left = [0,1,2,3,4,5,6,7], right = []', () => {
     const n = 7;
     const left = [0, 1, 2, 3, 4, 5, 6, 7];
     const right: number[] = [];
@@ -25,7 +25,7 @@ describe("Last Moment Before All Ants Fall Out of a Plank:", () => {
     expect(result).toEqual(7);
   });
 
-  it("getLastMoment should return 17 for n = 20, left = [4,7,15], right = [9,3,13,10]", () => {
+  it('getLastMoment should return 17 for n = 20, left = [4,7,15], right = [9,3,13,10]', () => {
     const n = 20;
     const left = [4, 7, 15];
     const right = [9, 3, 13, 10];

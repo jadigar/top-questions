@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function flipEquiv(
   root1: TreeNode | null,
@@ -12,8 +12,8 @@ export function flipEquiv(
   }
 
   return (
-    (flipEquiv(root1.left, root2.left) &&
-      flipEquiv(root1.right, root2.right)) ||
-    (flipEquiv(root1.left, root2.right) && flipEquiv(root1.right, root2.left))
+    (flipEquiv(root1.left, root2.left)
+      && flipEquiv(root1.right, root2.right))
+    || (flipEquiv(root1.left, root2.right) && flipEquiv(root1.right, root2.left))
   );
 }

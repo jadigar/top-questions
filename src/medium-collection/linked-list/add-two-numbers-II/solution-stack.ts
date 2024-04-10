@@ -1,18 +1,18 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
 export function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null,
 ): ListNode | null {
-  let l1Stack = createStack(l1);
-  let l2Stack = createStack(l2);
+  const l1Stack = createStack(l1);
+  const l2Stack = createStack(l2);
   let head = new ListNode();
 
   while (l1Stack.length || l2Stack.length) {
-    let sum = head.val + (l1Stack.pop() ?? 0) + (l2Stack.pop() ?? 0);
+    const sum = head.val + (l1Stack.pop() ?? 0) + (l2Stack.pop() ?? 0);
     head.val = sum % 10;
-    let carry = Math.trunc(sum / 10);
-    let node = new ListNode(carry);
+    const carry = Math.trunc(sum / 10);
+    const node = new ListNode(carry);
     node.next = head;
     head = node;
   }
@@ -20,7 +20,7 @@ export function addTwoNumbers(
 }
 
 function createStack(list: ListNode | null): number[] {
-  let stack: number[] = [];
+  const stack: number[] = [];
   let head = list;
   while (head) {
     stack.push(head.val);

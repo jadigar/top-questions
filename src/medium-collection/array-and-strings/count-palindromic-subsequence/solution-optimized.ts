@@ -4,7 +4,7 @@ export function countPalindromicSubsequence(s: string): number {
     (ch) => {
       const [l, r] = [s.indexOf(ch), s.lastIndexOf(ch)];
       if (l >= 0) {
-        res += new Set(s.slice(l + 1, r).split("")).size;
+        res += new Set(s.slice(l + 1, r).split('')).size;
       }
     },
   );

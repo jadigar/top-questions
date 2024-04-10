@@ -1,7 +1,7 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function zigzagLevelOrder(root: TreeNode | null): number[][] {
-  let result: number[][] = [];
+  const result: number[][] = [];
   addLevel(root, result, 0);
   return result;
 }

@@ -1,11 +1,11 @@
 export function eliminateMaximum(dist: number[], speed: number[]): number {
-  let timeLeft = [];
-  let n = dist.length;
+  const timeLeft = [];
+  const n = dist.length;
   for (let i = 0; i < n; i++) {
     timeLeft[i] = Math.ceil(dist[i] / speed[i]);
   }
 
-  let monstersPerMinute = new Array(n).fill(0);
+  const monstersPerMinute = new Array(n).fill(0);
   for (let i = 0; i < n; i++) {
     if (timeLeft[i] >= n) {
       continue;

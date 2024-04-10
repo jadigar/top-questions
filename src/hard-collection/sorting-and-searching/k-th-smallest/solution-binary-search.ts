@@ -1,12 +1,12 @@
 export function kthSmallest(matrix: number[][], k: number): number {
-  let n = matrix.length;
+  const n = matrix.length;
   let start = matrix[0][0];
   let end = matrix[n - 1][n - 1];
   while (start < end) {
-    let mid = start + Math.trunc((end - start) / 2);
+    const mid = start + Math.trunc((end - start) / 2);
     // first number is the smallest and the second number is the largest
-    let smallLargePair = [matrix[0][0], matrix[n - 1][n - 1]];
-    let count = countLessEqual(matrix, mid, smallLargePair);
+    const smallLargePair = [matrix[0][0], matrix[n - 1][n - 1]];
+    const count = countLessEqual(matrix, mid, smallLargePair);
 
     if (count == k) {
       return smallLargePair[0];

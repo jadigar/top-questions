@@ -1,5 +1,5 @@
 export function decodeString(s: string): string {
-  let openBraceIdx = s.indexOf("[");
+  let openBraceIdx = s.indexOf('[');
   while (openBraceIdx !== -1) {
     let numIdx = openBraceIdx - 1;
     while (numIdx > 0 && /^\d$/.test(s[numIdx - 1])) {
@@ -10,9 +10,8 @@ export function decodeString(s: string): string {
     const substr = s.substring(openBraceIdx + 1, closeBraceIdx);
     const parsedSubstr = decodeString(substr);
     const repeatedSubstr = parsedSubstr.repeat(num);
-    s =
-      s.substring(0, numIdx) + repeatedSubstr + s.substring(closeBraceIdx + 1);
-    openBraceIdx = s.indexOf("[");
+    s = s.substring(0, numIdx) + repeatedSubstr + s.substring(closeBraceIdx + 1);
+    openBraceIdx = s.indexOf('[');
   }
   return s;
 }
@@ -20,13 +19,13 @@ export function decodeString(s: string): string {
 function findCloseBraceIndex(fromIdx: number, s: string): number {
   let openBraceCount = 0;
   for (let i = fromIdx; i < s.length; i++) {
-    if (s[i] === "[") {
+    if (s[i] === '[') {
       openBraceCount++;
     }
-    if (s[i] === "]" && openBraceCount === 0) {
+    if (s[i] === ']' && openBraceCount === 0) {
       return i;
     }
-    if (s[i] === "]" && openBraceCount !== 0) {
+    if (s[i] === ']' && openBraceCount !== 0) {
       openBraceCount--;
     }
   }

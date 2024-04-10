@@ -1,10 +1,10 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function pseudoPalindromicPaths(root: TreeNode | null): number {
-  let count: number = 0;
-  let path: number = 0;
+  let count = 0;
+  let path = 0;
 
-  const stack: Array<[TreeNode, number]> = [];
+  const stack: [TreeNode, number][] = [];
   stack.push([root!, 0]);
 
   while (stack.length > 0) {
@@ -13,7 +13,7 @@ export function pseudoPalindromicPaths(root: TreeNode | null): number {
 
     if (node !== null) {
       // Compute occurrences of each digit in the corresponding register
-      path = path ^ (1 << node.val);
+      path ^= 1 << node.val;
 
       if (node.left === null && node.right === null) {
         // Check if at most one digit has an odd frequency

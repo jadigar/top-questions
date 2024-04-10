@@ -1,5 +1,5 @@
 export function minFallingPathSum(matrix: number[][]): number {
-  let n = matrix.length;
+  const n = matrix.length;
   for (let row = 1; row < n; row++) {
     for (let col = 0; col < n; col++) {
       let minValue = matrix[row - 1][col];

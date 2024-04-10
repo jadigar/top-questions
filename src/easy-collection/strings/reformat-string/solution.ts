@@ -4,7 +4,7 @@ export function reformat(s: string): string {
 
   // Separate digits and letters into their respective arrays
   for (const char of s) {
-    if (char >= "0" && char <= "9") {
+    if (char >= '0' && char <= '9') {
       digits.push(char);
     } else {
       letters.push(char);
@@ -13,7 +13,7 @@ export function reformat(s: string): string {
 
   // If the absolute difference between digits and letters is more than 1, return an empty string
   if (Math.abs(digits.length - letters.length) > 1) {
-    return "";
+    return '';
   }
 
   const result: string[] = new Array(s.length);
@@ -28,5 +28,5 @@ export function reformat(s: string): string {
     result[letterIndex] = letters[i];
   }
 
-  return result.join("");
+  return result.join('');
 }

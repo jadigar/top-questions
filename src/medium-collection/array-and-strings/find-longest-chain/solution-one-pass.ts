@@ -5,7 +5,7 @@ export function findLongestChain(pairs: number[][]): number {
   let result = 0;
   let currentEnd = -Infinity; // Use -Infinity as initial value so that first pair is always included
 
-  for (let pair of pairs) {
+  for (const pair of pairs) {
     if (currentEnd < pair[0]) {
       // If current end is less than the start of the new pair,
       // then the new pair can be added to the chain.

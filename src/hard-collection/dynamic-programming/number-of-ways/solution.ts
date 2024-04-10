@@ -1,9 +1,9 @@
 export function numberOfWays(corridor: string): number {
-  let mod = 1e9 + 7;
+  const mod = 1e9 + 7;
   let seats = 0;
-  let seatsIndexes: number[] = [];
+  const seatsIndexes: number[] = [];
   for (let i = 0; i < corridor.length; i++) {
-    if (corridor[i] === "S") {
+    if (corridor[i] === 'S') {
       seats++;
       seatsIndexes.push(i);
     }
@@ -18,7 +18,7 @@ export function numberOfWays(corridor: string): number {
   let result = 1;
   for (let i = 2; i < seatsIndexes.length; i += 2) {
     // we have plants+1 ways to place divider
-    let ways = seatsIndexes[i] - seatsIndexes[i - 1];
+    const ways = seatsIndexes[i] - seatsIndexes[i - 1];
     result = (result * ways) % mod;
   }
   return result;

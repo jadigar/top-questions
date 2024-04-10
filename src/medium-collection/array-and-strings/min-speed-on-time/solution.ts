@@ -3,7 +3,7 @@ export function minSpeedOnTime(dist: number[], hour: number): number {
   let right = 1e7;
   let result = -1;
   while (left <= right) {
-    let mid = left + Math.trunc((right - left) / 2);
+    const mid = left + Math.trunc((right - left) / 2);
     let resHour = 0;
     for (let i = 0; i < dist.length - 1; i++) {
       resHour += Math.ceil(dist[i] / mid);

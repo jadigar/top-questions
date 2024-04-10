@@ -3,7 +3,7 @@ export function customSortString(order: string, s: string): string {
   for (const char of s) {
     frequencyMap.set(char, (frequencyMap.get(char) ?? 0) + 1);
   }
-  let result: string[] = [];
+  const result: string[] = [];
   for (const char of order) {
     result.push(char.repeat(frequencyMap.get(char)!));
     frequencyMap.set(char, 0);
@@ -14,5 +14,5 @@ export function customSortString(order: string, s: string): string {
       result.push(char.repeat(count));
     }
   }
-  return result.join("");
+  return result.join('');
 }

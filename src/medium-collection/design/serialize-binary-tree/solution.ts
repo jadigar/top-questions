@@ -1,21 +1,21 @@
-import { TreeNode } from "../../trees-and-graphs/common";
+import { TreeNode } from '../../trees-and-graphs/common';
 
 /*
  * Encodes a tree to a single string.
  */
 export function serialize(root: TreeNode | null): string {
-  let result = rSerialize(root, "");
+  const result = rSerialize(root, '');
   return result;
 }
 
 function rSerialize(root: TreeNode | null, result: string): string {
   if (!root) {
-    result += "null,";
+    result += 'null,';
     return result;
   }
-  result += `${root?.val},`;
-  result += rSerialize(root?.left ?? null, "");
-  result += rSerialize(root?.right ?? null, "");
+  result += `${root.val},`;
+  result += rSerialize(root.left ?? null, '');
+  result += rSerialize(root.right ?? null, '');
   return result;
 }
 
@@ -23,20 +23,20 @@ function rSerialize(root: TreeNode | null, result: string): string {
  * Decodes your encoded data to tree.
  */
 export function deserialize(data: string): TreeNode | null {
-  let dataArray = data
-    .split(",")
-    .map((n) => (n === "null" ? null : parseInt(n, 10)));
+  const dataArray = data
+    .split(',')
+    .map((n) => (n === 'null' ? null : parseInt(n, 10)));
   let root: TreeNode | null = new TreeNode();
   root = rDeserialize(dataArray);
   return root;
 }
 
 function rDeserialize(dataArray: (number | null)[]): TreeNode | null {
-  let val = dataArray.shift();
+  const val = dataArray.shift();
   if (val === null || val === undefined) {
     return null;
   }
-  let root = new TreeNode(val);
+  const root = new TreeNode(val);
   root.left = rDeserialize(dataArray);
   root.right = rDeserialize(dataArray);
   return root;

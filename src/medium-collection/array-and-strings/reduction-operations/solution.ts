@@ -3,7 +3,7 @@ export function reductionOperations(nums: number[]): number {
   nums.sort((a, b) => a - b);
   // Start index of the current group of equal elements
   let left = 0;
-  let n = nums.length;
+  const n = nums.length;
 
   for (let i = 1; i < nums.length; i++) {
     if (nums[i] === nums[left]) {

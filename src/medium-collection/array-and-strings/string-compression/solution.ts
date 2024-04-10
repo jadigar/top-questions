@@ -6,9 +6,9 @@ export function compress(chars: string[]): number {
       read++;
     }
     chars[write++] = chars[i];
-    let diff = read - i;
+    const diff = read - i;
     if (diff > 1) {
-      let sDiff = diff.toString();
+      const sDiff = diff.toString();
       for (let j = 0; j < sDiff.length; j++) {
         chars[write++] = sDiff[j];
       }

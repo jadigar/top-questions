@@ -1,7 +1,7 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function pathSum(root: TreeNode | null, targetSum: number): number[][] {
-  let result: number[][] = [];
+  const result: number[][] = [];
   dfs(root, targetSum, 0, [], result);
   return result;
 }

@@ -1,22 +1,22 @@
 export function removeDuplicateLetters(s: string): string {
   // Create an array to hold the frequency of each character in the string.
-  let count: number[] = Array(26).fill(0);
+  const count: number[] = Array(26).fill(0);
 
   // Boolean array to check if a character is currently in the stack.
-  let inStack: boolean[] = Array(26).fill(false);
+  const inStack: boolean[] = Array(26).fill(false);
 
   // Stack to construct the final answer.
-  let stack: string[] = [];
+  const stack: string[] = [];
 
   // Populate the count array with the frequency of each character in the string.
-  for (let char of s) {
-    count[char.charCodeAt(0) - "a".charCodeAt(0)]++;
+  for (const char of s) {
+    count[char.charCodeAt(0) - 'a'.charCodeAt(0)]++;
   }
 
   // Process each character in the string to build the stack.
-  for (let char of s) {
+  for (const char of s) {
     // Index of the current character in count and inStack arrays.
-    let index = char.charCodeAt(0) - "a".charCodeAt(0);
+    const index = char.charCodeAt(0) - 'a'.charCodeAt(0);
 
     // Decrease the count for the current character.
     count[index]--;
@@ -28,12 +28,11 @@ export function removeDuplicateLetters(s: string): string {
     // than the current character, AND the top character will appear later in the string,
     // we pop it out from the stack. This ensures the smallest lexicographical order.
     while (
-      stack.length &&
-      stack[stack.length - 1] > char &&
-      count[stack[stack.length - 1].charCodeAt(0) - "a".charCodeAt(0)] > 0
+      stack.length
+      && stack[stack.length - 1] > char
+      && count[stack[stack.length - 1].charCodeAt(0) - 'a'.charCodeAt(0)] > 0
     ) {
-      inStack[stack[stack.length - 1].charCodeAt(0) - "a".charCodeAt(0)] =
-        false;
+      inStack[stack[stack.length - 1].charCodeAt(0) - 'a'.charCodeAt(0)] = false;
       stack.pop();
     }
 
@@ -43,5 +42,5 @@ export function removeDuplicateLetters(s: string): string {
   }
 
   // Convert the stack to a string to get the final answer.
-  return stack.join("");
+  return stack.join('');
 }

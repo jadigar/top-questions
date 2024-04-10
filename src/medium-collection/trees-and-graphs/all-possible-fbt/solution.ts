@@ -1,13 +1,13 @@
-import { TreeNode } from "../common";
+import { TreeNode } from '../common';
 
-export function allPossibleFBT(n: number): Array<TreeNode | null> {
+export function allPossibleFBT(n: number): (TreeNode | null)[] {
   return dfs(n, new Map());
 }
 
 function dfs(
   n: number,
   memo: Map<number, (TreeNode | null)[]>,
-): Array<TreeNode | null> {
+): (TreeNode | null)[] {
   if (n % 2 === 0) {
     return [];
   }
@@ -17,13 +17,13 @@ function dfs(
   if (memo.has(n)) {
     return memo.get(n)!;
   }
-  let result: (TreeNode | null)[] = [];
+  const result: (TreeNode | null)[] = [];
   for (let i = 1; i < n; i += 2) {
-    let left = dfs(i, memo);
-    let right = dfs(n - i - 1, memo);
+    const left = dfs(i, memo);
+    const right = dfs(n - i - 1, memo);
     left.forEach((l) => {
       right.forEach((r) => {
-        let root = new TreeNode(0, l, r);
+        const root = new TreeNode(0, l, r);
         result.push(root);
       });
     });

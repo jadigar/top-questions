@@ -1,7 +1,7 @@
 export function eventualSafeNodes(graph: number[][]): number[] {
-  let result = [];
-  let safeNodes = new Set<number>();
-  let notSafeNodes = new Set<number>();
+  const result = [];
+  const safeNodes = new Set<number>();
+  const notSafeNodes = new Set<number>();
   for (let i = 0; i < graph.length; i++) {
     if (isSafeNode(i, graph, new Set(), safeNodes, notSafeNodes)) {
       result.push(i);

@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import type { ListNode } from '../common';
 
 export function removeNthFromEnd(
   head: ListNode | null,
@@ -16,7 +16,6 @@ export function removeNthFromEnd(
   if (listArray.length - 1 - n === -1) {
     return listArray[1];
   }
-  listArray[listArray.length - 1 - n].next =
-    listArray[listArray.length - n].next;
+  listArray[listArray.length - 1 - n].next = listArray[listArray.length - n].next;
   return listArray[0];
 }

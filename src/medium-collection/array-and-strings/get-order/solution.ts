@@ -1,8 +1,8 @@
-import { Heap } from "../../../hard-collection/design/heap/heap";
+import { Heap } from '../../../hard-collection/design/heap/heap';
 
 export function getOrder(tasks: number[][]): number[] {
-  type ProcessType = { enqueue: number; processing: number; taskId: number };
-  let processes: ProcessType[] = tasks
+  interface ProcessType { enqueue: number; processing: number; taskId: number }
+  const processes: ProcessType[] = tasks
     .map(([enqueue, processing], taskId) => ({
       enqueue,
       processing,
@@ -10,11 +10,9 @@ export function getOrder(tasks: number[][]): number[] {
     }))
     .sort((left, right) => left.enqueue - right.enqueue);
 
-  let heap = new Heap<ProcessType>((left, right) =>
-    left.processing !== right.processing
-      ? left.processing - right.processing
-      : left.taskId - right.taskId,
-  );
+  const heap = new Heap<ProcessType>((left, right) => (left.processing !== right.processing
+    ? left.processing - right.processing
+    : left.taskId - right.taskId));
 
   let currentTime = 0;
   let taskIndex = 0;
@@ -26,8 +24,8 @@ export function getOrder(tasks: number[][]): number[] {
     }
     // Take available processes and put them into the heap
     while (
-      taskIndex < processes.length &&
-      processes[taskIndex].enqueue <= currentTime
+      taskIndex < processes.length
+      && processes[taskIndex].enqueue <= currentTime
     ) {
       heap.push(processes[taskIndex++]);
     }

@@ -1,5 +1,5 @@
 export function summaryRanges(nums: number[]): string[] {
-  let result: string[] = [];
+  const result: string[] = [];
   let start = 0;
   for (let i = 0; i < nums.length; i++) {
     if (i + 1 < nums.length && nums[i + 1] === nums[i] + 1) {

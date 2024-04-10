@@ -1,4 +1,4 @@
-import { Robot } from "./robot";
+import type { Robot } from './robot';
 
 // up, right, down, left
 const directions = [

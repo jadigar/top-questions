@@ -1,8 +1,8 @@
 export function trap(height: number[]): number {
   let result = 0;
-  let leftMax = [];
-  let rightMax = [];
-  let size = height.length;
+  const leftMax = [];
+  const rightMax = [];
+  const size = height.length;
   // for each i find the highest height from the left
   leftMax[0] = height[0];
   for (let i = 1; i < size; i++) {

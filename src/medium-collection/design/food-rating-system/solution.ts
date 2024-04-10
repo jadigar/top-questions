@@ -1,10 +1,11 @@
-import { Heap } from "../../../hard-collection/design/heap/heap";
+import { Heap } from '../../../hard-collection/design/heap/heap';
 
-type FoodObj = { food: string; rating: number };
-type CuisineObj = { cuisine: string; rating: number };
+interface FoodObj { food: string; rating: number }
+interface CuisineObj { cuisine: string; rating: number }
 
 export class FoodRatings {
   foodMap: Map<string, CuisineObj>;
+
   cuisineMap: Map<string, Heap<FoodObj>>;
 
   constructor(foods: string[], cuisines: string[], ratings: number[]) {
@@ -14,11 +15,9 @@ export class FoodRatings {
     for (let i = 0; i < n; i++) {
       this.foodMap.set(foods[i], { cuisine: cuisines[i], rating: ratings[i] });
       if (!this.cuisineMap.has(cuisines[i])) {
-        const pq = new Heap<FoodObj>((a: FoodObj, b: FoodObj) => {
-          return a.rating !== b.rating
-            ? b.rating - a.rating
-            : a.food.localeCompare(b.food);
-        });
+        const pq = new Heap<FoodObj>((a: FoodObj, b: FoodObj) => (a.rating !== b.rating
+          ? b.rating - a.rating
+          : a.food.localeCompare(b.food)));
         this.cuisineMap.set(cuisines[i], pq);
       }
       this.cuisineMap
@@ -28,7 +27,7 @@ export class FoodRatings {
   }
 
   changeRating(food: string, newRating: number): void {
-    const cuisine = this.foodMap.get(food)!.cuisine;
+    const { cuisine } = (this.foodMap.get(food)!);
     this.cuisineMap.get(cuisine)?.push({ food, rating: newRating });
     this.foodMap.set(food, { cuisine, rating: newRating });
   }

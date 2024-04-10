@@ -1,12 +1,12 @@
-import { MinStack } from "./solution";
+import { MinStack } from './solution';
 
 function createStack(nums: number[]): MinStack {
   const stack = new MinStack();
-  nums.forEach((n) => stack.push(n));
+  nums.forEach((n) => { stack.push(n); });
   return stack;
 }
 
-it("push should push the element to the stack", () => {
+it('push should push the element to the stack', () => {
   const stack = new MinStack();
   const val = 42;
   stack.push(val);
@@ -14,7 +14,7 @@ it("push should push the element to the stack", () => {
   expect(top).toEqual(val);
 });
 
-it("pop should remove top element fom the stack [1,2]", () => {
+it('pop should remove top element fom the stack [1,2]', () => {
   const stack = new MinStack();
   const [val1, val2] = [1, 2];
   stack.push(val1);
@@ -26,21 +26,21 @@ it("pop should remove top element fom the stack [1,2]", () => {
   expect(top2).toEqual(val2);
 });
 
-it("getMin should return min element fom the [2,-1,3]", () => {
+it('getMin should return min element fom the [2,-1,3]', () => {
   const nums = [2, -1, 3];
   const stack = createStack(nums);
   const min = stack.getMin();
   expect(min).toEqual(-1);
 });
 
-it("getMin should return first min element fom the [2,-1,3,-5,4]", () => {
+it('getMin should return first min element fom the [2,-1,3,-5,4]', () => {
   const nums = [2, -1, 3, -5, 4];
   const stack = createStack(nums);
   const min = stack.getMin();
   expect(min).toEqual(-5);
 });
 
-it("getMin should return second min element fom the [2,-1,3,-5,4]", () => {
+it('getMin should return second min element fom the [2,-1,3,-5,4]', () => {
   const nums = [2, -1, 3, -5, 4];
   const stack = createStack(nums);
   stack.pop();
@@ -49,7 +49,7 @@ it("getMin should return second min element fom the [2,-1,3,-5,4]", () => {
   expect(min).toEqual(-1);
 });
 
-it("should pass the sequence", () => {
+it('should pass the sequence', () => {
   const nums = [2147483646, 2147483646, 2147483647];
   const stack = createStack(nums);
   let top = stack.top();

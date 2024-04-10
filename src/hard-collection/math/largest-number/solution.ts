@@ -5,7 +5,7 @@ export function largestNumber(nums: number[]): string {
     return aStr + bStr < bStr + aStr ? 1 : -1;
   });
   if (nums[0] === 0) {
-    return "0";
+    return '0';
   }
-  return nums.join("");
+  return nums.join('');
 }

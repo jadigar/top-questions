@@ -3,10 +3,10 @@ export function findMissingRanges(
   lower: number,
   upper: number,
 ): string[] {
-  let result: string[] = [];
+  const result: string[] = [];
   let prev = lower - 1;
   for (let i = 0; i <= nums.length; i++) {
-    let curr = i < nums.length ? nums[i] : upper + 1;
+    const curr = i < nums.length ? nums[i] : upper + 1;
     if (prev + 1 <= curr - 1) {
       result.push(formatRange(prev + 1, curr - 1));
     }
@@ -16,5 +16,5 @@ export function findMissingRanges(
 }
 
 function formatRange(lower: number, higher: number): string {
-  return lower === higher ? `${lower}` : lower + "->" + higher;
+  return lower === higher ? `${lower}` : `${lower}->${higher}`;
 }

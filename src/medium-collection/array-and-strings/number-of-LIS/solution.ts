@@ -1,6 +1,6 @@
 export function findNumberOfLIS(nums: number[]): number {
-  let lisTable = new Array(nums.length).fill(1);
-  let countTable = new Array(nums.length).fill(1);
+  const lisTable = new Array(nums.length).fill(1);
+  const countTable = new Array(nums.length).fill(1);
   for (let i = 0; i < nums.length; i++) {
     for (let j = 0; j < i; j++) {
       if (nums[j] < nums[i]) {

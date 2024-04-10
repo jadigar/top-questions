@@ -1,12 +1,12 @@
-import { Heap } from "../../../hard-collection/design/heap/heap";
+import { Heap } from '../../../hard-collection/design/heap/heap';
 
 export function totalCost(
   costs: number[],
   k: number,
   candidates: number,
 ): number {
-  let leftQueue = new Heap<number>((a, b) => a - b);
-  let rightQueue = new Heap<number>((a, b) => a - b);
+  const leftQueue = new Heap<number>((a, b) => a - b);
+  const rightQueue = new Heap<number>((a, b) => a - b);
 
   // leftQueue stores the first k workers.
   // rightQueue stores at most last k workers without any workers from the first k workers.
@@ -27,8 +27,8 @@ export function totalCost(
 
   for (let i = 0; i < k; i++) {
     if (
-      rightQueue.isEmpty() ||
-      (!leftQueue.isEmpty() && leftQueue.top()! <= rightQueue.top()!)
+      rightQueue.isEmpty()
+      || (!leftQueue.isEmpty() && leftQueue.top()! <= rightQueue.top()!)
     ) {
       result += leftQueue.pop()!;
 

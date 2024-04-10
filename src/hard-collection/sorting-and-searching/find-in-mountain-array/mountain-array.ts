@@ -1,5 +1,6 @@
 export class MountainArray {
-  constructor(private arr: number[]) {}
+  constructor(private readonly arr: number[]) {}
+
   get(index: number) {
     return this.arr[index];
   }

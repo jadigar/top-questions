@@ -23,7 +23,7 @@ function dfs(
   if (!subordinatesMap.has(manager)) {
     return 0;
   }
-  let subordinates = subordinatesMap.get(manager)!;
+  const subordinates = subordinatesMap.get(manager)!;
   let time = 0;
   for (let i = 0; i < subordinates.length; i++) {
     time = Math.max(time, dfs(subordinates[i], subordinatesMap, informTime));

@@ -1,5 +1,5 @@
 export function sequentialDigits(low: number, high: number): number[] {
-  let result: number[] = [];
+  const result: number[] = [];
   for (let i = 1; i <= 9; i++) {
     addSequence(i, low, high, result);
   }

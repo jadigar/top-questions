@@ -1,5 +1,5 @@
 export function rob(nums: number[]): number {
-  let N = nums.length;
+  const N = nums.length;
   let nextNext = 0;
   let next = nums[N - 1];
   // if there is only one house we take it

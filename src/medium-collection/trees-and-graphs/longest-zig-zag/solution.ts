@@ -1,4 +1,5 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
+
 export function longestZigZag(root: TreeNode | null): number {
   // Call the 'dfs' with initial direction as false (right)
   return dfs(root, false, 0);
@@ -17,10 +18,9 @@ function dfs(node: TreeNode | null, goLeft: boolean, steps: number): number {
     const leftPathLength = dfs(node.left, false, steps + 1);
     // Return the maximum length of the left zigzag path and the right zigzag path starting from the current node
     return Math.max(leftPathLength, dfs(node.right, true, 1));
-  } else {
-    // Calculate the length of the zigzag path that goes right from the current node
-    const rightPathLength = dfs(node.right, true, steps + 1);
-    // Return the maximum length of the right zigzag path and the left zigzag path starting from the current node
-    return Math.max(rightPathLength, dfs(node.left, false, 1));
   }
+  // Calculate the length of the zigzag path that goes right from the current node
+  const rightPathLength = dfs(node.right, true, steps + 1);
+  // Return the maximum length of the right zigzag path and the left zigzag path starting from the current node
+  return Math.max(rightPathLength, dfs(node.left, false, 1));
 }

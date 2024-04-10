@@ -1,7 +1,7 @@
-import { Heap } from "../../../hard-collection/design/heap/heap";
+import { Heap } from '../../../hard-collection/design/heap/heap';
 
 export function lastStoneWeight(stones: number[]): number {
-  var heap = new Heap<number>((left, right) => right - left);
+  const heap = new Heap<number>((left, right) => right - left);
   stones.forEach((s) => heap.insert(s));
   while (heap.size() > 1) {
     const left = heap.pop()!;

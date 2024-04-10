@@ -1,9 +1,9 @@
 export function countPoints(rings: string): number {
-  let map = new Map<number, Set<string>>();
+  const map = new Map<number, Set<string>>();
   let result = 0;
   for (let i = 0; i < rings.length; i += 2) {
-    let color = rings[i];
-    let rod: number = +rings[i + 1];
+    const color = rings[i];
+    const rod: number = +rings[i + 1];
     if (!map.has(rod)) {
       map.set(rod, new Set());
     }

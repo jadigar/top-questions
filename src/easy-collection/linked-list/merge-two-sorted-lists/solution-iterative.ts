@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
 export function mergeTwoLists(
   l1: ListNode | null,
@@ -7,7 +7,7 @@ export function mergeTwoLists(
   if (!l1 && !l2) {
     return null;
   }
-  let head = new ListNode();
+  const head = new ListNode();
   let currentNode = head;
   while (l1 !== null || l2 !== null) {
     if ((l1 && l2 && l1.val < l2.val) || (l1 && l2 === null)) {

@@ -1,5 +1,5 @@
 export function findSpecialInteger(arr: number[]): number {
-  let quarter = Math.trunc(arr.length / 4);
+  const quarter = Math.trunc(arr.length / 4);
   let count = 1;
   let result = arr[0];
   for (let i = 1; i < arr.length; i++) {

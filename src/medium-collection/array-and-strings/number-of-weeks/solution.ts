@@ -10,7 +10,6 @@ export function numberOfWeeks(milestones: number[]): number {
   const otherMilestones = totalMilestones - maxMilestones;
   if (maxMilestones > otherMilestones + 1) {
     return 2 * otherMilestones + 1;
-  } else {
-    return totalMilestones;
   }
+  return totalMilestones;
 }

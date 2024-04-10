@@ -7,7 +7,7 @@ export const knows = function (
 };
 
 function cachedKnows(knows: (a: number, b: number) => boolean) {
-  const cache: { [key: string]: boolean } = Object.create(null);
+  const cache: Record<string, boolean> = Object.create(null);
   return function (a: number, b: number): boolean {
     const key = `${a}->${b}`;
     if (key in cache) {

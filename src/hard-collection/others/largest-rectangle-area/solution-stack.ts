@@ -3,8 +3,8 @@ export function largestRectangleArea(heights: number[]): number {
   let maxArea = 0;
   for (let i = 0; i < heights.length; i++) {
     while (
-      stack[stack.length - 1] !== -1 &&
-      heights[stack[stack.length - 1]] >= heights[i]
+      stack[stack.length - 1] !== -1
+      && heights[stack[stack.length - 1]] >= heights[i]
     ) {
       const currentHeight = heights[stack.pop()!];
       const currentWidth = i - stack[stack.length - 1] - 1;

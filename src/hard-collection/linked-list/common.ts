@@ -1,6 +1,7 @@
 // Definition for singly-linked list.
 export class ListNode {
   val: number;
+
   next: ListNode | null;
 
   constructor(val?: number, next?: ListNode | null) {
@@ -15,7 +16,7 @@ export function arrayToList(nodes: number[]): NullableListNode {
   if (nodes.length === 0) {
     return null;
   }
-  let root: ListNode = new ListNode(nodes[0]);
+  const root: ListNode = new ListNode(nodes[0]);
   let currentNode: ListNode = root;
   for (let i = 1; i < nodes.length; i++) {
     const node = new ListNode(nodes[i]);
@@ -26,7 +27,7 @@ export function arrayToList(nodes: number[]): NullableListNode {
 }
 
 export function listToArray(list: ListNode | null): number[] {
-  let result = [];
+  const result = [];
   let step: ListNode | null = list;
   while (step) {
     result.push(step.val);
@@ -37,7 +38,9 @@ export function listToArray(list: ListNode | null): number[] {
 
 export class Node {
   val: number;
+
   next: Node | null;
+
   random: Node | null;
 
   constructor(val?: number, random?: Node | null, next?: Node) {
@@ -53,7 +56,7 @@ export function arrayToNode(nodes: (number | null)[][]): NullableNode {
   if (nodes.length === 0) {
     return null;
   }
-  let head: Node = new Node();
+  const head: Node = new Node();
   let currentNode: Node | null = head;
   for (let i = 0; i < nodes.length; i++) {
     const node = new Node(nodes[i][0]!);
@@ -71,7 +74,7 @@ export function arrayToNode(nodes: (number | null)[][]): NullableNode {
 }
 
 export function nodeToArray(list: Node | null): (number | null)[][] {
-  let result = [];
+  const result = [];
   let step: Node | null = list;
   while (step) {
     result.push([step.val, getIndexByNode(list, step.random)]);

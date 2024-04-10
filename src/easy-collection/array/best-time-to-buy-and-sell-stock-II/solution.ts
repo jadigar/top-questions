@@ -1,7 +1,7 @@
 export function maxProfit(prices: number[]): number {
-  let profit = 0,
-    buyIndex = 0,
-    sellIndex = 0;
+  let profit = 0;
+  let buyIndex = 0;
+  let sellIndex = 0;
   do {
     buyIndex = getLocalMin(prices, buyIndex);
     sellIndex = getLocalMax(prices, buyIndex);

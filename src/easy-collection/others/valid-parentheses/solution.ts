@@ -1,11 +1,11 @@
 export function isValid(s: string): boolean {
   // initialize map with corresponding brackets
-  let mapBrackets = new Map<string, string>([
-    [")", "("],
-    ["}", "{"],
-    ["]", "["],
+  const mapBrackets = new Map<string, string>([
+    [')', '('],
+    ['}', '{'],
+    [']', '['],
   ]);
-  let stack: string[] = [];
+  const stack: string[] = [];
   for (let i = 0; i < s.length; i++) {
     // if the current bracket is the closing bracket
     if (mapBrackets.has(s[i])) {

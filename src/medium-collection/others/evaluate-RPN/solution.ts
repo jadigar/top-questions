@@ -1,10 +1,10 @@
 export function evalRPN(tokens: string[]): number {
-  let stack: number[] = [];
+  const stack: number[] = [];
   for (let i = 0; i < tokens.length; i++) {
     if (isOperator(tokens[i])) {
-      let [right, left] = [stack.pop(), stack.pop()];
+      const [right, left] = [stack.pop(), stack.pop()];
       if (left === undefined || right === undefined) {
-        throw "Stack is empty";
+        throw 'Stack is empty';
       }
       stack.push(Math.trunc(operate(left, right, tokens[i])));
     } else {
@@ -15,19 +15,19 @@ export function evalRPN(tokens: string[]): number {
 }
 
 function isOperator(token: string) {
-  return token === "+" || token === "-" || token === "*" || token === "/";
+  return token === '+' || token === '-' || token === '*' || token === '/';
 }
 
 function operate(a: number, b: number, op: string): number {
   switch (op) {
-    case "+":
+    case '+':
       return a + b;
-    case "-":
+    case '-':
       return a - b;
-    case "*":
+    case '*':
       return a * b;
-    case "/":
+    case '/':
       return a / b;
   }
-  throw "Unsupported operation";
+  throw 'Unsupported operation';
 }

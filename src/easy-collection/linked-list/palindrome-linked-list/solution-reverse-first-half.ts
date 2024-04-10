@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import type { ListNode } from '../common';
 
 export function isPalindrome(head: ListNode | null): boolean {
   if (head && !head.next) {

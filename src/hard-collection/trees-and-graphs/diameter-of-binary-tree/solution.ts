@@ -1,7 +1,7 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function diameterOfBinaryTree(root: TreeNode | null): number {
-  let [result] = getNodeLength(root);
+  const [result] = getNodeLength(root);
   return result;
 }
 

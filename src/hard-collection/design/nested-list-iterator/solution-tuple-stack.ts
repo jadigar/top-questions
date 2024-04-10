@@ -1,10 +1,12 @@
-import { NestedInteger } from "./nested-integer";
+import type { NestedInteger } from './nested-integer';
 
 export class NestedIterator {
   tupleStack: [NestedInteger[], number][];
+
   get lastTupleStackItem() {
     return this.tupleStack[this.tupleStack.length - 1];
   }
+
   constructor(nestedList: NestedInteger[]) {
     this.tupleStack = [[nestedList, 0]];
   }

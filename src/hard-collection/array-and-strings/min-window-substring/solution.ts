@@ -1,10 +1,10 @@
 export function minWindow(s: string, t: string): string {
   if (s.length < t.length) {
-    return "";
+    return '';
   }
 
-  const tFreq: { [key: string]: number } = {};
-  const windowFreq: { [key: string]: number } = {};
+  const tFreq: Record<string, number> = {};
+  const windowFreq: Record<string, number> = {};
 
   // Initialize frequency map for t
   for (const char of t) {
@@ -12,7 +12,7 @@ export function minWindow(s: string, t: string): string {
   }
 
   let have = 0; // Number of unique characters in the current window that match the required frequency in t
-  let need = Object.keys(tFreq).length; // Number of unique characters needed from t
+  const need = Object.keys(tFreq).length; // Number of unique characters needed from t
   let res = [-1, -1]; // Pair to keep track of the start and end of the minimum window
   let resLength = Infinity; // Length of the minimum window
   let left = 0; // Left pointer for the sliding window
@@ -42,5 +42,5 @@ export function minWindow(s: string, t: string): string {
     }
   }
 
-  return resLength === Infinity ? "" : s.substring(res[0], res[1] + 1);
+  return resLength === Infinity ? '' : s.substring(res[0], res[1] + 1);
 }

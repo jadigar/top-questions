@@ -7,7 +7,7 @@ export function isMatch(s: string, p: string): boolean {
     return true;
   }
 
-  if (pLen > 0 && p.match(/^\*+$/)) {
+  if (pLen > 0 && /^\*+$/.exec(p)) {
     return true;
   }
 
@@ -16,7 +16,7 @@ export function isMatch(s: string, p: string): boolean {
   }
 
   // init all matrix except [0][0] element as False
-  let d: boolean[][] = new Array(pLen + 1);
+  const d: boolean[][] = new Array(pLen + 1);
   for (let i = 0; i < pLen + 1; i++) {
     d[i] = new Array(sLen + 1).fill(false);
   }
@@ -26,7 +26,7 @@ export function isMatch(s: string, p: string): boolean {
   // DP compute
   for (let pIdx = 1; pIdx < pLen + 1; pIdx++) {
     // the current character in the pattern is '*'
-    if (p[pIdx - 1] === "*") {
+    if (p[pIdx - 1] === '*') {
       let sIdx = 1;
 
       // d[p_idx - 1][s_idx - 1] is a string-pattern match
@@ -47,7 +47,7 @@ export function isMatch(s: string, p: string): boolean {
       }
 
       // the current character in the pattern is '?'
-    } else if (p[pIdx - 1] === "?") {
+    } else if (p[pIdx - 1] === '?') {
       for (let sIdx = 1; sIdx < sLen + 1; sIdx++) {
         d[pIdx][sIdx] = d[pIdx - 1][sIdx - 1];
       }

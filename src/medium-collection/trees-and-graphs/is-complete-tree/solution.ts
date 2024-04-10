@@ -1,10 +1,10 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function isCompleteTree(root: TreeNode | null): boolean {
-  let queue: (TreeNode | null)[] = [root];
+  const queue: (TreeNode | null)[] = [root];
 
   while (queue.length) {
-    let node = queue.shift();
+    const node = queue.shift();
     // If the node is null, we have reached the end of the tree and it is complete
     if (node === null) {
       return true;

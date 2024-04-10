@@ -2,8 +2,8 @@ export function numSubmatrixSumTarget(
   matrix: number[][],
   target: number,
 ): number {
-  let rows = matrix.length;
-  let cols = matrix[0].length;
+  const rows = matrix.length;
+  const cols = matrix[0].length;
   let count = 0;
 
   // Precompute the prefix sums for each row
@@ -16,13 +16,13 @@ export function numSubmatrixSumTarget(
   // Iterate over all pairs of columns
   for (let colStart = 0; colStart < cols; colStart++) {
     for (let colEnd = colStart; colEnd < cols; colEnd++) {
-      let sumMap = new Map<number, number>();
+      const sumMap = new Map<number, number>();
       sumMap.set(0, 1); // Base case
       let sum = 0;
 
       for (let row = 0; row < rows; row++) {
-        sum +=
-          matrix[row][colEnd] - (colStart > 0 ? matrix[row][colStart - 1] : 0);
+        sum
+          += matrix[row][colEnd] - (colStart > 0 ? matrix[row][colStart - 1] : 0);
         count += sumMap.get(sum - target) || 0;
         sumMap.set(sum, (sumMap.get(sum) || 0) + 1);
       }

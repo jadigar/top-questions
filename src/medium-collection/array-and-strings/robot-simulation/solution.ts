@@ -14,7 +14,7 @@ const turnRight = -1;
 
 export function robotSim(commands: number[], obstacles: number[][]): number {
   let coords = [0, 0];
-  let obstaclesSet = new Set<string>();
+  const obstaclesSet = new Set<string>();
   obstacles.forEach((obstacle) => obstaclesSet.add(obstacle.toString()));
 
   let direction = Direction.North;
@@ -27,7 +27,7 @@ export function robotSim(commands: number[], obstacles: number[][]): number {
     }
     coords = move(coords, direction, commands[i], obstaclesSet);
     const [x, y] = coords;
-    result = Math.max(result, Math.pow(x, 2) + Math.pow(y, 2));
+    result = Math.max(result, x ** 2 + y ** 2);
   }
   return result;
 }

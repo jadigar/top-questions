@@ -1,11 +1,11 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function isCompleteTree(root: TreeNode | null): boolean {
-  let queue: (TreeNode | null)[] = [root];
+  const queue: (TreeNode | null)[] = [root];
   let isLastNode = false;
 
   while (queue.length) {
-    let node = queue.shift();
+    const node = queue.shift();
     // If this is the last node, make a note of it
     if (node === null) {
       isLastNode = true;

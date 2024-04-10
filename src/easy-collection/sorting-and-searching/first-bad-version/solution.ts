@@ -7,10 +7,10 @@
 
 export var solution = function (isBadVersion: any) {
   return function (n: number): number {
-    let left = 1,
-      right = n;
+    let left = 1;
+    let right = n;
     while (left < right) {
-      let index = Math.floor((right - left) / 2) + left;
+      const index = Math.floor((right - left) / 2) + left;
       if (isBadVersion(index)) {
         right = index;
       } else {

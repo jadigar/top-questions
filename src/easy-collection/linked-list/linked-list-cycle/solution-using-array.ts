@@ -1,13 +1,13 @@
-import { ListNode } from "../common";
+import type { ListNode } from '../common';
 
 export function hasCycle(head: ListNode | null): boolean {
   if (!head) {
     return false;
   }
-  let arrayList: ListNode[] = [];
+  const arrayList: ListNode[] = [];
   let temp: ListNode | null = head;
   while (temp) {
-    if (arrayList.indexOf(temp) !== -1) {
+    if (arrayList.includes(temp)) {
       return true;
     }
     arrayList.push(temp);

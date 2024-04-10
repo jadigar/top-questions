@@ -1,5 +1,5 @@
 export class MinStack {
-  constructor(private stack: { val: number; min: number }[] = []) {}
+  constructor(private readonly stack: { val: number; min: number }[] = []) {}
 
   push(val: number): void {
     const min = Math.min(this.getMin() ?? Infinity, val);

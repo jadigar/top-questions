@@ -1,6 +1,6 @@
-import { Robot } from "./robot";
+import { Robot } from './robot';
 
-it("robot should not go over right bound", () => {
+it('robot should not go over right bound', () => {
   const room = [
     [1, 1],
     [1, 1],
@@ -8,9 +8,9 @@ it("robot should not go over right bound", () => {
   const robot = new Robot(room, 0, 0);
   robot.turnRight();
   let moveResult = robot.move();
-  expect(moveResult).toBeTrue();
+  expect(moveResult).toBeTruthy();
   moveResult = robot.move();
-  expect(moveResult).toBeFalse();
+  expect(moveResult).toBeFalsy();
   robot.clean();
   expect(room).toEqual([
     [1, 2],
@@ -18,7 +18,7 @@ it("robot should not go over right bound", () => {
   ]);
 });
 
-it("robot should not go over down bound", () => {
+it('robot should not go over down bound', () => {
   const room = [
     [1, 1],
     [1, 1],
@@ -27,9 +27,9 @@ it("robot should not go over down bound", () => {
   robot.turnRight();
   robot.turnRight();
   let moveResult = robot.move();
-  expect(moveResult).toBeTrue();
+  expect(moveResult).toBeTruthy();
   moveResult = robot.move();
-  expect(moveResult).toBeFalse();
+  expect(moveResult).toBeFalsy();
   robot.clean();
   expect(room).toEqual([
     [1, 1],
@@ -37,7 +37,7 @@ it("robot should not go over down bound", () => {
   ]);
 });
 
-it("robot should not go over left bound", () => {
+it('robot should not go over left bound', () => {
   const room = [
     [1, 1],
     [1, 1],
@@ -46,8 +46,8 @@ it("robot should not go over left bound", () => {
   robot.turnRight();
   robot.turnRight();
   robot.turnRight();
-  let moveResult = robot.move();
-  expect(moveResult).toBeFalse();
+  const moveResult = robot.move();
+  expect(moveResult).toBeFalsy();
   robot.clean();
   expect(room).toEqual([
     [2, 1],
@@ -55,7 +55,7 @@ it("robot should not go over left bound", () => {
   ]);
 });
 
-it("robot should not go over up bound", () => {
+it('robot should not go over up bound', () => {
   const room = [
     [1, 1],
     [1, 1],
@@ -63,8 +63,8 @@ it("robot should not go over up bound", () => {
   const robot = new Robot(room, 0, 0);
   robot.turnRight();
   robot.turnLeft();
-  let moveResult = robot.move();
-  expect(moveResult).toBeFalse();
+  const moveResult = robot.move();
+  expect(moveResult).toBeFalsy();
   robot.clean();
   expect(room).toEqual([
     [2, 1],
@@ -72,7 +72,7 @@ it("robot should not go over up bound", () => {
   ]);
 });
 
-it("robot should clean starting point", () => {
+it('robot should clean starting point', () => {
   const room = [
     [1, 1],
     [1, 1],
@@ -86,7 +86,7 @@ it("robot should clean starting point", () => {
   ]);
 });
 
-it("robot should go right and clean", () => {
+it('robot should go right and clean', () => {
   const room = [
     [1, 1],
     [1, 1],
@@ -101,7 +101,7 @@ it("robot should go right and clean", () => {
   ]);
 });
 
-it("robot should go down and clean", () => {
+it('robot should go down and clean', () => {
   const room = [
     [1, 1],
     [1, 1],
@@ -117,7 +117,7 @@ it("robot should go down and clean", () => {
   ]);
 });
 
-it("robot should clean all except starting point turning right", () => {
+it('robot should clean all except starting point turning right', () => {
   const room = [
     [1, 1],
     [1, 1],
@@ -138,7 +138,7 @@ it("robot should clean all except starting point turning right", () => {
   ]);
 });
 
-it("robot should clean all except starting point turning left", () => {
+it('robot should clean all except starting point turning left', () => {
   const room = [
     [1, 1],
     [1, 1],

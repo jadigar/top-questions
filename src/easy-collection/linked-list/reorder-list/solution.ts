@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import type { ListNode } from '../common';
 
 export function reorderList(head: ListNode | null): void {
   if (head === null) {
@@ -24,7 +24,7 @@ export function reorderList(head: ListNode | null): void {
   // Reorder the list by alternating nodes from the start and end,
   while (first < last) {
     // Keep a reference to the next node of the current starting node.
-    let second = stack[first].next;
+    const second = stack[first].next;
 
     // Set the next of the current node to the last node in the list.
     node!.next = stack[last];

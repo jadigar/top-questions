@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function maxPathSum(root: TreeNode | null): number {
   const [_, result] = getMaxPathSum(root);

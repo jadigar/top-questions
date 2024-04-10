@@ -1,8 +1,8 @@
 export function groupThePeople(groupSizes: number[]): number[][] {
-  let result: number[][] = [];
-  let map = new Map<number, number[]>();
+  const result: number[][] = [];
+  const map = new Map<number, number[]>();
   for (let i = 0; i < groupSizes.length; i++) {
-    let key = groupSizes[i];
+    const key = groupSizes[i];
     if (!map.has(key)) {
       map.set(key, []);
     }

@@ -28,7 +28,7 @@ export function getSkyline(buildings: number[][]): number[][] {
     }
   });
 
-  let result: number[][] = [];
+  const result: number[][] = [];
   for (let i = 0; i < heights.length; ++i) {
     const currHeight = heights[i];
     const currPos = edges[i];

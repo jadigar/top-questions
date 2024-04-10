@@ -14,7 +14,7 @@ function sumDigits(n: number): number {
   let result = 0;
   while (n > 0) {
     const lastDigit = n % 10;
-    result += Math.pow(lastDigit, 2);
+    result += lastDigit ** 2;
     n = Math.trunc(n / 10);
   }
   return result;

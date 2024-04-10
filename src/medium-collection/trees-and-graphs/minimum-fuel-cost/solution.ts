@@ -4,7 +4,7 @@ export function minimumFuelCost(roads: number[][], seats: number): number {
   }
 
   // Create a new Map object called "tree" to represent the road connections between nodes
-  let tree = new Map<number, number[]>();
+  const tree = new Map<number, number[]>();
   roads.forEach(([from, to]) => {
     if (!tree.has(from)) {
       tree.set(from, []);
@@ -15,7 +15,7 @@ export function minimumFuelCost(roads: number[][], seats: number): number {
     tree.get(from)!.push(to);
     tree.get(to)!.push(from);
   });
-  let result = calculateFuelCost(seats, 0, new Set(), tree);
+  const result = calculateFuelCost(seats, 0, new Set(), tree);
   return result.fuelSpent;
 }
 
@@ -25,16 +25,16 @@ function calculateFuelCost(
   visited: Set<number>,
   tree: Map<number, number[]>,
 ): { seatsLeft: number; fuelSpent: number; cars: number } {
-  let neighbors = tree.get(node)!;
+  const neighbors = tree.get(node)!;
   visited.add(node);
 
-  let result = { seatsLeft: 0, fuelSpent: 0, cars: 0 };
+  const result = { seatsLeft: 0, fuelSpent: 0, cars: 0 };
 
   for (let i = 0; i < neighbors.length; i++) {
     if (visited.has(neighbors[i])) {
       continue;
     }
-    let nodeResult = calculateFuelCost(
+    const nodeResult = calculateFuelCost(
       initialSeats,
       neighbors[i],
       visited,
@@ -61,8 +61,8 @@ function calculateFuelCost(
   // If there are enough seats left to fill a whole new car,
   // calculate how many cars can be filled and remove them from the result object.
   if (result.seatsLeft >= initialSeats) {
-    let carsToRemove = Math.trunc(result.seatsLeft / initialSeats);
-    result.seatsLeft = result.seatsLeft % initialSeats;
+    const carsToRemove = Math.trunc(result.seatsLeft / initialSeats);
+    result.seatsLeft %= initialSeats;
     result.cars -= carsToRemove;
   }
 

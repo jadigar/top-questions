@@ -1,7 +1,7 @@
 export function isPalindrome(s: string): boolean {
   const isAlphaNumeric = /[a-zA-Z0-9]/;
-  let li = 0,
-    ri = s.length - 1;
+  let li = 0;
+  let ri = s.length - 1;
 
   while (li <= ri) {
     if (!isAlphaNumeric.test(s[li])) {

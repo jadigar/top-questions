@@ -1,6 +1,6 @@
 export function maxSumAfterPartitioning(arr: number[], k: number): number {
-  let n = arr.length;
-  let dp = new Array(n + 1).fill(0);
+  const n = arr.length;
+  const dp = new Array(n + 1).fill(0);
   for (let i = 0; i <= n; i++) {
     let maxPartitionVal = 0;
     let maxSum = 0;

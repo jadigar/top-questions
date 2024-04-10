@@ -1,6 +1,6 @@
-import { snakesAndLadders } from "./solution";
+import { snakesAndLadders } from './solution';
 
-it("snakesAndLadders should pass test 1", () => {
+it('snakesAndLadders should pass test 1', () => {
   const board = [
     [-1, -1, -1, -1, -1, -1],
     [-1, -1, -1, -1, -1, -1],
@@ -13,7 +13,7 @@ it("snakesAndLadders should pass test 1", () => {
   expect(result).toEqual(4);
 });
 
-it("snakesAndLadders should pass test 2", () => {
+it('snakesAndLadders should pass test 2', () => {
   const board = [
     [-1, -1],
     [-1, 3],
@@ -22,7 +22,7 @@ it("snakesAndLadders should pass test 2", () => {
   expect(result).toEqual(1);
 });
 
-it("snakesAndLadders should pass test 3", () => {
+it('snakesAndLadders should pass test 3', () => {
   const board = [
     [-1, -1, -1],
     [-1, -1, -1],
@@ -32,7 +32,7 @@ it("snakesAndLadders should pass test 3", () => {
   expect(result).toEqual(2);
 });
 
-it("snakesAndLadders should pass test 4", () => {
+it('snakesAndLadders should pass test 4', () => {
   const board = [
     [-1, -1, -1],
     [-1, -1, -1],
@@ -42,7 +42,7 @@ it("snakesAndLadders should pass test 4", () => {
   expect(result).toEqual(1);
 });
 
-it("snakesAndLadders should pass test 5", () => {
+it('snakesAndLadders should pass test 5', () => {
   const board = [
     [-1, -1, -1],
     [-1, -1, -1],
@@ -52,7 +52,7 @@ it("snakesAndLadders should pass test 5", () => {
   expect(result).toEqual(1);
 });
 
-it("snakesAndLadders should pass test 6", () => {
+it('snakesAndLadders should pass test 6', () => {
   const board = [
     [-1, -1, -1, -1],
     [-1, -1, -1, -1],
@@ -63,7 +63,7 @@ it("snakesAndLadders should pass test 6", () => {
   expect(result).toEqual(2);
 });
 
-it("snakesAndLadders should pass test 7", () => {
+it('snakesAndLadders should pass test 7', () => {
   const board = [
     [-1, -1, -1, -1],
     [-1, -1, -1, -1],

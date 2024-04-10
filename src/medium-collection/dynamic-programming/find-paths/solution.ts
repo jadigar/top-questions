@@ -5,9 +5,7 @@ export function findPaths(
   startRow: number,
   startColumn: number,
 ): number {
-  const dp = Array.from({ length: m }, () =>
-    Array.from({ length: n }, () => new Array(maxMove + 1).fill(-1)),
-  );
+  const dp = Array.from({ length: m }, () => Array.from({ length: n }, () => new Array(maxMove + 1).fill(-1)));
   return countPaths(startRow, startColumn, m, n, maxMove, dp);
 }
 

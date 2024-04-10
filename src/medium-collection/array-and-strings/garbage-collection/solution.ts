@@ -9,17 +9,17 @@ export function garbageCollection(garbage: string[], travel: number[]): number {
 
   // Iterate through each house and calculate collection time
   for (let i = 0; i < n; i++) {
-    for (let char of garbage[i]) {
+    for (const char of garbage[i]) {
       switch (char) {
-        case "M":
+        case 'M':
           metalTime++;
           lastMetal = i;
           break;
-        case "P":
+        case 'P':
           paperTime++;
           lastPaper = i;
           break;
-        case "G":
+        case 'G':
           glassTime++;
           lastGlass = i;
           break;
@@ -28,7 +28,7 @@ export function garbageCollection(garbage: string[], travel: number[]): number {
   }
 
   // Pre-calculate the cumulative travel time
-  let travelTime = Array(n).fill(0);
+  const travelTime = Array(n).fill(0);
   for (let i = 1; i < n; i++) {
     travelTime[i] = travelTime[i - 1] + travel[i - 1];
   }

@@ -1,7 +1,7 @@
 export function maxScore(s: string): number {
   let totalZeroes = 0;
   for (const num of s) {
-    if (num === "0") {
+    if (num === '0') {
       totalZeroes++;
     }
   }
@@ -9,7 +9,7 @@ export function maxScore(s: string): number {
   let maxScore = 0;
   let leftZeroes = 0;
   for (let i = 0; i < s.length - 1; i++) {
-    if (s[i] === "0") {
+    if (s[i] === '0') {
       leftZeroes++;
     } else {
       rightOnes--;

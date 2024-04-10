@@ -16,7 +16,7 @@ export function alienOrder(words: string[]): string {
     const next = words[i + 1];
     // check that second word is not the prefix of the first
     if (current.length > next.length && current.startsWith(next)) {
-      return "";
+      return '';
     }
 
     // find the first different letter
@@ -35,11 +35,11 @@ export function alienOrder(words: string[]): string {
   // pass using DFS
   for (let i = 0; i < letters.length; i++) {
     if (!dfs(letters[i], visited, reverseEdges, result)) {
-      return "";
+      return '';
     }
   }
 
-  return result.join("");
+  return result.join('');
 }
 
 function dfs(
@@ -55,7 +55,7 @@ function dfs(
   }
   visited.set(letter, false);
   // take all previous letters
-  let prevLetters = reverseEdges.get(letter)!;
+  const prevLetters = reverseEdges.get(letter)!;
   for (let i = 0; i < prevLetters.length; i++) {
     if (!dfs(prevLetters[i], visited, reverseEdges, result)) {
       return false;

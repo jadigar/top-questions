@@ -1,22 +1,22 @@
-import { convert } from "./solution";
+import { convert } from './solution';
 
 it('convert should return "PAHNAPLSIIGYIR" for s = "PAYPALISHIRING", numRows = 3', () => {
-  const s = "PAYPALISHIRING";
+  const s = 'PAYPALISHIRING';
   const numRows = 3;
   const result = convert(s, numRows);
-  expect(result).toEqual("PAHNAPLSIIGYIR");
+  expect(result).toEqual('PAHNAPLSIIGYIR');
 });
 
 it('convert should return "PINALSIGYAHRPI" for s = "PAYPALISHIRING", numRows = 4', () => {
-  const s = "PAYPALISHIRING";
+  const s = 'PAYPALISHIRING';
   const numRows = 4;
   const result = convert(s, numRows);
-  expect(result).toEqual("PINALSIGYAHRPI");
+  expect(result).toEqual('PINALSIGYAHRPI');
 });
 
 it('convert should return "A" for s = "A", numRows = 1', () => {
-  const s = "A";
+  const s = 'A';
   const numRows = 1;
   const result = convert(s, numRows);
-  expect(result).toEqual("A");
+  expect(result).toEqual('A');
 });

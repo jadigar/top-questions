@@ -1,5 +1,5 @@
 export function distributeCookies(cookies: number[], k: number): number {
-  let distribute: number[] = new Array(k).fill(0);
+  const distribute: number[] = new Array(k).fill(0);
 
   return dfs(0, distribute, cookies, k, k);
 }
@@ -21,7 +21,7 @@ function dfs(
   // distribution.
   if (i === cookies.length) {
     let unfairness = Number.MIN_SAFE_INTEGER;
-    for (let value of distribute) {
+    for (const value of distribute) {
       unfairness = Math.max(unfairness, value);
     }
     return unfairness;

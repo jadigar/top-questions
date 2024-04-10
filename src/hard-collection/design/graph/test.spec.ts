@@ -1,8 +1,8 @@
-import { Graph } from "./solution";
+import { Graph } from './solution';
 
-describe("Design Graph With Shortest Path Calculator", () => {
-  it("shortestPath should pass test 1", () => {
-    let g = new Graph(4, [
+describe('Design Graph With Shortest Path Calculator', () => {
+  it('shortestPath should pass test 1', () => {
+    const g = new Graph(4, [
       [0, 2, 5],
       [0, 1, 2],
       [1, 2, 1],

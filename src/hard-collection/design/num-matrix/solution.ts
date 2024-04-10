@@ -1,5 +1,6 @@
 export class NumMatrix {
   matrix: number[][];
+
   constructor(matrix: number[][]) {
     this.matrix = matrix;
   }

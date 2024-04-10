@@ -9,10 +9,10 @@ export function canTransform(start: string, end: string): boolean {
 
   while (startIndex < n || endIndex < n) {
     // Skip Xs in start and end
-    while (startIndex < n && start[startIndex] === "X") {
+    while (startIndex < n && start[startIndex] === 'X') {
       startIndex++;
     }
-    while (endIndex < n && end[endIndex] === "X") {
+    while (endIndex < n && end[endIndex] === 'X') {
       endIndex++;
     }
     // Check if we have reached the end of one string but not the other
@@ -26,10 +26,10 @@ export function canTransform(start: string, end: string): boolean {
     // Check for invalid movements
     // L can be moved only to the left
     // R can be moved only to the right
-    if (start[startIndex] === "L" && startIndex < endIndex) {
+    if (start[startIndex] === 'L' && startIndex < endIndex) {
       return false;
     }
-    if (start[startIndex] === "R" && startIndex > endIndex) {
+    if (start[startIndex] === 'R' && startIndex > endIndex) {
       return false;
     }
     // Move pointers

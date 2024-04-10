@@ -1,6 +1,6 @@
-import { TicTacToe } from "./o1-solution";
+import { TicTacToe } from './o1-solution';
 
-it("should pass game 1", () => {
+it('should pass game 1', () => {
   const ticTacToe = new TicTacToe(3);
   expect(ticTacToe.move(0, 0, 1)).toBe(0);
   expect(ticTacToe.move(0, 2, 2)).toBe(0);

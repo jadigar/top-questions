@@ -13,16 +13,14 @@ export function isIsomorphic(s: string, t: string): boolean {
     // Check mapping from s to t
     if (mapST.has(charS) && mapST.get(charS) !== charT) {
       return false;
-    } else {
-      mapST.set(charS, charT);
     }
+    mapST.set(charS, charT);
 
     // Check mapping from t to s
     if (mapTS.has(charT) && mapTS.get(charT) !== charS) {
       return false;
-    } else {
-      mapTS.set(charT, charS);
     }
+    mapTS.set(charT, charS);
   }
 
   return true;

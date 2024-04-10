@@ -28,5 +28,6 @@ export class MinStack {
 
 class Node {
   public next: Node | null = null;
+
   constructor(public val: number, public min: number) {}
 }

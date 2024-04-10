@@ -1,40 +1,40 @@
-import { subsets } from "./solution";
-import { arrayEquals } from "../common";
+import { subsets } from './solution';
+import { arrayEquals } from '../common';
 
-it("subsets should return [[],[0]] for nums = [0]", function () {
+it('subsets should return [[],[0]] for nums = [0]', () => {
   const nums = [0];
   const expectedResult = [[], [0]];
   const subsetsResult = subsets(nums);
   expect(expectedResult.length).toEqual(subsetsResult.length);
   expectedResult.forEach((item) => {
     const result = subsetsResult.some((p) => arrayEquals(p, item));
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 });
 
-it("subsets should return [[],[0],[1],[0,1]] for nums = [0]", function () {
+it('subsets should return [[],[0],[1],[0,1]] for nums = [0]', () => {
   const nums = [0, 1];
   const expectedResult = [[], [0], [1], [0, 1]];
   const subsetsResult = subsets(nums);
   expect(expectedResult.length).toEqual(subsetsResult.length);
   expectedResult.forEach((item) => {
     const result = subsetsResult.some((p) => arrayEquals(p, item));
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 });
 
-it("subsets should return [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]] for nums = [1,2,3]", function () {
+it('subsets should return [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]] for nums = [1,2,3]', () => {
   const nums = [1, 2, 3];
   const expectedResult = [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]];
   const subsetsResult = subsets(nums);
   expect(expectedResult.length).toEqual(subsetsResult.length);
   expectedResult.forEach((item) => {
     const result = subsetsResult.some((p) => arrayEquals(p, item));
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 });
 
-it("subsets should return correct result for nums = [1,2,3,4]", function () {
+it('subsets should return correct result for nums = [1,2,3,4]', () => {
   const nums = [1, 2, 3, 4];
   const expectedResult = [
     [1, 2, 3, 4],
@@ -58,6 +58,6 @@ it("subsets should return correct result for nums = [1,2,3,4]", function () {
   expect(expectedResult.length).toEqual(subsetsResult.length);
   expectedResult.forEach((item) => {
     const result = subsetsResult.some((p) => arrayEquals(p, item));
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 });

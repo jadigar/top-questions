@@ -1,8 +1,8 @@
-import { Allocator } from "./solution";
+import { Allocator } from './solution';
 
-describe("Design Memory Allocator", () => {
-  it("should pass test 1", () => {
-    var loc = new Allocator(10);
+describe('Design Memory Allocator', () => {
+  it('should pass test 1', () => {
+    const loc = new Allocator(10);
     expect(loc.allocate(1, 1)).toEqual(0); // The leftmost block's first index is 0. The memory array becomes [1,_,_,_,_,_,_,_,_,_]. We return 0.
     expect(loc.allocate(1, 2)).toEqual(1); // The leftmost block's first index is 1. The memory array becomes [1,2,_,_,_,_,_,_,_,_]. We return 1.
     expect(loc.allocate(1, 3)).toEqual(2); // The leftmost block's first index is 2. The memory array becomes [1,2,3,_,_,_,_,_,_,_]. We return 2.
@@ -15,7 +15,7 @@ describe("Design Memory Allocator", () => {
     expect(loc.free(7)).toEqual(0); // Free all memory units with mID 7. The memory array remains the same since there is no memory unit with mID 7. We return 0.
   });
 
-  it("should pass test 2", () => {
+  it('should pass test 2', () => {
     const loc = new Allocator(20);
     expect(loc.allocate(12, 1)).toEqual(0);
     expect(loc.allocate(5, 2)).toEqual(12);

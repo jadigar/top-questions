@@ -1,5 +1,5 @@
 export function halvesAreAlike(s: string): boolean {
-  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
   const vowelsSet = new Set<string>(vowels);
   let leftVowels = 0;
   let rightVowels = 0;

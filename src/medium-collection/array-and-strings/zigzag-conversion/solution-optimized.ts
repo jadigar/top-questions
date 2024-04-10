@@ -3,9 +3,9 @@ export function convert(s: string, numRows: number): string {
     return s;
   }
 
-  let answer = "";
-  let n = s.length;
-  let charsInSection = 2 * (numRows - 1);
+  let answer = '';
+  const n = s.length;
+  const charsInSection = 2 * (numRows - 1);
 
   for (let currRow = 0; currRow < numRows; ++currRow) {
     let index = currRow;
@@ -16,8 +16,8 @@ export function convert(s: string, numRows: number): string {
       // If current row is not first or last,
       // then we have to add one more character of current section.
       if (currRow != 0 && currRow != numRows - 1) {
-        let charsInBetween = charsInSection - 2 * currRow;
-        let secondIndex = index + charsInBetween;
+        const charsInBetween = charsInSection - 2 * currRow;
+        const secondIndex = index + charsInBetween;
 
         if (secondIndex < n) {
           answer += s[secondIndex];

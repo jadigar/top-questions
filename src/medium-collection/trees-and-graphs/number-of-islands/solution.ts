@@ -5,7 +5,7 @@ export function numIslands(grid: string[][]): number {
   let result = 0;
   for (let i = 0; i < grid.length; i++) {
     for (let k = 0; k < grid[0].length; k++) {
-      if (grid[i][k] === "1") {
+      if (grid[i][k] === '1') {
         result++;
         dfs(grid, i, k);
       }
@@ -20,10 +20,10 @@ export function numIslands(grid: string[][]): number {
 function dfs(grid: string[][], r: number, c: number) {
   const h = grid.length;
   const w = grid[0].length;
-  if (r < 0 || r >= h || c < 0 || c >= w || grid[r][c] === "0") {
+  if (r < 0 || r >= h || c < 0 || c >= w || grid[r][c] === '0') {
     return;
   }
-  grid[r][c] = "0";
+  grid[r][c] = '0';
   dfs(grid, r + 1, c);
   dfs(grid, r - 1, c);
   dfs(grid, r, c + 1);

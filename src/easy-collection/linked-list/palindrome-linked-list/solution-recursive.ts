@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import type { ListNode } from '../common';
 
 let headPointer: ListNode | null;
 

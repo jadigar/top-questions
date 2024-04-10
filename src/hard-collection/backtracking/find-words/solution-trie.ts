@@ -1,8 +1,8 @@
-import { Trie } from "../../../medium-collection/trees-and-graphs/implement-trie/solution";
+import { Trie } from '../../../medium-collection/trees-and-graphs/implement-trie/solution';
 
 export function findWords(board: string[][], words: string[]): string[] {
-  let result: string[] = [];
-  let trie = new Trie();
+  const result: string[] = [];
+  const trie = new Trie();
   // fill trie with words
   words.forEach((word) => {
     trie.insert(word);
@@ -10,7 +10,7 @@ export function findWords(board: string[][], words: string[]): string[] {
 
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[0].length; j++) {
-      dfs("", board, i, j, result, trie);
+      dfs('', board, i, j, result, trie);
     }
   }
   return result;

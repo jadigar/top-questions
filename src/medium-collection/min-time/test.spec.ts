@@ -1,6 +1,6 @@
-import { minTime } from "./solution";
+import { minTime } from './solution';
 
-it("minTime should return 8 for test 1", () => {
+it('minTime should return 8 for test 1', () => {
   const n = 7;
   const edges = [
     [0, 1],
@@ -15,7 +15,7 @@ it("minTime should return 8 for test 1", () => {
   expect(result).toEqual(8);
 });
 
-it("minTime should return 6 for test 2", () => {
+it('minTime should return 6 for test 2', () => {
   const n = 7;
   const edges = [
     [0, 1],
@@ -30,7 +30,7 @@ it("minTime should return 6 for test 2", () => {
   expect(result).toEqual(6);
 });
 
-it("minTime should return 0 for test 3", () => {
+it('minTime should return 0 for test 3', () => {
   const n = 7;
   const edges = [
     [0, 1],
@@ -45,7 +45,7 @@ it("minTime should return 0 for test 3", () => {
   expect(result).toEqual(0);
 });
 
-it("minTime should return 10 for test 4", () => {
+it('minTime should return 10 for test 4', () => {
   const n = 7;
   const edges = [
     [0, 1],

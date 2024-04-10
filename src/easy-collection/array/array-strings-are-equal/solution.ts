@@ -2,8 +2,8 @@ export function arrayStringsAreEqual(
   word1: string[],
   word2: string[],
 ): boolean {
-  let wordsIterator1 = makeWordsIterator(word1);
-  let wordsIterator2 = makeWordsIterator(word2);
+  const wordsIterator1 = makeWordsIterator(word1);
+  const wordsIterator2 = makeWordsIterator(word2);
   let words1IteratorResult = wordsIterator1.next();
   let words2IteratorResult = wordsIterator2.next();
   while (!words1IteratorResult.done || !words2IteratorResult.done) {

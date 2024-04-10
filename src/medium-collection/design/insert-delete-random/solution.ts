@@ -1,6 +1,8 @@
 export class RandomizedSet {
   arr: number[] = [];
+
   valIdx = new Map();
+
   constructor() {}
 
   insert(val: number): boolean {

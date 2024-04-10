@@ -1,6 +1,6 @@
 export function isGood(nums: number[]): boolean {
   nums.sort((a, b) => a - b);
-  let n = nums.length - 1;
+  const n = nums.length - 1;
   if (nums[n] !== n || nums[n - 1] !== n) {
     return false;
   }

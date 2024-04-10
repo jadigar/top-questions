@@ -1,5 +1,5 @@
 export function possibleBipartition(n: number, dislikes: number[][]): boolean {
-  const adj: { [key: number]: number[] } = {};
+  const adj: Record<number, number[]> = {};
   for (const edge of dislikes) {
     const [a, b] = edge;
     if (!adj[a]) {
@@ -33,6 +33,7 @@ export function possibleBipartition(n: number, dislikes: number[][]): boolean {
 
 class UnionFind {
   parent: number[];
+
   rank: number[];
 
   constructor(size: number) {
@@ -54,7 +55,7 @@ class UnionFind {
     const xset = this.find(x);
     const yset = this.find(y);
     if (xset === yset) {
-      return;
+
     } else if (this.rank[xset] < this.rank[yset]) {
       this.parent[xset] = yset;
     } else if (this.rank[xset] > this.rank[yset]) {

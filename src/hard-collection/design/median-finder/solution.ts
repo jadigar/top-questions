@@ -1,8 +1,10 @@
 export class MedianFinder {
   numbers: number[];
+
   constructor() {
     this.numbers = [];
   }
+
   addNum(num: number): void {
     const index = this.findIndex(this.numbers, num);
     this.numbers.splice(index, 0, num);
@@ -19,7 +21,7 @@ export class MedianFinder {
     let left = 0;
     let right = array.length;
     while (left < right) {
-      let mid = left + Math.trunc((right - left) / 2);
+      const mid = left + Math.trunc((right - left) / 2);
       if (array[mid] < value) {
         left = mid + 1;
       } else {

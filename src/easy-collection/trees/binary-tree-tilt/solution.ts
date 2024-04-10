@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function findTilt(root: TreeNode | null): number {
   const { tilt } = dfs(root);

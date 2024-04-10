@@ -1,10 +1,10 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
 export function removeNthFromEnd(
   head: ListNode | null,
   n: number,
 ): ListNode | null {
-  let headBehind = new ListNode(0);
+  const headBehind = new ListNode(0);
   headBehind.next = head;
   let second: ListNode | null = headBehind;
   let first = head;

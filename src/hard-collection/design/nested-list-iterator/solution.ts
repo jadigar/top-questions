@@ -1,8 +1,10 @@
-import { NestedInteger } from "./nested-integer";
+import type { NestedInteger } from './nested-integer';
 
 export class NestedIterator {
   flatList: number[];
+
   index: number;
+
   constructor(nestedList: NestedInteger[]) {
     this.flatList = [];
     this.index = 0;

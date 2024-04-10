@@ -1,9 +1,9 @@
 export function removeInvalidParentheses(s: string): string[] {
   // we calculate number of left and right parenthesis to remove
-  let [left, right] = parenthesisToRemove(s);
+  const [left, right] = parenthesisToRemove(s);
   // store path that we already checked
-  let checkedPath = new Set<string>();
-  let result: string[] = [];
+  const checkedPath = new Set<string>();
+  const result: string[] = [];
   dfs(left, right, s, result, checkedPath);
   return result;
 }
@@ -25,14 +25,14 @@ function dfs(
     return;
   }
   for (let i = 0; i < s.length; i++) {
-    if (left > 0 && s[i] === "(") {
+    if (left > 0 && s[i] === '(') {
       // remove one left "(" to check
       const temp = s.slice(0, i) + s.slice(i + 1);
       if (!checked.has(temp)) {
         dfs(left - 1, right, temp, result, checked);
       }
     }
-    if (right > 0 && s[i] === ")") {
+    if (right > 0 && s[i] === ')') {
       // remove one right ")" to check
       const temp = s.slice(0, i) + s.slice(i + 1);
       if (!checked.has(temp)) {
@@ -48,17 +48,17 @@ function parenthesisToRemove(s: string): [left: number, right: number] {
   let right = 0;
   const stack: string[] = [];
   for (let i = 0; i < s.length; i++) {
-    if (s[i] === "(") {
+    if (s[i] === '(') {
       left++;
-      stack.push("(");
+      stack.push('(');
     }
-    if (s[i] === ")") {
-      if (stack[stack.length - 1] === "(") {
+    if (s[i] === ')') {
+      if (stack[stack.length - 1] === '(') {
         left--;
         stack.pop();
       } else {
         right++;
-        stack.push(")");
+        stack.push(')');
       }
     }
   }
@@ -67,16 +67,16 @@ function parenthesisToRemove(s: string): [left: number, right: number] {
 
 // check if this is valid parenthesis combination
 function isValid(s: string): boolean {
-  const parenthesis = ["(", ")"];
+  const parenthesis = ['(', ')'];
   const stack: string[] = [];
   for (let i = 0; i < s.length; i++) {
     // if this is the closing parenthesis
-    if (s[i] === ")") {
-      let top = stack.pop();
-      if (top !== "(") {
+    if (s[i] === ')') {
+      const top = stack.pop();
+      if (top !== '(') {
         return false;
       }
-    } else if (s[i] === "(") {
+    } else if (s[i] === '(') {
       stack.push(s[i]);
     }
   }

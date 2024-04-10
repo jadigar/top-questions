@@ -1,8 +1,8 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function inorderTraversal(root: TreeNode | null): number[] {
-  let result: number[] = [];
-  let stack: TreeNode[] = [];
+  const result: number[] = [];
+  const stack: TreeNode[] = [];
   let node = root;
   while (node !== null || stack.length) {
     while (node !== null) {

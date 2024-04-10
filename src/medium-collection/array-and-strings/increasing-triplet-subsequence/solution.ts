@@ -1,5 +1,5 @@
 export function increasingTriplet(nums: number[]): boolean {
-  for (let i = 0, j = 1, jt = 1, k = 2; k < nums.length; ) {
+  for (let i = 0, j = 1, jt = 1, k = 2; k < nums.length;) {
     // if we found the result return it
     if (i < j && j < k && nums[i] < nums[j] && nums[j] < nums[k]) {
       return true;

@@ -1,5 +1,5 @@
 export function numIdenticalPairs(nums: number[]): number {
-  let map = new Map<number, number>();
+  const map = new Map<number, number>();
   for (const item of nums) {
     if (!map.has(item)) {
       map.set(item, 0);

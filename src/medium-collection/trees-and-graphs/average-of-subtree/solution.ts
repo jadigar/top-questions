@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function averageOfSubtree(root: TreeNode | null): number {
   if (root === null) {
@@ -22,7 +22,6 @@ function dfs(node: TreeNode | null): {
   const sum = node.val + l.sum + r.sum;
   const count = 1 + l.count + r.count;
   const avg = Math.trunc(sum / count);
-  const result =
-    avg === node.val ? 1 + l.result + r.result : l.result + r.result;
+  const result = avg === node.val ? 1 + l.result + r.result : l.result + r.result;
   return { sum, count, result };
 }

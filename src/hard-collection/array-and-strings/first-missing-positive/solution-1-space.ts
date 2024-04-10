@@ -1,6 +1,6 @@
 export function firstMissingPositive(nums: number[]): number {
   let onePresent = false;
-  let n = nums.length;
+  const n = nums.length;
   // check if 1 is in the array
   for (let i = 0; i < n; i++) {
     if (nums[i] === 1) {
@@ -23,7 +23,7 @@ export function firstMissingPositive(nums: number[]): number {
   // is present in the array.
   // if nums[2] is positive - number 2 is missing.
   for (let i = 0; i < n; i++) {
-    let nIdx = Math.abs(nums[i]);
+    const nIdx = Math.abs(nums[i]);
 
     // we use 0 index to mark nth number
     if (nIdx === n) {

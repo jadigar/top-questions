@@ -19,7 +19,7 @@ function binarySearch(array: number[], target: number): number {
 // Optimized function to check if string s is a subsequence of string t
 export function isSubsequence(s: string, t: string): boolean {
   // Create a dictionary to store the indices of each character in string t
-  const charIndices: { [key: string]: number[] } = {};
+  const charIndices: Record<string, number[]> = {};
 
   // Populate the dictionary with indices for each character in t
   for (let i = 0; i < t.length; i++) {

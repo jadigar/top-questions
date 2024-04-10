@@ -1,7 +1,5 @@
 export function sortByBits(arr: number[]): number[] {
-  return arr.sort((a, b) => {
-    return hammingWeight(a) - hammingWeight(b) || a - b;
-  });
+  return arr.sort((a, b) => hammingWeight(a) - hammingWeight(b) || a - b);
 }
 
 function hammingWeight(num: number) {

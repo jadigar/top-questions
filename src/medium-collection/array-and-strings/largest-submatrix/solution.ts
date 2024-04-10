@@ -1,7 +1,7 @@
 export function largestSubmatrix(matrix: number[][]): number {
   let maxArea = 0;
-  let m = matrix.length;
-  let n = matrix[0].length;
+  const m = matrix.length;
+  const n = matrix[0].length;
   // Preprocess the matrix to calculate heights of consecutive ones
   for (let i = 1; i < m; i++) {
     for (let j = 0; j < n; j++) {

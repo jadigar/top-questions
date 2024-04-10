@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
 export function middleNode(head: ListNode | null): ListNode | null {
   let fast: ListNode | null = new ListNode(0, head);

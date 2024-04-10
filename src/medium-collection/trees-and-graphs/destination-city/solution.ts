@@ -1,5 +1,5 @@
 export function destCity(paths: string[][]): string {
-  let outSet = new Set<string>();
+  const outSet = new Set<string>();
   for (const [out] of paths) {
     outSet.add(out);
   }
@@ -9,5 +9,5 @@ export function destCity(paths: string[][]): string {
       return dest;
     }
   }
-  return "";
+  return '';
 }

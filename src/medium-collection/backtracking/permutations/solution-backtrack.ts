@@ -23,7 +23,7 @@ function swap(nums: number[], i: number, j: number) {
   if (i === j) {
     return;
   }
-  let temp = nums[i];
+  const temp = nums[i];
   nums[i] = nums[j];
   nums[j] = temp;
 }

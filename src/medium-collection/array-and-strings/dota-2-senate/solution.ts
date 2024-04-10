@@ -3,7 +3,7 @@ export function predictPartyVictory(senate: string): string {
   const direQueue: number[] = [];
 
   for (let i = 0; i < senate.length; i++) {
-    if (senate[i] === "R") {
+    if (senate[i] === 'R') {
       radiantQueue.push(i);
     } else {
       direQueue.push(i);
@@ -21,5 +21,5 @@ export function predictPartyVictory(senate: string): string {
     direQueue.shift();
   }
 
-  return radiantQueue.length > 0 ? "Radiant" : "Dire";
+  return radiantQueue.length > 0 ? 'Radiant' : 'Dire';
 }

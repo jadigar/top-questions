@@ -1,9 +1,9 @@
 export function reverseWords(s: string): string {
   let from = 0;
   let to = 0;
-  let result = split(s);
+  const result = split(s);
   for (let i = 0; i < result.length; i++) {
-    if (result[i] !== " " && i < result.length - 1) {
+    if (result[i] !== ' ' && i < result.length - 1) {
       to++;
       continue;
     }
@@ -16,7 +16,7 @@ export function reverseWords(s: string): string {
 }
 
 function split(s: string): string[] {
-  let result = [];
+  const result = [];
   for (let i = 0; i < s.length; i++) {
     result.push(s[i]);
   }
@@ -24,7 +24,7 @@ function split(s: string): string[] {
 }
 
 function join(s: string[]): string {
-  let result = "";
+  let result = '';
   for (let i = 0; i < s.length; i++) {
     result += s[i];
   }

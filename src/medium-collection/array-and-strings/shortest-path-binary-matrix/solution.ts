@@ -28,11 +28,11 @@ export function shortestPathBinaryMatrix(grid: number[][]): number {
       const newX = x + dx;
       const newY = y + dy;
       if (
-        newX >= 0 &&
-        newY >= 0 &&
-        newX < n &&
-        newY < n &&
-        grid[newX][newY] === 0
+        newX >= 0
+        && newY >= 0
+        && newX < n
+        && newY < n
+        && grid[newX][newY] === 0
       ) {
         queue.push([newX, newY, step + 1]);
         grid[newX][newY] = 1; // Mark the position as visited

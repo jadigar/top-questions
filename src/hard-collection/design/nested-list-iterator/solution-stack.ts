@@ -1,7 +1,8 @@
-import { NestedInteger } from "./nested-integer";
+import type { NestedInteger } from './nested-integer';
 
 export class NestedIterator {
   stack: NestedInteger[] = [];
+
   constructor(nestedList: NestedInteger[]) {
     this.stack = [];
     this.addToStack(nestedList);

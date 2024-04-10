@@ -3,8 +3,8 @@ export function dailyTemperatures(temperatures: number[]): number[] {
   const stack: number[] = [];
   for (let i = 0; i < temperatures.length; i++) {
     while (
-      stack.length > 0 &&
-      temperatures[i] > temperatures[stack[stack.length - 1]]
+      stack.length > 0
+      && temperatures[i] > temperatures[stack[stack.length - 1]]
     ) {
       const idx = stack.pop()!;
       result[idx] = i - idx;

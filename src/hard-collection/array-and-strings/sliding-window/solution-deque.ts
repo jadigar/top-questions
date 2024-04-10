@@ -2,8 +2,8 @@ export function maxSlidingWindow(num: number[], k: number) {
   if (k === 1) {
     return num;
   }
-  let deque: number[] = [];
-  let result = [];
+  const deque: number[] = [];
+  const result = [];
   for (let i = 0; i < num.length; i++) {
     while (num[deque[deque.length - 1]] <= num[i]) {
       deque.pop();

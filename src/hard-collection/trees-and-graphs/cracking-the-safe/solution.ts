@@ -1,14 +1,14 @@
 export function crackSafe(n: number, k: number): string {
   if (n === 1 && k === 1) {
-    return "0";
+    return '0';
   }
   const visited = new Set<string>();
-  let sequences: string[] = [];
+  const sequences: string[] = [];
   // fill prefix with "000" in case n = 4
-  const prefix = "0".repeat(n - 1);
+  const prefix = '0'.repeat(n - 1);
   dfs(prefix, sequences, visited, k);
   sequences.push(prefix);
-  return sequences.join("");
+  return sequences.join('');
 }
 
 function dfs(

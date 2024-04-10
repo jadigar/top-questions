@@ -1,5 +1,5 @@
 export function minCostClimbingStairs(cost: number[]): number {
-  let prevCost = new Array(cost.length + 1).fill(0);
+  const prevCost = new Array(cost.length + 1).fill(0);
   prevCost[0] = cost[0];
   prevCost[1] = cost[1];
   for (let i = 2; i <= cost.length; i++) {

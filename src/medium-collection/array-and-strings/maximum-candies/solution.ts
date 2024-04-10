@@ -1,5 +1,5 @@
 export function maximumCandies(candies: number[], k: number): number {
-  let sum = candies.reduce((p, c) => p + c, 0);
+  const sum = candies.reduce((p, c) => p + c, 0);
   let max = Math.trunc(sum / k);
   let min = 0;
   let result = 0;

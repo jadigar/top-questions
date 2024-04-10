@@ -1,19 +1,19 @@
-import { canVisitAllRooms } from "./solution-stack";
+import { canVisitAllRooms } from './solution-stack';
 
-it("should return true for rooms = [[1],[2],[3],[]]", () => {
+it('should return true for rooms = [[1],[2],[3],[]]', () => {
   const rooms = [[1], [2], [3], []];
   const result = canVisitAllRooms(rooms);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });
 
-it("should return false for rooms = [[1,3],[3,0,1],[2],[0]]", () => {
+it('should return false for rooms = [[1,3],[3,0,1],[2],[0]]', () => {
   const rooms = [[1, 3], [3, 0, 1], [2], [0]];
   const result = canVisitAllRooms(rooms);
-  expect(result).toBeFalse();
+  expect(result).toBeFalsy();
 });
 
-it("should return false for rooms = [[1],[],[0,3],[1]]", () => {
+it('should return false for rooms = [[1],[],[0,3],[1]]', () => {
   const rooms = [[1], [], [0, 3], [1]];
   const result = canVisitAllRooms(rooms);
-  expect(result).toBeFalse();
+  expect(result).toBeFalsy();
 });

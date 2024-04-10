@@ -1,17 +1,17 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function amountOfTime(root: TreeNode | null, start: number): number {
-  let graph = new Map<number, number[]>();
+  const graph = new Map<number, number[]>();
   createGraph(root, null, graph);
   let result = -1;
-  let queue: number[] = [start];
-  let visited = new Set<number>(queue);
+  const queue: number[] = [start];
+  const visited = new Set<number>(queue);
   while (queue.length > 0) {
     result++;
-    let size = queue.length;
+    const size = queue.length;
     for (let i = 0; i < size; i++) {
-      let node = queue.shift()!;
-      for (let neighbor of graph.get(node)!) {
+      const node = queue.shift()!;
+      for (const neighbor of graph.get(node)!) {
         if (!visited.has(neighbor)) {
           visited.add(neighbor);
           queue.push(neighbor);

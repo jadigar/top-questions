@@ -1,52 +1,52 @@
-import { generateParenthesis } from "./solution";
+import { generateParenthesis } from './solution';
 
-it("generateParenthesis should return correct result for n = 1", () => {
+it('generateParenthesis should return correct result for n = 1', () => {
   const n = 1;
   const parenthesis = generateParenthesis(n);
-  expect(parenthesis).toEqual(["()"]);
+  expect(parenthesis).toEqual(['()']);
 });
 
-it("generateParenthesis should return correct result for n = 2", () => {
+it('generateParenthesis should return correct result for n = 2', () => {
   const n = 2;
   const parenthesis = generateParenthesis(n);
-  let expectedResult = ["(())", "()()"];
+  const expectedResult = ['(())', '()()'];
   expectedResult.forEach((item) => {
     const result = parenthesis.includes(item);
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 });
 
-it("generateParenthesis should return correct result for n = 3", () => {
+it('generateParenthesis should return correct result for n = 3', () => {
   const n = 3;
   const parenthesis = generateParenthesis(n);
-  let expectedResult = ["((()))", "(())()", "()(())", "(()())", "()()()"];
+  const expectedResult = ['((()))', '(())()', '()(())', '(()())', '()()()'];
   expectedResult.forEach((item) => {
     const result = parenthesis.includes(item);
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 });
 
-it("generateParenthesis should return correct result for n = 4", () => {
+it('generateParenthesis should return correct result for n = 4', () => {
   const n = 4;
   const parenthesis = generateParenthesis(n);
-  let expectedResult = [
-    "(((())))",
-    "((()()))",
-    "((())())",
-    "((()))()",
-    "(()(()))",
-    "(()()())",
-    "(()())()",
-    "(())(())",
-    "(())()()",
-    "()((()))",
-    "()(()())",
-    "()(())()",
-    "()()(())",
-    "()()()()",
+  const expectedResult = [
+    '(((())))',
+    '((()()))',
+    '((())())',
+    '((()))()',
+    '(()(()))',
+    '(()()())',
+    '(()())()',
+    '(())(())',
+    '(())()()',
+    '()((()))',
+    '()(()())',
+    '()(())()',
+    '()()(())',
+    '()()()()',
   ];
   expectedResult.forEach((item) => {
     const result = parenthesis.includes(item);
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 });

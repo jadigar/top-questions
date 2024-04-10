@@ -1,5 +1,6 @@
 export class Solution {
-  private original: number[];
+  private readonly original: number[];
+
   constructor(nums: number[]) {
     this.original = [...nums];
   }

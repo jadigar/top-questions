@@ -20,5 +20,5 @@ export function isIsomorphic(s: string, t: string): boolean {
     sToT[i] = map.get(s[i]);
   }
 
-  return t === sToT.join("");
+  return t === sToT.join('');
 }

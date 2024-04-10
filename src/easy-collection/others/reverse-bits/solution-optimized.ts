@@ -1,6 +1,6 @@
 export function reverseBits(n: number): number {
-  let result = 0,
-    power = 31;
+  let result = 0;
+  let power = 31;
   while (n !== 0) {
     result += (n & 1) << power;
     n >>>= 1;

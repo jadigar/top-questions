@@ -1,30 +1,30 @@
-import { MountainArray } from "./mountain-array";
+import type { MountainArray } from './mountain-array';
 
 export function findInMountainArray(
   target: number,
   mountainArr: MountainArray,
 ): number {
-  let n = mountainArr.length();
+  const n = mountainArr.length();
   let left = 0;
   let right = n;
 
   // find the peak
   while (left < right) {
-    let mid = left + Math.trunc((right - left) / 2);
+    const mid = left + Math.trunc((right - left) / 2);
     if (mountainArr.get(mid) < mountainArr.get(mid + 1)) {
       left = mid + 1;
     } else {
       right = mid;
     }
   }
-  let peak = left;
+  const peak = left;
 
   // search for the target in the increasing part
   left = 0;
   right = peak;
   while (left <= right) {
-    let mid = left + Math.trunc((right - left) / 2);
-    let midVal = mountainArr.get(mid);
+    const mid = left + Math.trunc((right - left) / 2);
+    const midVal = mountainArr.get(mid);
     if (midVal < target) {
       left = mid + 1;
     } else if (midVal > target) {
@@ -38,8 +38,8 @@ export function findInMountainArray(
   left = peak;
   right = n - 1;
   while (left <= right) {
-    let mid = left + Math.trunc((right - left) / 2);
-    let midVal = mountainArr.get(mid);
+    const mid = left + Math.trunc((right - left) / 2);
+    const midVal = mountainArr.get(mid);
     if (midVal > target) {
       left = mid + 1;
     } else if (midVal < target) {

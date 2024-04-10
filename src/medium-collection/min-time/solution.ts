@@ -30,20 +30,20 @@ function dfs(
   adjacent: Map<number, number[]>,
   hasApple: boolean[],
 ): number {
-  //Check if current node is parent node and return 0 if true
+  // Check if current node is parent node and return 0 if true
   if (node === parent) {
     return 0;
   }
   // Initialize total time
   let totalTime = 0;
   // Iterate through all child nodes
-  for (let child of adjacent.get(node)!) {
+  for (const child of adjacent.get(node)!) {
     // Skip if the child is the parent
     if (child === parent) {
       continue;
     }
     // Recursive call on the child node
-    let childTime = dfs(child, node, adjacent, hasApple);
+    const childTime = dfs(child, node, adjacent, hasApple);
     // If the child has an apple or its children have apples, add 2 minutes
     if (hasApple[child] || childTime > 0) {
       totalTime += childTime + 2;

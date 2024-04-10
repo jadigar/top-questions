@@ -1,7 +1,7 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function findMode(root: TreeNode | null): number[] {
-  let queue = [root];
+  const queue = [root];
   const map = new Map<number, number>();
   while (queue.length > 0) {
     const node = queue.pop()!;
@@ -23,7 +23,7 @@ export function findMode(root: TreeNode | null): number[] {
       maxCount = value;
     }
   }
-  let result: number[] = [];
+  const result: number[] = [];
   for (const [key, value] of map) {
     if (value === maxCount) {
       result.push(key);

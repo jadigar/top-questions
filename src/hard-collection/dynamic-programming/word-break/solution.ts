@@ -1,5 +1,5 @@
 export function wordBreak(s: string, wordDict: string[]): boolean {
-  let result = stringHasWord(s, 0, wordDict, new Map());
+  const result = stringHasWord(s, 0, wordDict, new Map());
   return result;
 }
 
@@ -17,7 +17,7 @@ function stringHasWord(
   }
   for (let i = 0; i < wordDict.length; i++) {
     if (s.startsWith(wordDict[i], pos)) {
-      let result = stringHasWord(s, pos + wordDict[i].length, wordDict, map);
+      const result = stringHasWord(s, pos + wordDict[i].length, wordDict, map);
       if (result) {
         return true;
       }

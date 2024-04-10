@@ -1,7 +1,7 @@
 export function numRollsToTarget(n: number, k: number, target: number): number {
   const MOD: number = 1e9 + 7;
   // Initialize a 2D array to store the number of ways to get to sum j with i dice.
-  let dp: number[][] = new Array(n + 1)
+  const dp: number[][] = new Array(n + 1)
     .fill(0)
     .map(() => new Array(target + 1).fill(0));
 

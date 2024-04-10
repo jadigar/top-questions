@@ -1,7 +1,7 @@
-import { SeatManager } from "./solution";
+import { SeatManager } from './solution';
 
-describe("Seat Reservation Manager:", () => {
-  it("SeatManager should pass test 1", () => {
+describe('Seat Reservation Manager:', () => {
+  it('SeatManager should pass test 1', () => {
     const seatManager = new SeatManager(5); // Initializes a SeatManager with 5 seats.
     expect(seatManager.reserve()).toEqual(1); // All seats are available, so return the lowest numbered seat, which is 1.
     expect(seatManager.reserve()).toEqual(2); // The available seats are [2,3,4,5], so return the lowest of them, which is 2.
@@ -13,7 +13,7 @@ describe("Seat Reservation Manager:", () => {
     seatManager.unreserve(5); // Unreserve seat 5, so now the available seats are [5].
   });
 
-  it("SeatManager should pass test 2", () => {
+  it('SeatManager should pass test 2', () => {
     const seatManager = new SeatManager(4);
     expect(seatManager.reserve()).toEqual(1);
     seatManager.unreserve(1);

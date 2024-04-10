@@ -1,6 +1,6 @@
 export function spiralOrder(matrix: number[][]): number[] {
-  let m = matrix.length;
-  let n = matrix[0].length;
+  const m = matrix.length;
+  const n = matrix[0].length;
   enum Direction {
     Right,
     Down,
@@ -14,8 +14,8 @@ export function spiralOrder(matrix: number[][]): number[] {
   let right = n - 1;
   let bottom = m - 1;
   let left = 0;
-  let result = [matrix[i][j]];
-  for (let index = 0; index < m * n - 1; ) {
+  const result = [matrix[i][j]];
+  for (let index = 0; index < m * n - 1;) {
     if (direction === Direction.Right) {
       if (j < right) {
         j++;

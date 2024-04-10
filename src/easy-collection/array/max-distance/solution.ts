@@ -1,5 +1,5 @@
 export function maxDistance(colors: number[]): number {
-  let n = colors.length - 1;
+  const n = colors.length - 1;
   let start = 0;
   let end = n;
   // Find 'end' with a different color than the first house.

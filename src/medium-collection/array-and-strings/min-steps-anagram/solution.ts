@@ -1,7 +1,7 @@
 export function minSteps(s: string, t: string): number {
-  let sMap = new Map<string, number>();
-  let tMap = new Map<string, number>();
-  let n = s.length;
+  const sMap = new Map<string, number>();
+  const tMap = new Map<string, number>();
+  const n = s.length;
   for (let i = 0; i < n; i++) {
     if (!sMap.has(s[i])) {
       sMap.set(s[i], 0);

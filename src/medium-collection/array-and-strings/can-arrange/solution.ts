@@ -1,8 +1,8 @@
 export function canArrange(arr: number[], k: number): boolean {
-  let freq = new Array(k).fill(0);
+  const freq = new Array(k).fill(0);
   for (let i = 0; i < arr.length; i++) {
     // Making sure that modulo is positive
-    let mod = ((arr[i] % k) + k) % k;
+    const mod = ((arr[i] % k) + k) % k;
     freq[mod]++;
   }
   // If k is even, check if frequency of k/2 is even

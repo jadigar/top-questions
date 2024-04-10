@@ -1,4 +1,4 @@
-type StrMap = { [k: string]: number };
+type StrMap = Record<string, number>;
 export function isAnagram(s: string, t: string): boolean {
   if (s.length !== t.length) {
     return false;

@@ -1,9 +1,7 @@
 export function cherryPickup(grid: number[][]): number {
   const rows = grid.length;
   const cols = grid[0].length;
-  let dp = Array.from({ length: rows }, () =>
-    Array.from({ length: cols }, () => Array(cols).fill(-1)),
-  );
+  const dp = Array.from({ length: rows }, () => Array.from({ length: cols }, () => Array(cols).fill(-1)));
   return dfs(grid, dp, 0, 0, cols - 1);
 }
 
@@ -17,12 +15,12 @@ function dfs(
   const rows = grid.length;
   const cols = grid[0].length;
   if (
-    row < 0 ||
-    row >= rows ||
-    col1 < 0 ||
-    col1 >= cols ||
-    col2 < 0 ||
-    col2 >= cols
+    row < 0
+    || row >= rows
+    || col1 < 0
+    || col1 >= cols
+    || col2 < 0
+    || col2 >= cols
   ) {
     return 0;
   }

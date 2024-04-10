@@ -15,10 +15,10 @@ export function isValidSudoku(board: string[][]): boolean {
 }
 
 function checkRow(board: string[][], rowIndex: number): boolean {
-  let rowSet = new Set<string>();
+  const rowSet = new Set<string>();
   for (let index = 0; index < board.length; index++) {
     const element = board[rowIndex][index];
-    if (element === ".") {
+    if (element === '.') {
       continue;
     }
     if (rowSet.has(element)) {
@@ -30,10 +30,10 @@ function checkRow(board: string[][], rowIndex: number): boolean {
 }
 
 function checkColumn(board: string[][], columnIndex: number): boolean {
-  let columnSet = new Set<string>();
+  const columnSet = new Set<string>();
   for (let index = 0; index < board.length; index++) {
     const element = board[index][columnIndex];
-    if (element === ".") {
+    if (element === '.') {
       continue;
     }
     if (columnSet.has(element)) {
@@ -45,11 +45,11 @@ function checkColumn(board: string[][], columnIndex: number): boolean {
 }
 
 function checkBox(board: string[][], left: number, top: number): boolean {
-  let boxSet = new Set<string>();
+  const boxSet = new Set<string>();
   for (let i = top; i < top + 3; i++) {
     for (let k = left; k < left + 3; k++) {
       const element = board[i][k];
-      if (element === ".") {
+      if (element === '.') {
         continue;
       }
       if (boxSet.has(element)) {

@@ -1,7 +1,7 @@
-import { findCheapestPrice } from "./solution";
+import { findCheapestPrice } from './solution';
 
-describe("Cheapest Flights Within K Stops:", () => {
-  it("findCheapestPrice should return 700 for test 1", () => {
+describe('Cheapest Flights Within K Stops:', () => {
+  it('findCheapestPrice should return 700 for test 1', () => {
     const n = 4;
     const flights = [
       [0, 1, 100],
@@ -17,7 +17,7 @@ describe("Cheapest Flights Within K Stops:", () => {
     expect(result).toEqual(700);
   });
 
-  it("findCheapestPrice should return 200 for test 2", () => {
+  it('findCheapestPrice should return 200 for test 2', () => {
     const n = 3;
     const flights = [
       [0, 1, 100],
@@ -31,7 +31,7 @@ describe("Cheapest Flights Within K Stops:", () => {
     expect(result).toEqual(200);
   });
 
-  it("findCheapestPrice should return 500 for test 3", () => {
+  it('findCheapestPrice should return 500 for test 3', () => {
     const n = 3;
     const flights = [
       [0, 1, 100],
@@ -45,7 +45,7 @@ describe("Cheapest Flights Within K Stops:", () => {
     expect(result).toEqual(500);
   });
 
-  it("findCheapestPrice should return 400 for test 4", () => {
+  it('findCheapestPrice should return 400 for test 4', () => {
     const n = 4;
     const flights = [
       [0, 1, 100],

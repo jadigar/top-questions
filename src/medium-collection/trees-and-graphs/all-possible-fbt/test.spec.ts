@@ -1,13 +1,11 @@
-import { treeNodeToArray } from "../common";
-import { allPossibleFBT } from "./solution";
+import { treeNodeToArray } from '../common';
+import { allPossibleFBT } from './solution';
 
-describe("All Possible Full Binary Trees:", () => {
-  it("allPossibleFBT should return correct result for n = 7", () => {
+describe('All Possible Full Binary Trees:', () => {
+  it('allPossibleFBT should return correct result for n = 7', () => {
     const n = 7;
     const result = allPossibleFBT(n);
-    const resultArrays = result.map((tree) => {
-      return treeNodeToArray(tree);
-    });
+    const resultArrays = result.map((tree) => treeNodeToArray(tree));
     expect(
       compareArrays(resultArrays, [
         [0, 0, 0, null, null, 0, 0, null, null, 0, 0],
@@ -16,30 +14,26 @@ describe("All Possible Full Binary Trees:", () => {
         [0, 0, 0, 0, 0, null, null, null, null, 0, 0],
         [0, 0, 0, 0, 0, null, null, 0, 0],
       ]),
-    ).toBeTrue();
+    ).toBeTruthy();
   });
 
-  it("allPossibleFBT should return correct result for n = 3", () => {
+  it('allPossibleFBT should return correct result for n = 3', () => {
     const n = 3;
     const result = allPossibleFBT(n);
-    const resultArrays = result.map((tree) => {
-      return treeNodeToArray(tree);
-    });
-    expect(compareArrays(resultArrays, [[0, 0, 0]])).toBeTrue();
+    const resultArrays = result.map((tree) => treeNodeToArray(tree));
+    expect(compareArrays(resultArrays, [[0, 0, 0]])).toBeTruthy();
   });
 
-  it("allPossibleFBT should return correct result for n = 5", () => {
+  it('allPossibleFBT should return correct result for n = 5', () => {
     const n = 5;
     const result = allPossibleFBT(n);
-    const resultArrays = result.map((tree) => {
-      return treeNodeToArray(tree);
-    });
+    const resultArrays = result.map((tree) => treeNodeToArray(tree));
     expect(
       compareArrays(resultArrays, [
         [0, 0, 0, null, null, 0, 0],
         [0, 0, 0, 0, 0],
       ]),
-    ).toBeTrue();
+    ).toBeTruthy();
   });
 });
 
@@ -50,11 +44,11 @@ function compareArrays(
   if (left.length !== right.length) {
     return false;
   }
-  let leftStrings = left.map((item) => item.join(","));
-  let rightStrings = right.map((item) => item.join(","));
+  const leftStrings = left.map((item) => item.join(','));
+  const rightStrings = right.map((item) => item.join(','));
 
   return (
-    leftStrings.every((l) => rightStrings.includes(l)) &&
-    rightStrings.every((r) => leftStrings.includes(r))
+    leftStrings.every((l) => rightStrings.includes(l))
+    && rightStrings.every((r) => leftStrings.includes(r))
   );
 }

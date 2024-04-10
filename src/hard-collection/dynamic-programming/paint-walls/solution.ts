@@ -1,8 +1,6 @@
 export function paintWalls(cost: number[], time: number[]): number {
   const n: number = cost.length;
-  const memo: number[][] = Array.from({ length: n }, () =>
-    Array(n + 1).fill(-1),
-  );
+  const memo: number[][] = Array.from({ length: n }, () => Array(n + 1).fill(-1));
 
   return dp(0, n, cost, time, memo);
 }

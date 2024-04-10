@@ -8,10 +8,10 @@ export function sortArrayByParity(nums: number[]): number[] {
     // if we already found the odd number
     // and found the even number after it - swap them
     if (oddIndex !== -1 && nums[i] % 2 === 0) {
-      let temp = nums[i];
+      const temp = nums[i];
       nums[i] = nums[oddIndex];
       nums[oddIndex] = temp;
-      oddIndex = oddIndex + 1;
+      oddIndex += 1;
     }
   }
   return nums;

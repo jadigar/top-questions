@@ -4,15 +4,15 @@ export function jobScheduling(
   profit: number[],
 ): number {
   const n = startTime.length;
-  let jobs: { start: number; end: number; profit: number }[] = [];
+  const jobs: { start: number; end: number; profit: number }[] = [];
   for (let i = 0; i < n; i++) {
     jobs.push({ start: startTime[i], end: endTime[i], profit: profit[i] });
   }
   jobs.sort((a, b) => a.end - b.end);
-  let dp = new Array(n + 1);
+  const dp = new Array(n + 1);
   dp[0] = jobs[0].profit;
   for (let i = 1; i < n; i++) {
-    let prevIndex = prevNonConflictingJobIndex(jobs, i);
+    const prevIndex = prevNonConflictingJobIndex(jobs, i);
     let currentProfit = jobs[i].profit;
     if (prevIndex !== -1) {
       currentProfit += dp[prevIndex];
@@ -29,7 +29,7 @@ function prevNonConflictingJobIndex(
   let firstIndex = 0;
   let lastIndex = index - 1;
   while (firstIndex <= lastIndex) {
-    let mid = firstIndex + Math.floor((lastIndex - firstIndex) / 2);
+    const mid = firstIndex + Math.floor((lastIndex - firstIndex) / 2);
     if (jobs[mid].end <= jobs[index].start) {
       if (jobs[mid + 1].end <= jobs[index].start) {
         firstIndex = mid + 1;

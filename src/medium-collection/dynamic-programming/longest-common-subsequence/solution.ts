@@ -1,7 +1,7 @@
 export function longestCommonSubsequence(text1: string, text2: string): number {
-  let m = text1.length;
-  let n = text2.length;
-  let dp: number[][] = new Array(m + 1);
+  const m = text1.length;
+  const n = text2.length;
+  const dp: number[][] = new Array(m + 1);
 
   for (let i = 0; i <= m; i++) {
     dp[i] = new Array(n + 1).fill(0);

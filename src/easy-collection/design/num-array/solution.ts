@@ -1,5 +1,6 @@
 export class NumArray {
   sums: number[] = [];
+
   constructor(nums: number[]) {
     this.sums = [nums[0]];
     for (let i = 1; i < nums.length; i++) {

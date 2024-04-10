@@ -13,7 +13,7 @@ export function getSkyline(buildings: number[][]): number[][] {
   edges.sort((a, b) => a - b);
 
   // 'answer' for skyline key points.
-  const answer = new Array();
+  const answer = [];
 
   // For each position, draw an imaginary vertical line.
   edges.forEach((edge) => {

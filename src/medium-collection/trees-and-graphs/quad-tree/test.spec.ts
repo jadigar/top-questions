@@ -1,8 +1,8 @@
-import { quadTreeNodeToArray } from "../common";
-import { construct } from "./solution";
+import { quadTreeNodeToArray } from '../common';
+import { construct } from './solution';
 
-describe("Construct Quad Tree", () => {
-  it("construct should pass test 1", () => {
+describe('Construct Quad Tree', () => {
+  it('construct should pass test 1', () => {
     const grid = [
       [0, 1],
       [1, 0],
@@ -18,7 +18,7 @@ describe("Construct Quad Tree", () => {
     ]);
   });
 
-  it("construct should pass test 2", () => {
+  it('construct should pass test 2', () => {
     const grid = [
       [1, 1, 1, 1, 0, 0, 0, 0],
       [1, 1, 1, 1, 0, 0, 0, 0],
@@ -44,7 +44,7 @@ describe("Construct Quad Tree", () => {
     ]);
   });
 
-  it("construct should pass test 3", () => {
+  it('construct should pass test 3', () => {
     const grid = [
       [1, 1, 1, 1],
       [1, 1, 1, 0],
@@ -70,7 +70,7 @@ describe("Construct Quad Tree", () => {
     ]);
   });
 
-  it("construct should pass test 4", () => {
+  it('construct should pass test 4', () => {
     const grid = [
       [1, 1],
       [1, 1],

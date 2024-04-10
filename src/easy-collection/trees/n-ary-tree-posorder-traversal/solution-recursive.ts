@@ -1,4 +1,4 @@
-import { Node } from "./node";
+import type { Node } from './node';
 
 export function postorder(root: Node | null): number[] {
   if (root === null) {

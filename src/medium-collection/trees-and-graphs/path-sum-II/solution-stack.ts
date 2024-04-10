@@ -1,11 +1,11 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function pathSum(root: TreeNode | null, targetSum: number): number[][] {
   if (root === null) {
     return [];
   }
-  let result: number[][] = [];
-  let stack: { node: TreeNode; sum: number; path: number[] }[] = [];
+  const result: number[][] = [];
+  const stack: { node: TreeNode; sum: number; path: number[] }[] = [];
 
   stack.push({ node: root, sum: 0, path: [] });
 
@@ -16,11 +16,11 @@ export function pathSum(root: TreeNode | null, targetSum: number): number[][] {
     path = [...path, node.val];
 
     if (node.left !== null) {
-      stack.push({ node: node.left, sum: sum, path: path });
+      stack.push({ node: node.left, sum, path });
     }
 
     if (node.right !== null) {
-      stack.push({ node: node.right, sum: sum, path: path });
+      stack.push({ node: node.right, sum, path });
     }
 
     if (node.left === null && node.right === null && sum === targetSum) {

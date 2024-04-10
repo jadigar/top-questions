@@ -1,7 +1,9 @@
 // Definition for a binary tree node.
 export class TreeNode {
   val: number;
+
   left: TreeNode | null;
+
   right: TreeNode | null;
 
   constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
@@ -71,10 +73,10 @@ export function treeNodeToArray(root: TreeNode | null): (number | null)[] {
   if (!root) {
     return [];
   }
-  let result: (number | null)[] = [];
-  let queue: (TreeNode | null)[] = [root];
+  const result: (number | null)[] = [];
+  const queue: (TreeNode | null)[] = [root];
   while (queue.length) {
-    let node = queue.shift();
+    const node = queue.shift();
     result.push(node?.val ?? null);
     if (node?.left || node?.right) {
       queue.push(node.left || null);
@@ -87,8 +89,11 @@ export function treeNodeToArray(root: TreeNode | null): (number | null)[] {
 // Definition for Node.
 export class Node {
   val: number;
+
   left: Node | null;
+
   right: Node | null;
+
   next: Node | null;
 
   constructor(val?: number, left?: Node, right?: Node, next?: Node) {
@@ -103,17 +108,17 @@ export function nodeToArray(root: Node | null): (number | string)[] {
   if (!root) {
     return [];
   }
-  let result: (number | string)[] = [];
-  let queue: (Node | null)[] = [root];
+  const result: (number | string)[] = [];
+  const queue: (Node | null)[] = [root];
   while (queue.length) {
-    let node = queue.shift();
-    result.push(node?.val ?? "#");
+    const node = queue.shift();
+    result.push(node?.val ?? '#');
     if (node?.left || node?.right) {
       queue.push(node.left || null);
       queue.push(node.right || null);
     }
     if (node?.next === null) {
-      result.push("#");
+      result.push('#');
     }
   }
   return result;

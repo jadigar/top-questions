@@ -1,9 +1,9 @@
 export function largestRectangleArea(heights: number[]): number {
   let result = 0;
-  const length = heights.length;
+  const { length } = heights;
   const cache = new Map<number, number[]>();
   for (let i = 0; i < length; i++) {
-    let height = heights[i];
+    const height = heights[i];
     let count = 1;
     const cached = cache.get(i - 1);
     if (cached && cached[0] === height) {

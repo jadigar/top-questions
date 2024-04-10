@@ -1,15 +1,15 @@
-import { divisorGame } from "./solution";
+import { divisorGame } from './solution';
 
-describe("Divisor Game:", () => {
-  it("divisorGame should return true for n = 2", () => {
+describe('Divisor Game:', () => {
+  it('divisorGame should return true for n = 2', () => {
     const n = 2;
     const result = divisorGame(n);
-    expect(result).toBeTrue();
+    expect(result).toBeTruthy();
   });
 
-  it("divisorGame should return false for n = 3", () => {
+  it('divisorGame should return false for n = 3', () => {
     const n = 3;
     const result = divisorGame(n);
-    expect(result).toBeFalse();
+    expect(result).toBeFalsy();
   });
 });

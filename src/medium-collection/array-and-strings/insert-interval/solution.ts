@@ -2,7 +2,7 @@ export function insert(
   intervals: number[][],
   newInterval: number[],
 ): number[][] {
-  let result: number[][] = [];
+  const result: number[][] = [];
 
   let i = 0;
   // Add all intervals ending before newInterval starts

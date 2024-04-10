@@ -58,8 +58,8 @@ class MaxHeap {
     let index = this.piles.length - 1;
     // While the item is not at the root and has a higher priority than its parent
     while (
-      index > 0 &&
-      this.piles[index] > this.piles[Math.floor((index - 1) / 2)]
+      index > 0
+      && this.piles[index] > this.piles[Math.floor((index - 1) / 2)]
     ) {
       // Swap the item with its parent
       [this.piles[index], this.piles[Math.floor((index - 1) / 2)]] = [

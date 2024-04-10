@@ -4,7 +4,7 @@ export function fourSumCount(
   nums3: number[],
   nums4: number[],
 ): number {
-  let map = new Map<number, number>();
+  const map = new Map<number, number>();
   for (let i = 0; i < nums1.length; i++) {
     for (let j = 0; j < nums1.length; j++) {
       const sum = nums1[i] + nums2[j];

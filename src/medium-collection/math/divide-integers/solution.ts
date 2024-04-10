@@ -19,8 +19,8 @@ export function divide(dividend: number, divisor: number): number {
     divisor = -divisor;
   }
 
-  let doubles: number[] = [];
-  let powersOfTwo: number[] = [];
+  const doubles: number[] = [];
+  const powersOfTwo: number[] = [];
 
   /* Nothing too exciting here, we're just making a list of doubles of 1 and
    * the divisor. This is pretty much the same as Approach 2, except we're
@@ -38,6 +38,7 @@ export function divide(dividend: number, divisor: number): number {
   }
 
   let quotient = 0;
+
   /* Go from largest double to smallest, checking if the current double fits.
    * into the remainder of the dividend. */
   for (let i = doubles.length - 1; i >= 0; i--) {

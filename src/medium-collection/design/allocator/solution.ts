@@ -2,13 +2,14 @@ export class Allocator {
   occupied: Map<number, number[][]>;
 
   mArr: number[];
+
   constructor(n: number) {
     this.occupied = new Map();
     this.mArr = new Array(n).fill(0);
   }
 
   allocate(size: number, mID: number): number {
-    let index = this.findIndex(size);
+    const index = this.findIndex(size);
     if (index === -1) {
       return index;
     }
@@ -24,7 +25,7 @@ export class Allocator {
   }
 
   free(mID: number): number {
-    let ranges = this.occupied.get(mID);
+    const ranges = this.occupied.get(mID);
     let count = 0;
     ranges?.forEach(([start, to]) => {
       for (let i = start; i < to; i++) {

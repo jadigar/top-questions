@@ -1,11 +1,11 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function zigzagLevelOrder(root: TreeNode | null): number[][] {
   if (!root) {
     return [];
   }
-  let result: number[][] = [];
-  let queue = [root];
+  const result: number[][] = [];
+  const queue = [root];
   let level = 0;
   while (queue.length) {
     const queueLength = queue.length;

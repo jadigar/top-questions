@@ -1,6 +1,6 @@
 export function isPathCrossing(path: string): boolean {
-  let visited = new Set<string>();
-  let point = {
+  const visited = new Set<string>();
+  const point = {
     x: 0,
     y: 0,
     toString() {
@@ -12,16 +12,16 @@ export function isPathCrossing(path: string): boolean {
 
   for (const direction of path) {
     switch (direction) {
-      case "N":
+      case 'N':
         point.y++;
         break;
-      case "E":
+      case 'E':
         point.x++;
         break;
-      case "S":
+      case 'S':
         point.y--;
         break;
-      case "W":
+      case 'W':
         point.x--;
         break;
     }

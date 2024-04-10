@@ -1,7 +1,7 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
-export function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
-  let arr: number[] = [];
+export function mergeKLists(lists: (ListNode | null)[]): ListNode | null {
+  const arr: number[] = [];
   for (let i = 0; i < lists.length; i++) {
     let l = lists[i];
     while (l) {
@@ -13,7 +13,7 @@ export function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
     return null;
   }
   arr.sort((a, b) => a - b);
-  let result = new ListNode(arr[0]);
+  const result = new ListNode(arr[0]);
   let temp = result;
   for (let i = 1; i < arr.length; i++) {
     temp.next = new ListNode(arr[i]);

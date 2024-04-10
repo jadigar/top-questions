@@ -1,5 +1,5 @@
 export function makeEqual(words: string[]): boolean {
-  let charNum = new Map<string, number>();
+  const charNum = new Map<string, number>();
   for (const word of words) {
     for (const char of word) {
       if (!charNum.has(char)) {

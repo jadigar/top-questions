@@ -1,7 +1,7 @@
 export function wordBreak(s: string, wordDict: string[]): string[] {
   const wordSet = new Set<string>(wordDict);
   const sentences = dfs(s, wordSet, new Map<string, string[][]>());
-  const result = sentences.map((sentence) => sentence.join(" "));
+  const result = sentences.map((sentence) => sentence.join(' '));
   return result;
 }
 

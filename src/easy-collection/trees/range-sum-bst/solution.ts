@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function rangeSumBST(
   root: TreeNode | null,
@@ -11,10 +11,9 @@ export function rangeSumBST(
   }
 
   if (root.val >= low && root.val <= high) {
-    result =
-      root.val +
-      rangeSumBST(root.left, low, high) +
-      rangeSumBST(root.right, low, high);
+    result = root.val
+      + rangeSumBST(root.left, low, high)
+      + rangeSumBST(root.right, low, high);
   }
   if (root.val < low) {
     result = rangeSumBST(root.right, low, high);

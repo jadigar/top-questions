@@ -1,6 +1,6 @@
 export function findMissingAndRepeatedValues(grid: number[][]): number[] {
-  let n = grid.length;
-  let numbers = new Array(n * n).fill(0);
+  const n = grid.length;
+  const numbers = new Array(n * n).fill(0);
   let duplicated = 0;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {

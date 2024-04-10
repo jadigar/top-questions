@@ -1,13 +1,13 @@
-import { maxFrequencyElements } from "./solution";
+import { maxFrequencyElements } from './solution';
 
-describe("Count Elements With Maximum Frequency:", () => {
-  it("maxFrequencyElements should return 4 for nums = [1,2,2,3,1,4]", () => {
+describe('Count Elements With Maximum Frequency:', () => {
+  it('maxFrequencyElements should return 4 for nums = [1,2,2,3,1,4]', () => {
     const nums = [1, 2, 2, 3, 1, 4];
     const result = maxFrequencyElements(nums);
     expect(result).toEqual(4);
   });
 
-  it("maxFrequencyElements should return 5 for nums = [1,2,3,4,5]", () => {
+  it('maxFrequencyElements should return 5 for nums = [1,2,3,4,5]', () => {
     const nums = [1, 2, 3, 4, 5];
     const result = maxFrequencyElements(nums);
     expect(result).toEqual(5);

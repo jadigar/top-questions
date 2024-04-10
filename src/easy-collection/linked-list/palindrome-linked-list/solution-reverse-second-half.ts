@@ -1,12 +1,12 @@
-import { NullableListNode } from "../common";
+import type { NullableListNode } from '../common';
 
 export function isPalindrome(head: NullableListNode): boolean {
   if (!head) {
     return true;
   }
   // Find the end of first half and reverse second half.
-  let firstHalfEnd: NullableListNode = endOfFirstHalf(head);
-  let secondHalfStart: NullableListNode = reverseList(
+  const firstHalfEnd: NullableListNode = endOfFirstHalf(head);
+  const secondHalfStart: NullableListNode = reverseList(
     firstHalfEnd?.next ?? null,
   );
 
@@ -32,8 +32,8 @@ export function isPalindrome(head: NullableListNode): boolean {
 function endOfFirstHalf(head: NullableListNode): NullableListNode {
   let fast: NullableListNode = head;
   let slow: NullableListNode = head;
-  while (fast?.next && fast?.next.next) {
-    fast = fast?.next.next;
+  while (fast?.next && fast.next.next) {
+    fast = fast.next.next;
     slow = slow?.next ?? null;
   }
   return slow;
@@ -43,7 +43,7 @@ function reverseList(head: NullableListNode): NullableListNode {
   let prev: NullableListNode = null;
   let curr: NullableListNode = head;
   while (curr) {
-    let nextTemp: NullableListNode = curr?.next;
+    const nextTemp: NullableListNode = curr.next;
     curr.next = prev;
     prev = curr;
     curr = nextTemp;

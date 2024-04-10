@@ -1,7 +1,7 @@
 export function sortColors(nums: number[]): void {
-  let zeroIndex = 0,
-    currIndex = 0,
-    twoIndex = nums.length - 1;
+  let zeroIndex = 0;
+  let currIndex = 0;
+  let twoIndex = nums.length - 1;
   while (currIndex <= twoIndex) {
     if (nums[currIndex] === 0) {
       swap(currIndex++, zeroIndex++, nums);

@@ -3,8 +3,8 @@ export function closeStrings(word1: string, word2: string): boolean {
     return false;
   }
 
-  let word1Map = new Map<string, number>();
-  let word2Map = new Map<string, number>();
+  const word1Map = new Map<string, number>();
+  const word2Map = new Map<string, number>();
 
   for (const letter of word1) {
     if (!word1Map.has(letter)) {
@@ -26,10 +26,10 @@ export function closeStrings(word1: string, word2: string): boolean {
     }
   }
 
-  let word1Counts: number[] = Array.from(word1Map.values());
+  const word1Counts: number[] = Array.from(word1Map.values());
   word1Counts.sort((a, b) => a - b);
 
-  let word2Counts: number[] = Array.from(word2Map.values());
+  const word2Counts: number[] = Array.from(word2Map.values());
   word2Counts.sort((a, b) => a - b);
 
   for (let i = 0; i < word1Counts.length; i++) {

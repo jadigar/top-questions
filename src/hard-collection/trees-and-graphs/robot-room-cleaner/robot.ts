@@ -1,7 +1,8 @@
-import { uniquePaths } from "../../../medium-collection/dynamic-programming/unique-paths/solution";
+import { uniquePaths } from '../../../medium-collection/dynamic-programming/unique-paths/solution';
 
 export class Robot {
   private directionIdx = Direction.Up;
+
   get direction() {
     const directions = [
       [-1, 0],
@@ -13,10 +14,11 @@ export class Robot {
   }
 
   constructor(
-    private room: number[][],
+    private readonly room: number[][],
     private row: number,
     private col: number,
   ) {}
+
   // Returns true if the cell in front is open and robot moves into the cell.
   // Returns false if the cell in front is blocked and robot stays in the current cell.
   move(): boolean {

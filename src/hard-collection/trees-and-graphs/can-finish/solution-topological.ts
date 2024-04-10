@@ -31,7 +31,7 @@ export function canFinish(
   });
   let removedEdges = 0;
   while (rootCourses.length > 0) {
-    let course = rootCourses.pop()!;
+    const course = rootCourses.pop()!;
     graph.get(course)!.nextNodes.forEach((nextCourse) => {
       const nextCourseNode = graph.get(nextCourse)!;
       nextCourseNode.depth--;

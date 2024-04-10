@@ -1,8 +1,6 @@
 export function getLengthOfOptimalCompression(s: string, k: number): number {
   const n = s.length;
-  const dp: number[][] = Array.from({ length: n + 1 }, () =>
-    Array(k + 1).fill(Infinity),
-  );
+  const dp: number[][] = Array.from({ length: n + 1 }, () => Array(k + 1).fill(Infinity));
 
   // Function to calculate the length of the encoded count
   const getEncodedLength = (count: number): number => {

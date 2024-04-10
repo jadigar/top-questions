@@ -4,7 +4,7 @@ export function validPath(
   source: number,
   destination: number,
 ): boolean {
-  let hashSet = new Map<number, Set<number>>();
+  const hashSet = new Map<number, Set<number>>();
   edges.forEach(([left, right]) => {
     if (!hashSet.has(left)) {
       hashSet.set(left, new Set<number>());

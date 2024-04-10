@@ -1,8 +1,8 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
 export function partition(head: ListNode | null, x: number): ListNode | null {
-  let left = new ListNode();
-  let right = new ListNode();
+  const left = new ListNode();
+  const right = new ListNode();
   let headNode = head;
   // create two partitions for storing nodes
   let leftNode = left;

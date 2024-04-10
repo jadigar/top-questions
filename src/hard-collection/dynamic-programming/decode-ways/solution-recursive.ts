@@ -10,7 +10,7 @@ function dfs(index: number, s: string, map: Map<number, number>): number {
   if (index === s.length) {
     return 1;
   }
-  if (s[index] === "0") {
+  if (s[index] === '0') {
     return 0;
   }
   if (index === s.length - 1) {

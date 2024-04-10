@@ -8,7 +8,7 @@ export function myPow(x: number, n: number): number {
   let curProd = x;
   for (let i = N; i > 0; i = Math.trunc(i / 2)) {
     if (i % 2 === 1) {
-      result = result * curProd;
+      result *= curProd;
     }
     curProd *= curProd;
   }

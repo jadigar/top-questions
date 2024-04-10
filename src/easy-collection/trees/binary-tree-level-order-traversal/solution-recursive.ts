@@ -1,7 +1,7 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function levelOrder(root: TreeNode | null): number[][] {
-  let levels: number[][] = [];
+  const levels: number[][] = [];
   addLevel(root, levels, 0);
   return levels;
 }

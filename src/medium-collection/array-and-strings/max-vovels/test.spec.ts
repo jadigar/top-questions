@@ -1,35 +1,35 @@
-import { maxVowels } from "./solution";
+import { maxVowels } from './solution';
 
-describe("Maximum Number of Vowels in a Substring of Given Length", () => {
+describe('Maximum Number of Vowels in a Substring of Given Length', () => {
   it('maxVowels should return 3 for s = "abciiidef", k = 3', () => {
-    const s = "abciiidef";
+    const s = 'abciiidef';
     const k = 3;
     const result = maxVowels(s, k);
     expect(result).toEqual(3);
   });
 
   it('maxVowels should return 2 for s = "aeiou", k = 2', () => {
-    const s = "aeiou";
+    const s = 'aeiou';
     const k = 2;
     const result = maxVowels(s, k);
     expect(result).toEqual(2);
   });
 
   it('maxVowels should return 2 for s = "leetcode", k = 3', () => {
-    const s = "leetcode";
+    const s = 'leetcode';
     const k = 2;
     const result = maxVowels(s, k);
     expect(result).toEqual(2);
   });
 
   it('maxVowels should return 4 for s = "weallloveyou", k = 7', () => {
-    const s = "weallloveyou";
+    const s = 'weallloveyou';
     const k = 7;
     const result = maxVowels(s, k);
     expect(result).toEqual(4);
   });
   it('maxVowels should return 4 for s = "loveyou", k = 7', () => {
-    const s = "loveyou";
+    const s = 'loveyou';
     const k = 7;
     const result = maxVowels(s, k);
     expect(result).toEqual(4);

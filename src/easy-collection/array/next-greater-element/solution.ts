@@ -1,5 +1,5 @@
 export function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
-  const map: Map<number, number> = new Map();
+  const map = new Map<number, number>();
   const stack: number[] = [];
   for (const num of nums2) {
     while (stack.length && stack[stack.length - 1] < num) {

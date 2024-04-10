@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import type { ListNode } from '../common';
 
 export function reverseList(head: ListNode | null): ListNode | null {
   if (!head) {

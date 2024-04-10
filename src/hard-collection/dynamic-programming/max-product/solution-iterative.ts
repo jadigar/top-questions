@@ -6,9 +6,9 @@ export function maxProduct(nums: number[]): number {
   let result = max;
 
   for (let i = 1; i < nums.length; i++) {
-    let curr = nums[i];
-    let maxProd = max * curr;
-    let minProd = min * curr;
+    const curr = nums[i];
+    const maxProd = max * curr;
+    const minProd = min * curr;
     max = Math.max(curr, maxProd, minProd);
     min = Math.min(curr, maxProd, minProd);
 

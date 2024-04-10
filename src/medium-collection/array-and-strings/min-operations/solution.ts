@@ -1,5 +1,5 @@
 export function minOperations(nums: number[]): number {
-  let countMap = new Map<number, number>();
+  const countMap = new Map<number, number>();
   for (const num of nums) {
     if (!countMap.has(num)) {
       countMap.set(num, 0);

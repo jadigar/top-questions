@@ -23,10 +23,9 @@ function pop(
   }
   let maxResult = 0;
   for (let i = left; i <= right; i++) {
-    const result =
-      nums[left - 1] * nums[i] * nums[right + 1] +
-      pop(nums, left, i - 1, map) +
-      pop(nums, i + 1, right, map);
+    const result = nums[left - 1] * nums[i] * nums[right + 1]
+      + pop(nums, left, i - 1, map)
+      + pop(nums, i + 1, right, map);
     maxResult = Math.max(maxResult, result);
   }
   map[left][right] = maxResult;

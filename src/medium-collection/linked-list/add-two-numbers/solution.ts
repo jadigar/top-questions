@@ -1,16 +1,16 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
 export function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null,
 ): ListNode | null {
-  let result = new ListNode(0);
+  const result = new ListNode(0);
   let currentNode = result;
   let carry = 0;
   while (l1 || l2 || carry) {
-    let left = l1?.val ?? 0;
-    let right = l2?.val ?? 0;
-    let sum = left + right + carry;
+    const left = l1?.val ?? 0;
+    const right = l2?.val ?? 0;
+    const sum = left + right + carry;
     carry = Math.trunc(sum / 10);
     currentNode.next = new ListNode(sum % 10);
     currentNode = currentNode.next;

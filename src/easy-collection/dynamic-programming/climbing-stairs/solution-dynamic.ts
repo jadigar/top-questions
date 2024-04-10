@@ -1,5 +1,5 @@
 export function climbStairs(n: number): number {
-  let dynamic: number[] = [];
+  const dynamic: number[] = [];
   dynamic[1] = 1;
   dynamic[2] = 2;
   for (let i = 3; i <= n; i++) {

@@ -20,15 +20,15 @@ function backtrack(
     return true;
   }
   if (
-    i < 0 ||
-    i >= board.length ||
-    j < 0 ||
-    j >= board[0].length ||
-    word[index] !== board[i][j]
+    i < 0
+    || i >= board.length
+    || j < 0
+    || j >= board[0].length
+    || word[index] !== board[i][j]
   ) {
     return false;
   }
-  board[i][j] = "#";
+  board[i][j] = '#';
 
   const rowOffset = [0, 1, 0, -1];
   const colOffset = [1, 0, -1, 0];

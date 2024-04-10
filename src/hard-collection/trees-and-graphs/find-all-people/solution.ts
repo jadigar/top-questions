@@ -1,5 +1,6 @@
 class UnionFind {
   private parent: number[];
+
   private rank: number[];
 
   constructor(n: number) {
@@ -15,8 +16,8 @@ class UnionFind {
   }
 
   unite(x: number, y: number): void {
-    let px = this.find(x);
-    let py = this.find(y);
+    const px = this.find(x);
+    const py = this.find(y);
     if (px !== py) {
       if (this.rank[px] > this.rank[py]) {
         this.parent[py] = px;
@@ -46,7 +47,7 @@ export function findAllPeople(
 ): number[] {
   meetings.sort((a, b) => a[2] - b[2]);
 
-  const sameTimeMeetings: Map<number, Array<[number, number]>> = new Map();
+  const sameTimeMeetings = new Map<number, [number, number][]>();
   meetings.forEach(([x, y, t]) => {
     if (!sameTimeMeetings.has(t)) sameTimeMeetings.set(t, []);
     sameTimeMeetings.get(t)!.push([x, y]);

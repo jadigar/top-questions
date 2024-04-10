@@ -1,6 +1,6 @@
 export function rob(nums: number[]): number {
-  let N = nums.length;
-  let memo = new Array(N + 1);
+  const N = nums.length;
+  const memo = new Array(N + 1);
   // if there are no houses there nothing to rob
   memo[N] = 0;
   // if this is the last house let's rob it

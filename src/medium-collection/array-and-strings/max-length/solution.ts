@@ -1,5 +1,5 @@
 export function maxLength(arr: string[]): number {
-  let result = backtrack(arr, 0, "", 0);
+  const result = backtrack(arr, 0, '', 0);
   return result;
 }
 
@@ -24,7 +24,7 @@ function backtrack(
 }
 
 function isUniqueSubsequence(current: string, add: string): boolean {
-  let charSet = new Set(current);
+  const charSet = new Set(current);
   for (const char of add) {
     if (charSet.has(char)) {
       return false;

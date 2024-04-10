@@ -1,15 +1,18 @@
 // Define the disjoint-set structure.
 class UnionFind {
   root: number[];
+
   constructor(n: number) {
     this.root = [];
     for (let i = 0; i < n; ++i) {
       this.root[i] = i;
     }
   }
+
   find(x: number): number {
     return this.root[x] == x ? x : (this.root[x] = this.find(this.root[x]));
   }
+
   union(x: number, y: number): void {
     this.root[x] = this.root[y];
   }
@@ -44,7 +47,7 @@ export function getSkyline(buildings: number[][]): number[][] {
   buildings.forEach(([leftEdge, rightEdge, height]) => {
     // For current x position, get the corresponding index.
     let leftIndex = edgeIndexMap.get(leftEdge)!;
-    let rightIndex = edgeIndexMap.get(rightEdge)!;
+    const rightIndex = edgeIndexMap.get(rightEdge)!;
 
     // While we haven't update the the root of 'left_idx':
     while (leftIndex < rightIndex) {
@@ -65,10 +68,9 @@ export function getSkyline(buildings: number[][]): number[][] {
 
   // Finally, we just need to iterate over updated heights, and
   // add every skyline key point to 'answer'.
-  let answer: number[][] = [];
+  const answer: number[][] = [];
   for (let i = 0; i < n; ++i) {
-    if (i == 0 || heights[i] != heights[i - 1])
-      answer.push([edges[i], heights[i]]);
+    if (i == 0 || heights[i] != heights[i - 1]) answer.push([edges[i], heights[i]]);
   }
   return answer;
 }

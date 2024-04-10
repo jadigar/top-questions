@@ -1,4 +1,4 @@
-import { Heap } from "../../../hard-collection/design/heap/heap";
+import { Heap } from '../../../hard-collection/design/heap/heap';
 
 const enum SECTION {
   LEFT,
@@ -10,7 +10,7 @@ export function totalCost(
   k: number,
   candidates: number,
 ): number {
-  let priorityQueue = new Heap<number[]>(
+  const priorityQueue = new Heap<number[]>(
     ([leftCost, leftSection], [rightCost, rightSection]) => {
       if (leftCost === rightCost) {
         return leftSection - rightSection;

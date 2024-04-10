@@ -1,5 +1,5 @@
 export function isNStraightHand(hand: number[], groupSize: number): boolean {
-  const cardCount: { [key: number]: number } = {};
+  const cardCount: Record<number, number> = {};
 
   // 1. Count occurrences of each card.
   for (const card of hand) {

@@ -1,5 +1,6 @@
 class Node {
   key: number;
+
   next: Node | null;
 
   constructor(key: number, next: Node | null = null) {
@@ -10,7 +11,9 @@ class Node {
 
 export class MyHashSet {
   numberOfBuckets = 1000;
+
   buckets = new Array<Node | null>(this.numberOfBuckets);
+
   constructor() {}
 
   add(key: number): void {
@@ -49,7 +52,7 @@ export class MyHashSet {
 
   contains(key: number): boolean {
     const index = key % this.numberOfBuckets;
-    let node = this.buckets[index];
+    const node = this.buckets[index];
     while (node) {
       if (node.key === key) {
         return true;

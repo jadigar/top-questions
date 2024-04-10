@@ -1,9 +1,9 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function tree2str(root: TreeNode | null): string {
-  let result = "";
+  let result = '';
   if (root === null) {
-    return "";
+    return '';
   }
   result = root.val.toString();
   if (root.left || root.right) {

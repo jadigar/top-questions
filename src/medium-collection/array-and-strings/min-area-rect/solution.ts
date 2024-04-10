@@ -3,10 +3,10 @@ export function minAreaRect(points: number[][]): number {
   points.sort(([ax, ay], [bx, by]) => (ax === bx ? ay - by : ax - bx));
 
   // Create a map to store the y-coordinates of points with the same x-coordinate
-  let yCoordinatesByX = new Map<number, number[]>();
+  const yCoordinatesByX = new Map<number, number[]>();
 
   for (let i = 0; i < points.length - 1; i++) {
-    let yCoordinates = [points[i][1]];
+    const yCoordinates = [points[i][1]];
     // Collect all y-coordinates of points that have the same x-coordinate
     while (i < points.length - 1 && points[i][0] === points[i + 1][0]) {
       yCoordinates.push(points[++i][1]);
@@ -17,7 +17,7 @@ export function minAreaRect(points: number[][]): number {
   }
 
   // Create a map to store the intervals (difference between y-coordinates) between the points with the same x-coordinate
-  let intervalsByX = new Map<string, number[]>();
+  const intervalsByX = new Map<string, number[]>();
 
   yCoordinatesByX.forEach((yCoordinates, x) => {
     for (let i = 0; i < yCoordinates.length; i++) {
@@ -36,7 +36,7 @@ export function minAreaRect(points: number[][]): number {
   let result = Infinity;
 
   intervalsByX.forEach((values, key) => {
-    let height = values[0];
+    const height = values[0];
     for (let i = 1; i < values.length - 1; i++) {
       result = Math.min(result, height * (values[i + 1] - values[i]));
     }

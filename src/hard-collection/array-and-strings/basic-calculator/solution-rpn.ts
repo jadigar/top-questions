@@ -1,11 +1,11 @@
 export function calculate(s: string): number {
-  let rpnStack = infixToRPN(s);
+  const rpnStack = infixToRPN(s);
   return calculateRPN(rpnStack);
 }
 
 function infixToRPN(s: string): string[] {
-  let rpnStack: string[] = [];
-  let opStack: string[] = [];
+  const rpnStack: string[] = [];
+  const opStack: string[] = [];
   let isPrevDigit = false;
   for (let i = 0; i < s.length; i++) {
     if (isDigit(s[i])) {
@@ -23,9 +23,9 @@ function infixToRPN(s: string): string[] {
     } else if (isOperator(s[i])) {
       let lastOpIndex = opStack.length - 1;
       while (
-        lastOpIndex >= 0 &&
+        lastOpIndex >= 0
         // if current operator is lower precedence than operator on top of stack
-        operators.get(s[i])! <= operators.get(opStack[lastOpIndex])!
+        && operators.get(s[i])! <= operators.get(opStack[lastOpIndex])!
       ) {
         rpnStack.push(opStack.pop()!);
         lastOpIndex--;
@@ -44,22 +44,22 @@ function infixToRPN(s: string): string[] {
 }
 
 function calculateRPN(s: string[]): number {
-  let stack: number[] = [];
+  const stack: number[] = [];
   for (let i = 0; i < s.length; i++) {
     if (isOperator(s[i])) {
-      let op = s[i];
-      let [right, left] = [stack.pop()!, stack.pop()!];
+      const op = s[i];
+      const [right, left] = [stack.pop()!, stack.pop()!];
       switch (op) {
-        case "+":
+        case '+':
           stack.push(left + right);
           break;
-        case "-":
+        case '-':
           stack.push(left - right);
           break;
-        case "*":
+        case '*':
           stack.push(left * right);
           break;
-        case "/":
+        case '/':
           stack.push(Math.trunc(left / right));
           break;
       }
@@ -72,15 +72,15 @@ function calculateRPN(s: string[]): number {
 
 let operators = new Map<string, number>(
   [
-    { operator: "+", priority: 0 },
-    { operator: "-", priority: 1 },
-    { operator: "*", priority: 2 },
-    { operator: "/", priority: 2 },
+    { operator: '+', priority: 0 },
+    { operator: '-', priority: 1 },
+    { operator: '*', priority: 2 },
+    { operator: '/', priority: 2 },
   ].map((i) => [i.operator, i.priority]),
 );
 
 function isDigit(s: string): boolean {
-  return s !== " " && !isOperator(s);
+  return s !== ' ' && !isOperator(s);
 }
 
 function isOperator(s: string): boolean {

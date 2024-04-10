@@ -1,8 +1,12 @@
 class CacheNode {
   prev: CacheNode | null;
+
   next: CacheNode | null;
+
   key: number;
+
   value: number;
+
   constructor(key: number, value: number) {
     this.prev = null;
     this.next = null;
@@ -13,9 +17,13 @@ class CacheNode {
 
 export class LRUCache {
   cache: Map<number, CacheNode>;
+
   capacity: number;
-  highKey: number = -1;
-  lowKey: number = -1;
+
+  highKey = -1;
+
+  lowKey = -1;
+
   constructor(capacity: number) {
     this.cache = new Map<number, CacheNode>();
     this.capacity = capacity;

@@ -6,8 +6,8 @@ export function longestCommonPrefix(strs: string[]): string {
     }
   }
 
-  let result = "";
-  let temp = "";
+  let result = '';
+  let temp = '';
   let mismatch = false;
   for (let i = 0; i < shortestStr; i++) {
     temp = strs[0][i];

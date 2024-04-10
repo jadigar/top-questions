@@ -1,6 +1,8 @@
 export class Node {
   val: number;
+
   children: Node[];
+
   constructor(val?: number) {
     this.val = val === undefined ? 0 : val;
     this.children = [];
@@ -12,8 +14,8 @@ export function nAryTreeFromArray(arr: (number | null)[]): Node | null {
     return null;
   }
 
-  let root = new Node(arr[0]);
-  let queue: Node[] = [root];
+  const root = new Node(arr[0]);
+  const queue: Node[] = [root];
   let currentParent = queue.shift();
 
   for (let i = 1; i < arr.length; i++) {
@@ -24,7 +26,7 @@ export function nAryTreeFromArray(arr: (number | null)[]): Node | null {
       }
     } else {
       // Create a new child node
-      let child = new Node(arr[i]!);
+      const child = new Node(arr[i]!);
       // Add this child to the current parent
       if (currentParent) {
         currentParent.children.push(child);

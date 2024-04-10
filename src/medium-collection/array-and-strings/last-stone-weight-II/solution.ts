@@ -14,7 +14,7 @@ export function lastStoneWeightII(stones: number[]): number {
 
   // For each stone, we update our dp array to see which sums
   // can be formed if we include this stone in our subset.
-  for (let stone of stones) {
+  for (const stone of stones) {
     // Update dp array in reverse to avoid double counting.
     for (let i = halfTotal; i >= stone; i--) {
       // We can form sum j if we've formed j before

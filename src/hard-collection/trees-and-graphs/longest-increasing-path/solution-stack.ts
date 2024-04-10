@@ -7,7 +7,7 @@ export function longestIncreasingPath(matrix: number[][]): number {
 
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {
-      let stack = [[i, j]];
+      const stack = [[i, j]];
       while (stack.length) {
         // take the last element from the stack
         const [row, col] = stack[stack.length - 1];
@@ -27,8 +27,7 @@ export function longestIncreasingPath(matrix: number[][]): number {
         directions.forEach(([rowShift, colShift]) => {
           const x = row + rowShift;
           const y = col + colShift;
-          const inBoundaries =
-            0 <= x && x < matrix.length && 0 <= y && y < matrix[0].length;
+          const inBoundaries = x >= 0 && x < matrix.length && y >= 0 && y < matrix[0].length;
           // if we are out of boundaries or next node is not greater than current node
           if (!inBoundaries || matrix[x][y] <= matrix[row][col]) {
             return;

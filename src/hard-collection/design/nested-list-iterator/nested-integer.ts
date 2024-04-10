@@ -2,8 +2,11 @@ export class NestedInteger {
   // If value is provided, then it holds a single integer
   // Otherwise it holds an empty nested list
   isSingleInteger: boolean;
+
   value?: number;
+
   list?: NestedInteger[];
+
   constructor(value?: number) {
     if (value !== undefined) {
       this.value = value;
@@ -35,7 +38,7 @@ export class NestedInteger {
   add(elem: NestedInteger) {
     if (this.isSingleInteger) {
       this.list = [];
-      this.list?.push(new NestedInteger(this.value));
+      this.list.push(new NestedInteger(this.value));
       this.value = undefined;
       this.isSingleInteger = false;
     }

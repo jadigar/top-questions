@@ -1,13 +1,13 @@
 export function sortVowels(s: string): string {
-  let vowels = new Set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]);
-  let vowelsInAString: string[] = [];
+  const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
+  const vowelsInAString: string[] = [];
   for (const char of s) {
     if (vowels.has(char)) {
       vowelsInAString.push(char);
     }
   }
   vowelsInAString.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0));
-  let result: string[] = [];
+  const result: string[] = [];
   let vowelIndex = 0;
   for (const char of s) {
     if (vowels.has(char)) {
@@ -16,5 +16,5 @@ export function sortVowels(s: string): string {
       result.push(char);
     }
   }
-  return result.join("");
+  return result.join('');
 }

@@ -1,6 +1,6 @@
 export function findJudge(n: number, trust: number[][]): number {
   // Initialize an array "trustCount" of size n+1 with all elements set to 0
-  let trustCount: number[] = Array(n + 1).fill(0);
+  const trustCount: number[] = Array(n + 1).fill(0);
 
   // Iterate through the trust array
   for (const [who, whom] of trust) {

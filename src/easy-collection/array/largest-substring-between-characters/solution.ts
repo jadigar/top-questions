@@ -4,7 +4,7 @@ export function maxLengthBetweenEqualCharacters(s: string): number {
     if (!charSection.has(s[i])) {
       charSection.set(s[i], [i, -1]);
     } else {
-      let [start] = charSection.get(s[i])!;
+      const [start] = charSection.get(s[i])!;
       charSection.set(s[i], [start, i]);
     }
   }

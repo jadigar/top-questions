@@ -1,7 +1,7 @@
 export function groupAnagrams(strs: string[]): string[][] {
   const strMap = new Map<string, string[]>();
   strs.forEach((s) => {
-    const str = s.split("").sort().join();
+    const str = s.split('').sort().join();
     if (strMap.has(str)) {
       const temp = strMap.get(str) ?? [];
       temp.push(s);

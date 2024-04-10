@@ -1,8 +1,8 @@
-import { arrayToTreeNodeLevel } from "../common";
-import { pathSum } from "./solution-stack";
+import { arrayToTreeNodeLevel } from '../common';
+import { pathSum } from './solution-stack';
 
-describe("", () => {
-  it("pathSum should return [[5,4,11,2],[5,8,4,5]] for root = [5,4,8,11,null,13,4,7,2,null,null,null,null,5,1], targetSum = 22", () => {
+describe('', () => {
+  it('pathSum should return [[5,4,11,2],[5,8,4,5]] for root = [5,4,8,11,null,13,4,7,2,null,null,null,null,5,1], targetSum = 22', () => {
     // prettier-ignore
     const nodes = [5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, 5, 1];
     const root = arrayToTreeNodeLevel(nodes);
@@ -14,7 +14,7 @@ describe("", () => {
     ]);
   });
 
-  it("pathSum should return [] for root = [1,2,3], targetSum = 5", () => {
+  it('pathSum should return [] for root = [1,2,3], targetSum = 5', () => {
     const nodes = [1, 2, 3];
     const targetSum = 5;
     const root = arrayToTreeNodeLevel(nodes);
@@ -22,7 +22,7 @@ describe("", () => {
     expect(result).toEqual([]);
   });
 
-  it("pathSum should return [] for root = [1,2], targetSum = 0", () => {
+  it('pathSum should return [] for root = [1,2], targetSum = 0', () => {
     const nodes = [1, 2];
     const targetSum = 0;
     const root = arrayToTreeNodeLevel(nodes);

@@ -1,6 +1,6 @@
 export function threeSum(nums: number[]): number[][] {
   nums.sort();
-  let result: number[][] = [];
+  const result: number[][] = [];
   for (let i = 0; i < nums.length && nums[i] <= 0; i++) {
     // skip equal numbers to avoid duplicate triples
     if (i > 0 && nums[i] === nums[i - 1]) {
@@ -12,7 +12,7 @@ export function threeSum(nums: number[]): number[][] {
 }
 
 function twoSum(i: number, nums: number[], result: number[][]) {
-  let hashMap = new Map();
+  const hashMap = new Map();
   for (let j = i + 1; j < nums.length; j++) {
     if (hashMap.has(nums[j])) {
       result.push([nums[i], nums[hashMap.get(nums[j])], nums[j]]);

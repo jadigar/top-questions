@@ -3,9 +3,9 @@ export function mySqrt(x: number): number {
     return x;
   }
   let num;
-  let pivot,
-    left = 2,
-    right = Math.trunc(x / 2);
+  let pivot;
+  let left = 2;
+  let right = Math.trunc(x / 2);
   while (left <= right) {
     pivot = Math.trunc(left + (right - left) / 2);
     num = pivot * pivot;

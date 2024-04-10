@@ -2,7 +2,7 @@ export function knightDialer(n: number): number {
   const mod = 1e9 + 7;
   let result = 0;
   // jumps that knight can make from every number
-  let jumps = [
+  const jumps = [
     [4, 6],
     [6, 8],
     [7, 9],
@@ -35,7 +35,7 @@ function dp(
     return memo[left][num];
   }
 
-  let nextJumps = jumps[num];
+  const nextJumps = jumps[num];
   let result = 0;
   for (let i = 0; i < nextJumps.length; i++) {
     result = (result + dp(left - 1, nextJumps[i], memo, jumps)) % mod;

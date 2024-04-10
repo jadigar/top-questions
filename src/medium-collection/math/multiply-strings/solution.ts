@@ -23,7 +23,7 @@ export function multiply(num1: string, num2: string): string {
 
   // if result is all zeros, return '0', otherwise return the remaining digits as a string
   if (i === result.length) {
-    return "0";
+    return '0';
   }
-  return result.slice(i).join("");
+  return result.slice(i).join('');
 }

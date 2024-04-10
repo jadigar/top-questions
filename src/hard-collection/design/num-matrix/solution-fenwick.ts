@@ -1,6 +1,8 @@
 export class NumMatrix {
   rows: number;
+
   cols: number;
+
   bit: number[][]; // The BIT matrix
 
   constructor(matrix: number[][]) {
@@ -55,11 +57,11 @@ export class NumMatrix {
   }
 
   update(row: number, col: number, val: number): void {
-    let old_val = this.sumRegion(row, col, row, col);
+    const old_val = this.sumRegion(row, col, row, col);
     // handling 1-based indexing
     row++;
     col++;
-    let diff = val - old_val;
+    const diff = val - old_val;
     this.updateBIT(row, col, diff);
   }
 

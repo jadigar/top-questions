@@ -1,7 +1,7 @@
-import { Node } from "../common";
+import type { Node } from '../common';
 
 export function connect(root: Node | null): Node | null {
-  let queue = [root];
+  const queue = [root];
   while (queue.length) {
     const queueLength = queue.length;
     for (let i = 0; i < queueLength; i++) {

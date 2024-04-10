@@ -1,7 +1,9 @@
 // Definition for a binary tree node.
 export class TreeNode {
   val: number;
+
   left: TreeNode | null;
+
   right: TreeNode | null;
 
   constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
@@ -96,8 +98,11 @@ export function treeNodeToArray(root: TreeNode | null): (number | null)[] {
 // Definition for Node.
 export class Node {
   val: number;
+
   left: Node | null;
+
   right: Node | null;
+
   next: Node | null;
 
   constructor(val?: number, left?: Node, right?: Node, next?: Node) {
@@ -112,17 +117,17 @@ export function nodeToArray(root: Node | null): (number | string)[] {
   if (!root) {
     return [];
   }
-  let result: (number | string)[] = [];
-  let queue: (Node | null)[] = [root];
+  const result: (number | string)[] = [];
+  const queue: (Node | null)[] = [root];
   while (queue.length) {
-    let node = queue.shift();
-    result.push(node?.val ?? "#");
+    const node = queue.shift();
+    result.push(node?.val ?? '#');
     if (node?.left || node?.right) {
       queue.push(node.left || null);
       queue.push(node.right || null);
     }
     if (node?.next === null) {
-      result.push("#");
+      result.push('#');
     }
   }
   return result;
@@ -156,11 +161,17 @@ export function arrayToNode(nodes: (number | null)[]): Node | null {
 
 export class QuadTreeNode {
   val: boolean;
+
   isLeaf: boolean;
+
   topLeft: QuadTreeNode | null;
+
   topRight: QuadTreeNode | null;
+
   bottomLeft: QuadTreeNode | null;
+
   bottomRight: QuadTreeNode | null;
+
   constructor(
     val: boolean,
     isLeaf: boolean,
@@ -184,23 +195,23 @@ export function quadTreeNodeToArray(
   if (!root) {
     return [];
   }
-  let result: (number[] | null)[] = [];
-  let queue: (QuadTreeNode | null)[] = [root];
+  const result: (number[] | null)[] = [];
+  const queue: (QuadTreeNode | null)[] = [root];
   while (queue.length) {
-    let node = queue.shift();
-    let val = node ? [node.isLeaf ? 1 : 0, node.val ? 1 : 0] : null;
+    const node = queue.shift();
+    const val = node ? [node.isLeaf ? 1 : 0, node.val ? 1 : 0] : null;
     result.push(val);
 
     if (
-      node?.topLeft ||
-      node?.topRight ||
-      node?.bottomLeft ||
-      node?.bottomRight
+      node?.topLeft
+      || node?.topRight
+      || node?.bottomLeft
+      || node?.bottomRight
     ) {
-      queue.push(node?.topLeft || null);
-      queue.push(node?.topRight || null);
-      queue.push(node?.bottomLeft || null);
-      queue.push(node?.bottomRight || null);
+      queue.push(node.topLeft || null);
+      queue.push(node.topRight || null);
+      queue.push(node.bottomLeft || null);
+      queue.push(node.bottomRight || null);
     }
   }
   return result;

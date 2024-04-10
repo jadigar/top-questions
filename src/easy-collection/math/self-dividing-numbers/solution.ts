@@ -1,5 +1,5 @@
 export function selfDividingNumbers(left: number, right: number): number[] {
-  let result = [];
+  const result = [];
   for (let i = left; i <= right; i++) {
     if (isSelfDividing(i)) {
       result.push(i);
@@ -9,9 +9,9 @@ export function selfDividingNumbers(left: number, right: number): number[] {
 }
 
 function isSelfDividing(num: number): boolean {
-  let strNum = num.toString();
+  const strNum = num.toString();
   for (let i = 0; i < strNum.length; i++) {
-    if (strNum[i] === "0" || num % parseInt(strNum[i], 10) !== 0) {
+    if (strNum[i] === '0' || num % parseInt(strNum[i], 10) !== 0) {
       return false;
     }
   }

@@ -1,12 +1,15 @@
-import { Heap } from "../heap/heap";
+import { Heap } from '../heap/heap';
 
 export class MedianFinder {
   lo: Heap<number>;
+
   hi: Heap<number>;
+
   constructor() {
     this.lo = new Heap<number>((left, right) => left - right);
     this.hi = new Heap<number>((left, right) => right - left);
   }
+
   addNum(num: number): void {
     this.lo.push(num); // Add to max heap
 

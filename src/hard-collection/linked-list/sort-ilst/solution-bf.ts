@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
 export function sortList(head: ListNode | null): ListNode | null {
   const temp: number[] = [];

@@ -1,11 +1,12 @@
-import { Node } from "../common";
+import { Node } from '../common';
+
 export function copyRandomList(head: Node | null): Node | null {
   let headCopy = head;
   // create duplicate of a list
   // A -> A' -> B -> B'
   while (headCopy) {
-    let next = headCopy.next;
-    let newNode = new Node(headCopy.val);
+    const { next } = headCopy;
+    const newNode = new Node(headCopy.val);
     headCopy.next = newNode;
     newNode.next = next;
     headCopy = headCopy.next.next;
@@ -18,7 +19,7 @@ export function copyRandomList(head: Node | null): Node | null {
     headCopy = headCopy.next.next;
   }
 
-  let result: Node | null = new Node();
+  const result: Node | null = new Node();
   let resultCopy: Node | null = result;
   headCopy = head;
   // separate original and copied lists
@@ -28,5 +29,5 @@ export function copyRandomList(head: Node | null): Node | null {
     resultCopy = resultCopy?.next ?? null;
     headCopy = headCopy.next;
   }
-  return result?.next ?? null;
+  return result.next ?? null;
 }

@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import type { ListNode } from '../common';
 
 export function reorderList(head: ListNode | null): void {
   // find the middle of the list
@@ -13,7 +13,7 @@ export function reorderList(head: ListNode | null): void {
   let current = slow;
   let prev: ListNode | null = null;
   while (current) {
-    let next = current.next;
+    const { next } = current;
     current.next = prev;
     prev = current;
     current = next;
@@ -23,8 +23,8 @@ export function reorderList(head: ListNode | null): void {
   let left = head;
   let right = prev;
   while (left && right) {
-    let leftNext = left.next;
-    let rightNext = right.next;
+    const leftNext = left.next;
+    const rightNext = right.next;
     left.next = right;
     right.next = leftNext;
     left = leftNext;

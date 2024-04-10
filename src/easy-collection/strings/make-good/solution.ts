@@ -1,16 +1,16 @@
 export function makeGood(s: string): string {
-  let result: string[] = [];
+  const result: string[] = [];
   for (const char of s) {
     if (
-      result.length > 0 &&
-      areOppositeCases(char, result[result.length - 1])
+      result.length > 0
+      && areOppositeCases(char, result[result.length - 1])
     ) {
       result.pop();
     } else {
       result.push(char);
     }
   }
-  return result.join("");
+  return result.join('');
 }
 
 function areOppositeCases(char1: string, char2: string): boolean {

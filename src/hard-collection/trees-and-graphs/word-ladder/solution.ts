@@ -3,26 +3,25 @@ export function ladderLength(
   endWord: string,
   wordList: string[],
 ): number {
-  let wordMap = new Map<string, Word>();
-  let passedWords = new Set<string>();
-  let queue: Word[] = [];
-  let begin = new Word(beginWord, wordList);
+  const wordMap = new Map<string, Word>();
+  const passedWords = new Set<string>();
+  const queue: Word[] = [];
+  const begin = new Word(beginWord, wordList);
   queue.push(begin);
   let result = 0;
   while (queue.length) {
     result++;
-    let size = queue.length;
+    const size = queue.length;
     for (let i = 0; i < size; i++) {
-      let node = queue.shift()!;
+      const node = queue.shift()!;
       if (node.word === endWord) {
         return result;
       }
       passedWords.add(node.word);
-      let neighbors = node.neighbors;
+      const { neighbors } = node;
       for (let j = 0; j < neighbors.length; j++) {
         if (!passedWords.has(neighbors[j])) {
-          let word =
-            wordMap.get(neighbors[j]) ?? new Word(neighbors[j], wordList);
+          const word = wordMap.get(neighbors[j]) ?? new Word(neighbors[j], wordList);
           wordMap.set(neighbors[j], word);
           queue.push(word);
         }
@@ -34,6 +33,7 @@ export function ladderLength(
 
 class Word {
   word: string;
+
   neighbors: string[];
 
   constructor(word: string, wordList: string[]) {

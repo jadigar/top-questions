@@ -1,4 +1,4 @@
-import { Node } from "../common";
+import type { Node } from '../common';
 
 export function connect(root: Node | null): Node | null {
   let leftNode = root;
@@ -17,7 +17,7 @@ export function connect(root: Node | null): Node | null {
       }
       node = node.next;
     }
-    leftNode = leftNode?.left || null;
+    leftNode = leftNode.left || null;
   }
   return root;
 }

@@ -1,5 +1,5 @@
 export function longestPalindrome(s: string): string {
-  let result = "";
+  let result = '';
   for (let i = 0, l = 0, r = 0; i < s.length || r < s.length; l = i, r = i) {
     let temp = s[i];
     // check the right character

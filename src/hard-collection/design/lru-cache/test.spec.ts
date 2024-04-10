@@ -1,6 +1,6 @@
-import { LRUCache } from "./solution";
+import { LRUCache } from './solution';
 
-it("LRUCache should pass test 1", () => {
+it('LRUCache should pass test 1', () => {
   const lRUCache = new LRUCache(2);
   lRUCache.put(1, 1); // cache is {1=1}
   lRUCache.put(2, 2); // cache is {1=1, 2=2}
@@ -13,7 +13,7 @@ it("LRUCache should pass test 1", () => {
   expect(lRUCache.get(4)).toEqual(4); // return 4
 });
 
-it("LRUCache should pass test 2", () => {
+it('LRUCache should pass test 2', () => {
   const lRUCache = new LRUCache(3);
   lRUCache.put(1, 1); // cache is {1=1}
   lRUCache.put(2, 2); // cache is {1=1, 2=2}
@@ -30,7 +30,7 @@ it("LRUCache should pass test 2", () => {
   expect(lRUCache.get(5)).toEqual(5); // return 5
 });
 
-it("LRUCache should pass test 3", () => {
+it('LRUCache should pass test 3', () => {
   const lRUCache = new LRUCache(1);
   lRUCache.put(1, 1); // cache is {1=1}
   lRUCache.put(2, 2); // cache is {2=2}
@@ -43,7 +43,7 @@ it("LRUCache should pass test 3", () => {
   expect(lRUCache.get(4)).toEqual(4); // return 4
 });
 
-it("LRUCache should pass test 3", () => {
+it('LRUCache should pass test 3', () => {
   const lRUCache = new LRUCache(3);
   lRUCache.put(1, 1); // cache is {1=1}
   lRUCache.put(2, 2); // cache is {1=1, 2=2}

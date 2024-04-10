@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import type { ListNode } from '../common';
 
 export function pairSum(head: ListNode | null): number {
   let result = 0;

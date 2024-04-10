@@ -2,7 +2,7 @@ export function findMedianSortedArrays(
   nums1: number[],
   nums2: number[],
 ): number {
-  let result = [];
+  const result = [];
   let i = 0;
   let k = 0;
   let j = 0;

@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import { ListNode } from '../common';
 
 export function swapPairs(head: ListNode | null): ListNode | null {
   if (head === null || head.next === null) {

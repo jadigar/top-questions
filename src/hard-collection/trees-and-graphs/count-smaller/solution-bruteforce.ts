@@ -1,5 +1,5 @@
 export function countSmaller(nums: number[]): number[] {
-  let result: number[] = [];
+  const result: number[] = [];
   result.unshift(0);
   for (let i = nums.length - 2; i >= 0; i--) {
     let count = 0;

@@ -2,7 +2,7 @@ export function searchInsert(nums: number[], target: number): number {
   let left = 0;
   let right = nums.length - 1;
   while (left <= right) {
-    let mid = left + Math.trunc((right - left) / 2);
+    const mid = left + Math.trunc((right - left) / 2);
     if (nums[mid] < target) {
       left = mid + 1;
     } else {

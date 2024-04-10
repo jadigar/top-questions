@@ -1,4 +1,4 @@
-import { ListNode } from "../common";
+import type { ListNode } from '../common';
 
 export function getIntersectionNode(
   headA: ListNode | null,

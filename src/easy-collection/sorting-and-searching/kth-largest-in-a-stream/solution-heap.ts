@@ -1,8 +1,10 @@
-import { Heap } from "../../../hard-collection/design/heap/heap";
+import { Heap } from '../../../hard-collection/design/heap/heap';
 
 export class KthLargest {
   heap: Heap<number>;
+
   k: number;
+
   constructor(k: number, nums: number[]) {
     this.heap = new Heap<number>((a, b) => a - b);
     this.k = k;

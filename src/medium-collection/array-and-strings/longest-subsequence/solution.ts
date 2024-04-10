@@ -2,7 +2,7 @@ export function longestSubsequence(arr: number[], difference: number): number {
   // The map is used to store the state of our dynamic programming problem. The key of the map is the
   // number from the array and the value is the length of the longest arithmetic subsequence that ends
   // with that number.
-  let dp = new Map<number, number>();
+  const dp = new Map<number, number>();
 
   // This variable keeps track of the length of the longest subsequence that we've found so far.
   // It's initially set to 1 because a subsequence can be a single number.
@@ -13,7 +13,7 @@ export function longestSubsequence(arr: number[], difference: number): number {
     // the difference. We then look up in our dynamic programming state to see if there's a
     // subsequence that ends with the previous number. If there is, we get the length of that
     // subsequence, otherwise we default to 0.
-    let prevCount = dp.get(item - difference) ?? 0;
+    const prevCount = dp.get(item - difference) ?? 0;
 
     // We update our dynamic programming state by setting the length of the longest subsequence that
     // ends with the current number. If there was a subsequence that ended with the previous number,

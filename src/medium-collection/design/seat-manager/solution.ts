@@ -1,7 +1,8 @@
-import { Heap } from "../../../hard-collection/design/heap/heap";
+import { Heap } from '../../../hard-collection/design/heap/heap';
 
 export class SeatManager {
   heap: Heap<number>;
+
   constructor(n: number) {
     this.heap = new Heap((left, right) => left - right);
     for (let i = 1; i <= n; i++) {

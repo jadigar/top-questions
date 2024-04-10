@@ -1,6 +1,6 @@
 export function lengthOfLongestSubstring(s: string): number {
-  let jumpMap = new Map<string, number>();
-  let jumpTable = new Array(s.length).fill(0);
+  const jumpMap = new Map<string, number>();
+  const jumpTable = new Array(s.length).fill(0);
   // we create map where to jump when we found duplicate character
   // for instance for "dvdfa" we will have [0, 0, 1, 0, 0]
   // that means that after we get second d
@@ -20,7 +20,7 @@ export function lengthOfLongestSubstring(s: string): number {
       strMap = new Set<string>();
       currentLength = 1;
       if (jumpTable[i] !== 0) {
-        let ti = i;
+        const ti = i;
         i = jumpTable[i];
         jumpTable[ti] = 0;
       }

@@ -1,8 +1,8 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 // Morris Traversal
 export function inorderTraversal(root: TreeNode | null): number[] {
-  let result: number[] = [];
+  const result: number[] = [];
   let curr = root;
   let pre: TreeNode | null = null;
   while (curr !== null) {
@@ -20,7 +20,7 @@ export function inorderTraversal(root: TreeNode | null): number[] {
       // put curr after the pre node
       pre.right = curr;
       // store curr node
-      let temp = curr;
+      const temp = curr;
       // move curr to the top of the new tree
       curr = curr.left;
       // original curr left be null, avoid infinite loops

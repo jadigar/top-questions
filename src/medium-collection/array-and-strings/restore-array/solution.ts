@@ -1,5 +1,5 @@
 export function restoreArray(adjacentPairs: number[][]): number[] {
-  let adjacencyList = new Map<number, number[]>();
+  const adjacencyList = new Map<number, number[]>();
   adjacentPairs.forEach(([left, right]) => {
     if (!adjacencyList.has(left)) {
       adjacencyList.set(left, []);
@@ -12,25 +12,25 @@ export function restoreArray(adjacentPairs: number[][]): number[] {
   });
 
   let start = 0;
-  for (let key of adjacencyList.keys()) {
+  for (const key of adjacencyList.keys()) {
     if (adjacencyList.get(key)!.length === 1) {
       start = key;
       break;
     }
   }
 
-  let stack = [start];
-  let result = [];
-  let visited = new Set();
+  const stack = [start];
+  const result = [];
+  const visited = new Set();
   while (stack.length > 0) {
-    let current = stack.pop()!;
+    const current = stack.pop()!;
     if (visited.has(current)) {
       continue;
     }
     result.push(current);
     visited.add(current);
 
-    let next = adjacencyList.get(current)!.find((n) => !visited.has(n));
+    const next = adjacencyList.get(current)!.find((n) => !visited.has(n));
     if (next !== undefined) {
       stack.push(next);
     }

@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
   if (p === null && q === null) {

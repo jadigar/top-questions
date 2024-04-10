@@ -3,13 +3,13 @@ export function snakesAndLadders(board: number[][]): number {
   const n = board.length;
 
   // An array to store the coordinates of each cell in the board
-  let cells: [number, number][] = new Array(n * n + 1);
+  const cells: [number, number][] = new Array(n * n + 1);
 
   // A variable to keep track of the current cell label
   let label = 1;
 
   // An array to store the columns of the board
-  let columns: number[] = new Array(n);
+  const columns: number[] = new Array(n);
 
   // Fill the columns array with the index of the columns
   for (let i = 0; i < n; i++) {
@@ -18,7 +18,7 @@ export function snakesAndLadders(board: number[][]): number {
 
   // Iterate through the rows and columns of the board, starting from the last row
   for (let row = n - 1; row >= 0; row--) {
-    for (let column of columns) {
+    for (const column of columns) {
       // Assign the current cell label to the corresponding coordinates
       cells[label++] = [row, column];
     }
@@ -27,10 +27,10 @@ export function snakesAndLadders(board: number[][]): number {
   }
 
   // An array to store the distance from the start cell (1) to each other cell in the board
-  let dist = new Array(n * n + 1).fill(-1);
+  const dist = new Array(n * n + 1).fill(-1);
 
   // A queue to keep track of the cells to be visited
-  let q = new Array<number>();
+  const q = new Array<number>();
 
   // Set the distance of the start cell to 0
   dist[1] = 0;
@@ -41,15 +41,15 @@ export function snakesAndLadders(board: number[][]): number {
   // While the queue is not empty
   while (q.length !== 0) {
     // Get the current cell from the front of the queue
-    let curr = q.shift()!;
+    const curr = q.shift()!;
 
     // Iterate through the possible next cells
     for (let next = curr + 1; next <= Math.min(curr + 6, n * n); next++) {
       // Get the coordinates of the next cell
-      let [row, column] = cells[next];
+      const [row, column] = cells[next];
 
       // If the next cell is a ladder or snake, get the destination cell
-      let destination = board[row][column] !== -1 ? board[row][column] : next;
+      const destination = board[row][column] !== -1 ? board[row][column] : next;
 
       // If the distance to the destination cell has not been set
       if (dist[destination] === -1) {

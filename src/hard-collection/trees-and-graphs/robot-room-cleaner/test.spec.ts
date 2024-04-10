@@ -1,7 +1,7 @@
-import { Robot } from "./robot";
-import { cleanRoom } from "./solution";
+import { Robot } from './robot';
+import { cleanRoom } from './solution';
 
-it("should pass test 1", () => {
+it('should pass test 1', () => {
   const room = [
     [1, 1, 1, 1, 1, 0, 1, 1],
     [1, 1, 1, 1, 1, 0, 1, 1],
@@ -14,17 +14,17 @@ it("should pass test 1", () => {
   const robot = new Robot(room, row, col);
   cleanRoom(robot);
   const result = isRoomClean(room);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });
 
-it("should pass test 2", () => {
+it('should pass test 2', () => {
   const room = [[1]];
   const row = 0;
   const col = 0;
   const robot = new Robot(room, row, col);
   cleanRoom(robot);
   const result = isRoomClean(room);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });
 
 function isRoomClean(room: number[][]): boolean {

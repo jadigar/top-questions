@@ -1,5 +1,5 @@
 export function maxProduct(nums: number[]): number {
-  let { result } = dfs(nums, 0);
+  const { result } = dfs(nums, 0);
   return result;
 }
 
@@ -7,7 +7,7 @@ function dfs(
   nums: number[],
   i: number,
 ): { min: number; max: number; result: number } {
-  let curr = nums[i];
+  const curr = nums[i];
   if (i === nums.length - 1) {
     return {
       max: curr,

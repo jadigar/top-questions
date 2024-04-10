@@ -40,7 +40,7 @@ function hasCycle(
 
   let result = false;
   path[course] = true;
-  let prerequisites = map.get(course)!;
+  const prerequisites = map.get(course)!;
   for (let i = 0; i < prerequisites.length; i++) {
     result = hasCycle(prerequisites[i], map, path, checked);
     if (result) {

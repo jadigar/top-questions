@@ -1,13 +1,13 @@
 export function countNicePairs(nums: number[]): number {
-  let mod = 1e9 + 7;
+  const mod = 1e9 + 7;
   let result = 0;
-  let reversedMap = new Map<number, number>();
-  let frequencyMap = new Map<number, number>();
+  const reversedMap = new Map<number, number>();
+  const frequencyMap = new Map<number, number>();
   for (let i = 0; i < nums.length; i++) {
     if (!reversedMap.has(nums[i])) {
       reversedMap.set(nums[i], rev(nums[i]));
     }
-    let diff = nums[i] - reversedMap.get(nums[i])!;
+    const diff = nums[i] - reversedMap.get(nums[i])!;
     if (!frequencyMap.has(diff)) {
       frequencyMap.set(diff, 0);
     }

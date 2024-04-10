@@ -1,4 +1,4 @@
-import { TreeNode } from "../common";
+import type { TreeNode } from '../common';
 
 export function distanceK(
   root: TreeNode | null,
@@ -8,10 +8,10 @@ export function distanceK(
   if (root === null || target === null) {
     return [];
   }
-  let parents = new Map<number, TreeNode | null>();
+  const parents = new Map<number, TreeNode | null>();
   createMap(root, null, parents);
-  let result: number[] = [];
-  let visited = new Set<number>();
+  const result: number[] = [];
+  const visited = new Set<number>();
   dfs(target, 0, k, result, visited, parents);
   return result;
 }

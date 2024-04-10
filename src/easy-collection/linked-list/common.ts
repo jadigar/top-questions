@@ -1,6 +1,7 @@
 // Definition for singly-linked list.
 export class ListNode {
   val: number;
+
   next: ListNode | null;
 
   constructor(val?: number, next?: ListNode | null) {
@@ -14,7 +15,7 @@ export function arrayToList(nodes: number[]): NullableListNode {
   if (nodes.length === 0) {
     return null;
   }
-  let root: ListNode = new ListNode(nodes[0]);
+  const root: ListNode = new ListNode(nodes[0]);
   let currentNode: ListNode = root;
   for (let i = 1; i < nodes.length; i++) {
     const node = new ListNode(nodes[i]);
@@ -42,7 +43,7 @@ export function getNodeToDelete(
 }
 
 export function listToArray(list: ListNode | null): number[] {
-  let result = [];
+  const result = [];
   let step: ListNode | null = list;
   while (step) {
     result.push(step.val);
@@ -60,7 +61,7 @@ export function createLoop(
   }
   let current = head;
   for (let i = 0; i < pos && current; i++) {
-    current = current?.next || null;
+    current = current.next || null;
   }
   const loopNode = current;
   while (current?.next) {

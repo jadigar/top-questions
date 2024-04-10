@@ -1,31 +1,31 @@
-import { isValid } from "./solution";
+import { isValid } from './solution';
 
-it('isValid should return true for s = "()"', function () {
-  const s = "()";
+it('isValid should return true for s = "()"', () => {
+  const s = '()';
   const result = isValid(s);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });
 
-it('isValid should return true for s = "()[]{}"', function () {
-  const s = "()[]{}";
+it('isValid should return true for s = "()[]{}"', () => {
+  const s = '()[]{}';
   const result = isValid(s);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });
 
-it('isValid should return true for s = "{{}[][[[]]]}"', function () {
-  const s = "{{}[][[[]]]}";
+it('isValid should return true for s = "{{}[][[[]]]}"', () => {
+  const s = '{{}[][[[]]]}';
   const result = isValid(s);
-  expect(result).toBeTrue();
+  expect(result).toBeTruthy();
 });
 
-it('isValid should return false for s = "{{}[][[[]]]}"', function () {
-  const s = "{{}[][[[[]]]}";
+it('isValid should return false for s = "{{}[][[[]]]}"', () => {
+  const s = '{{}[][[[[]]]}';
   const result = isValid(s);
-  expect(result).toBeFalse();
+  expect(result).toBeFalsy();
 });
 
-it('isValid should return false for s = "(]"', function () {
-  const s = "(]";
+it('isValid should return false for s = "(]"', () => {
+  const s = '(]';
   const result = isValid(s);
-  expect(result).toBeFalse();
+  expect(result).toBeFalsy();
 });

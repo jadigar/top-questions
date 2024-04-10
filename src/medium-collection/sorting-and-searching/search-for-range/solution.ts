@@ -4,7 +4,8 @@ export function searchRange(nums: number[], target: number): number[] {
   let lri = nums.length - 1;
   let rli = 0;
   let rri = lri;
-  let li, ri;
+  let li; let
+    ri;
   li = ri = getMid(lli, rri);
   while (lli <= lri || rli <= rri) {
     if (lli <= lri) {

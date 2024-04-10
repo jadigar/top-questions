@@ -1,9 +1,9 @@
 export function minSubArrayLen(target: number, nums: number[]): number {
-  let n = nums.length;
+  const n = nums.length;
   let minLength = n + 1; // Initialize minLength to a value larger than any possible result
 
   // Compute prefix sums where prefixSum[i] is sum of nums[0] through nums[i - 1]
-  let prefixSum = new Array(n + 1).fill(0);
+  const prefixSum = new Array(n + 1).fill(0);
   for (let i = 1; i <= n; i++) {
     prefixSum[i] = prefixSum[i - 1] + nums[i - 1];
   }
@@ -11,8 +11,8 @@ export function minSubArrayLen(target: number, nums: number[]): number {
   // For each prefixSum[i], binary search for the smallest j (j > i) such that
   // prefixSum[j] >= prefixSum[i] + target (i.e., sum of subarray nums[i] through nums[j - 1] >= target)
   for (let i = 0; i <= n; i++) {
-    let toFind = target + prefixSum[i];
-    let found = binarySearch(prefixSum, toFind);
+    const toFind = target + prefixSum[i];
+    const found = binarySearch(prefixSum, toFind);
     // If such j exists, update minLength
     if (found >= 0) {
       minLength = Math.min(minLength, found - i);
@@ -36,7 +36,7 @@ function binarySearch(prefixSum: number[], toFind: number): number {
 
   // Perform binary search
   while (left <= right) {
-    let mid = Math.floor(left + (right - left) / 2);
+    const mid = Math.floor(left + (right - left) / 2);
     // If prefixSum[mid] >= toFind, update answer to mid and continue searching on the left side
     if (prefixSum[mid] >= toFind) {
       answer = mid;

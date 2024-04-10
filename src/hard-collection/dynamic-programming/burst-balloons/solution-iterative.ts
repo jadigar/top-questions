@@ -1,8 +1,8 @@
 export function maxCoins(nums: number[]): number {
-  let n = nums.length + 2;
-  let newNums = [1, ...nums, 1];
+  const n = nums.length + 2;
+  const newNums = [1, ...nums, 1];
 
-  let dp: number[][] = new Array(n);
+  const dp: number[][] = new Array(n);
   for (let i = 0; i < n; i++) {
     dp[i] = new Array(n).fill(0);
   }

@@ -1,8 +1,8 @@
 export function isPrefixOfWord(sentence: string, searchWord: string): number {
-  let words = sentence.split(" ");
+  const words = sentence.split(' ');
   let result = -1;
   for (let i = 0; i < words.length; i++) {
-    let word = words[i];
+    const word = words[i];
     let isPrefix = true;
     if (word.length < searchWord.length) {
       continue;
