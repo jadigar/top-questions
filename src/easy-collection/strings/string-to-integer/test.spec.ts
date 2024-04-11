@@ -41,3 +41,27 @@ it('myAtoi should return 2147483647 s = "91283472332"', () => {
   const result = myAtoi(s);
   expect(result).toBe(2147483647);
 });
+
+it('myAtoi should return 0 s = ".1"', () => {
+  const s = '.1';
+  const result = myAtoi(s);
+  expect(result).toBe(0);
+});
+
+it('myAtoi should return 3 s = "3.14159"', () => {
+  const s = '3.14159';
+  const result = myAtoi(s);
+  expect(result).toBe(3);
+});
+
+it('myAtoi should return -12 s = "+-12"', () => {
+  const s = '+-12';
+  const result = myAtoi(s);
+  expect(result).toBe(0);
+});
+
+it('myAtoi should return -42 s = "00000-42a1234"', () => {
+  const s = '00000-42a1234';
+  const result = myAtoi(s);
+  expect(result).toBe(0);
+});
