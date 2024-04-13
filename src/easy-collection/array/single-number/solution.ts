@@ -19,6 +19,19 @@
 // }
 
 // XOR one-liner
+// export function singleNumber(nums: number[]): number {
+//   return nums.reduce((a, b) => a ^ b);
+// }
+
 export function singleNumber(nums: number[]): number {
-  return nums.reduce((a, b) => a ^ b);
+  const set = new Set<number>();
+  for (let i = 0; i < nums.length; i++) {
+    const num = nums[i];
+    if (set.has(num)) {
+      set.delete(num);
+    } else {
+      set.add(num);
+    }
+  }
+  return [...set][0];
 }
