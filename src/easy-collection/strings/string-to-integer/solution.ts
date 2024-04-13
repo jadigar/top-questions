@@ -72,6 +72,8 @@
 //   return res;
 // }
 
+const ZERO_CHAR_CODE = '0'.charCodeAt(0);
+
 export function myAtoi(s: string): number {
   let res = 0;
   let sign = 1;
@@ -91,13 +93,12 @@ export function myAtoi(s: string): number {
     if (charCode < 48 || charCode > 57) {
       break;
     }
-    res = res * 10 + (charCode - '0'.charCodeAt(0));
+    res = res * 10 + (charCode - ZERO_CHAR_CODE);
     i++;
   }
 
   res *= sign;
 
-  // Check for overflow
   if (res > 2147483647) {
     return 2147483647;
   }
